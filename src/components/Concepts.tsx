@@ -144,13 +144,7 @@ export default function Concepts() {
               <p style={{ margin: '0 0 8px', fontSize: '11px', color: 'var(--accent)', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
                 Formula
               </p>
-              {c.formulaTex ? (
-                <Formula tex={c.formulaTex} legend={c.formulaLegend} />
-              ) : (
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--text-primary)', lineHeight: 1.7, fontWeight: 500 }}>
-                  {c.formula}
-                </p>
-              )}
+              <Formula tex={c.formulaTex} legend={c.formulaLegend} />
             </div>
 
             {/* Intuition */}

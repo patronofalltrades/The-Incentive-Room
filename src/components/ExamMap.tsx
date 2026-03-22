@@ -7,6 +7,14 @@ const DIFFICULTY_LABEL = { 1: 'Easy', 2: 'Medium', 3: 'Hard' } as const
 const DIFFICULTY_COLOR = { 1: 'var(--green)', 2: 'var(--amber)', 3: 'var(--red)' } as const
 const DIFFICULTY_BG = { 1: 'var(--green-soft)', 2: 'var(--amber-soft)', 3: 'var(--red-soft)' } as const
 
+const KEY_INSIGHTS: Record<number, string> = {
+  1: 'Each variance isolates one driver. The order matters: always start with volume, then work through price, efficiency, input cost, and fixed costs.',
+  2: 'The company sees cash flows. The manager sees divisional profit. When they disagree, there is goal incongruence \u2014 and that is the exam question.',
+  3: 'The transfer price range exists where both divisions prefer to trade. If the policy transfer price falls outside this range, value-creating trade will not occur.',
+  4: 'Residual income charges the division for capital used. As the asset depreciates, the charge shrinks and residual income improves mechanically \u2014 this is not real performance improvement.',
+  5: 'For each dimension, state the problem, name the behavioral distortion, and propose a concrete fix. Never describe the accounting without explaining the incentive consequence.',
+}
+
 interface ExamMapProps {
   onNavigate: (tab: Tab) => void
 }
@@ -133,6 +141,23 @@ export default function ExamMap({ onNavigate }: ExamMapProps) {
                       </p>
                       <Formula tex={part.coreFormulaTex} legend={part.coreFormulaLegend} />
                     </div>
+
+                    {/* Key Insight */}
+                    {KEY_INSIGHTS[part.part] && (
+                      <div style={{
+                        borderLeft: `4px solid ${part.color}`,
+                        background: part.softColor,
+                        borderRadius: '10px',
+                        padding: '14px 16px',
+                      }}>
+                        <p style={{ margin: '0 0 6px', fontSize: '11px', fontWeight: 600, color: part.color, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
+                          Key Insight
+                        </p>
+                        <p style={{ margin: 0, fontSize: '14px', color: 'var(--text-primary)', lineHeight: 1.7 }}>
+                          {KEY_INSIGHTS[part.part]}
+                        </p>
+                      </div>
+                    )}
 
                     {/* Data In + Compute side by side */}
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>

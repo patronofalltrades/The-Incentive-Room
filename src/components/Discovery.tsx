@@ -403,6 +403,48 @@ const TOPICS: Topic[] = [
   },
 ]
 
+/** Map of concept name to key phrase(s) to bold in the interpretation */
+const KEY_PHRASES: Record<string, string[]> = {
+  'Negative Volume Variance': ['contribution margin'],
+  'Favorable Efficiency Variance': ['resource utilization'],
+  'Zero Fixed Cost Variance': ['never flexed with volume'],
+  'Favorable Price with Unfavorable Volume Trade-Off': ['the price increase did not compensate'],
+  'Positive Cash Flow but Negative Divisional Profit': ['goal incongruence'],
+  'Opportunity Cost at Full Capacity': ['opportunity cost'],
+  'Bonus Alignment with Company Interest': ['no goal incongruence'],
+  'Death Spiral Price Increase': ['death spiral'],
+  'Idle Capacity Cost Absorption': ['idle capacity cost'],
+  'Cross-Subsidization Revealed by Activity-Based Costing': ['cross-subsidization'],
+  'Empty Goal Congruence Zone': ['no transfer price exists'],
+  'Full-Cost Transfer Price Above Market': ['destroys the internal trade incentive'],
+  'Goal Congruence Transfer Price Range': ['both the seller and the buyer better off'],
+  'Negative Year 1 Residual Income Despite Positive Net Present Value': ['reluctant to invest'],
+  'Increasing Residual Income Pattern Under Straight-Line Depreciation': ['mechanical artifact'],
+  'Moving-Target Bonus Discouraging Strong Performance': ['strongly discourages'],
+  'Cascade Diagnosis: One Allocation Choice Ripples Everywhere': ['cascades'],
+  'Structured Critique Framework': ['behavioral distortion'],
+  'Goal Congruence as the Central Test': ['goal congruence'],
+}
+
+function boldKeyPhrases(text: string, concept: string) {
+  const phrases = KEY_PHRASES[concept]
+  if (!phrases || phrases.length === 0) return text
+
+  const escaped = phrases.map(p => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+  const regex = new RegExp(`(${escaped.join('|')})`, 'gi')
+  const parts = text.split(regex)
+
+  if (parts.length === 1) return text
+
+  const lowerPhrases = phrases.map(p => p.toLowerCase())
+  return parts.map((part, i) => {
+    if (lowerPhrases.includes(part.toLowerCase())) {
+      return <strong key={i}>{part}</strong>
+    }
+    return part
+  })
+}
+
 export default function Discovery() {
   const [expandedTopic, setExpandedTopic] = useState<string | null>(null)
   const [mastered, setMastered] = useState<Set<string>>(() => new Set())
@@ -644,7 +686,7 @@ export default function Discovery() {
                             </div>
                           )}
                           <p style={{ margin: 0, fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-                            {am.interpretation}
+                            {boldKeyPhrases(am.interpretation, am.concept)}
                           </p>
                         </div>
                       ))}

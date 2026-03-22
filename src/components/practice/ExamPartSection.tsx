@@ -291,13 +291,14 @@ export default function ExamPartSection({
                   {/* Key Takeaway */}
                   <div style={{
                     padding: '14px 16px',
-                    background: 'var(--accent-soft)',
+                    background: 'rgba(251, 191, 36, 0.08)',
+                    borderLeft: '4px solid #f59e0b',
                   }}>
                     <p style={{
                       margin: '0 0 4px',
                       fontSize: '11px',
                       fontWeight: 600,
-                      color: 'var(--accent)',
+                      color: '#d97706',
                       letterSpacing: '0.06em',
                       textTransform: 'uppercase',
                     }}>
@@ -309,6 +310,7 @@ export default function ExamPartSection({
                       color: 'var(--text-primary)',
                       lineHeight: 1.6,
                     }}>
+                      <span role="img" aria-label="lightbulb" style={{ marginRight: '6px' }}>💡</span>
                       {q.keyTakeaway}
                     </p>
                   </div>

@@ -10,19 +10,23 @@ interface FormulaProps {
 export default function Formula({ tex, block = true, legend }: FormulaProps) {
   return (
     <div style={{
-      background: 'var(--code-bg)',
+      background: 'var(--code-bg, var(--card-hover))',
       border: '1px solid var(--border)',
       borderRadius: '10px',
-      padding: block ? '14px 16px' : '8px 12px',
+      padding: block ? '16px 18px' : '8px 12px',
       overflow: 'auto',
     }}>
-      {block ? <BlockMath math={tex} /> : <InlineMath math={tex} />}
+      <div style={{ padding: block ? '12px 0' : '0' }}>
+        {block ? <BlockMath math={tex} /> : <InlineMath math={tex} />}
+      </div>
       {legend && (
         <p style={{
-          margin: '8px 0 0',
+          margin: '12px 0 0',
+          paddingTop: '10px',
+          borderTop: '1px solid var(--border-subtle)',
           fontSize: '12px',
           color: 'var(--text-muted)',
-          lineHeight: 1.5,
+          lineHeight: 1.6,
         }}>
           {legend}
         </p>

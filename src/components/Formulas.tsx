@@ -58,6 +58,13 @@ const SECTIONS = [
   },
 ]
 
+const REMEMBER_NOTES: Record<string, string> = {
+  'Variance Analysis': 'Remember: Volume variance uses BUDGET margins. All other variances use ACTUAL volume.',
+  'Transfer Pricing': 'Remember: The seller floor is their incremental cost. The buyer ceiling is their alternative. Corporate overhead inflates BOTH.',
+  'Residual Income': 'Remember: Use BEGINNING of year book value. The capital charge shrinks as the asset depreciates.',
+  'Cost-Plus Pricing': 'Remember: Capacity-based allocation prevents the death spiral. Actual-volume allocation causes it.',
+}
+
 const TEN_TRAPS = [
   { trap: 'Forgetting inflation adjustment', where: 'Part 1 (Variance)', fix: 'Insert the inflation step right after volume. Restate budget prices at inflated level before computing price and efficiency variances.' },
   { trap: 'Including allocated overhead in cash flow analysis', where: 'Part 2 (Relevance)', fix: 'Allocated overhead does not change in cash. Exclude it from the company cash flow calculation. Include it only in the divisional profit calculation.' },
@@ -106,6 +113,19 @@ export default function Formulas() {
                 )}
               </div>
             ))}
+            {REMEMBER_NOTES[section.title] && (
+              <div style={{
+                margin: '0 20px 14px',
+                padding: '12px 16px',
+                borderLeft: `4px solid ${section.color}`,
+                background: 'var(--card-hover)',
+                borderRadius: '0 8px 8px 0',
+              }}>
+                <p style={{ margin: 0, fontSize: '13px', color: 'var(--text-primary)', lineHeight: 1.6, fontWeight: 500 }}>
+                  {REMEMBER_NOTES[section.title]}
+                </p>
+              </div>
+            )}
           </div>
         </div>
       ))}

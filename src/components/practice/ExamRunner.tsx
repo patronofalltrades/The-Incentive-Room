@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { ArrowLeft, ChevronRight, ChevronDown, ChevronUp, Clock } from 'lucide-react'
 import type { Simulation } from '../../data/artisanGardeners'
 import ExamPartSection from './ExamPartSection'
@@ -39,9 +39,8 @@ export default function ExamRunner({ simulation, onBack }: ExamRunnerProps) {
   const [screen, setScreen] = useState<Screen>('intro')
   const [elapsedSeconds, setElapsedSeconds] = useState(0)
   const [caseMaterialsOpen, setCaseMaterialsOpen] = useState(true)
-  const [activePart, setActivePart] = useState(0)
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
-  const partRefs = useRef<Map<number, HTMLDivElement>>(new Map())
+  // partRefs removed — part tabs removed per user request
 
   // Group steps by partLabel
   const parts: PartGroup[] = (() => {
@@ -92,39 +91,6 @@ export default function ExamRunner({ simulation, onBack }: ExamRunnerProps) {
     return `${m}:${s.toString().padStart(2, '0')}`
   }
 
-  // Track active part on scroll
-  useEffect(() => {
-    if (screen !== 'active') return
-    const handleScroll = () => {
-      let closest = 0
-      let closestDist = Infinity
-      partRefs.current.forEach((el, idx) => {
-        const rect = el.getBoundingClientRect()
-        const dist = Math.abs(rect.top - 120)
-        if (dist < closestDist) {
-          closestDist = dist
-          closest = idx
-        }
-      })
-      setActivePart(closest)
-    }
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [screen])
-
-  const scrollToPart = useCallback((idx: number) => {
-    const el = partRefs.current.get(idx)
-    if (el) {
-      const y = el.getBoundingClientRect().top + window.scrollY - 110
-      window.scrollTo({ top: y, behavior: 'smooth' })
-    }
-  }, [])
-
-  const setPartRef = useCallback((idx: number, el: HTMLDivElement | null) => {
-    if (el) partRefs.current.set(idx, el)
-    else partRefs.current.delete(idx)
-  }, [])
-
   const beginExam = () => {
     setScreen('active')
     setElapsedSeconds(0)
@@ -141,7 +107,6 @@ export default function ExamRunner({ simulation, onBack }: ExamRunnerProps) {
     setScreen('intro')
     setElapsedSeconds(0)
     setCaseMaterialsOpen(true)
-    setActivePart(0)
     window.scrollTo({ top: 0 })
   }
 
@@ -502,40 +467,10 @@ export default function ExamRunner({ simulation, onBack }: ExamRunnerProps) {
           </div>
         </div>
 
-        {/* Part progress bar */}
-        <div style={{
-          display: 'flex',
-          gap: '4px',
-          overflowX: 'auto',
-        }}>
-          {parts.map((part, idx) => {
-            const shortLabel = `Part ${idx + 1}`
-            const isActive = idx === activePart
-            return (
-              <button
-                key={idx}
-                onClick={() => scrollToPart(idx)}
-                style={{
-                  flex: 1,
-                  minWidth: '60px',
-                  padding: '6px 10px',
-                  border: 'none',
-                  borderRadius: '6px',
-                  fontSize: '11px',
-                  fontWeight: 600,
-                  cursor: 'pointer',
-                  background: isActive ? part.color + '20' : 'var(--surface)',
-                  color: isActive ? part.color : 'var(--text-muted)',
-                  borderBottom: isActive ? `2px solid ${part.color}` : '2px solid transparent',
-                  whiteSpace: 'nowrap',
-                  transition: 'all 0.15s ease',
-                }}
-              >
-                {shortLabel}
-              </button>
-            )
-          })}
-        </div>
+        {/* Question count summary */}
+        <p style={{ margin: 0, fontSize: '12px', color: 'var(--text-muted)' }}>
+          {sim.steps.length} questions across {parts.length} parts
+        </p>
       </div>
 
       {/* Case materials collapsible */}
@@ -643,7 +578,6 @@ export default function ExamRunner({ simulation, onBack }: ExamRunnerProps) {
         {parts.map((part, idx) => (
           <div
             key={part.label}
-            ref={(el) => setPartRef(idx, el)}
             id={`exam-part-${idx}`}
           >
             <ExamPartSection

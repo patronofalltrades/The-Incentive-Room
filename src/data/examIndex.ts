@@ -33,7 +33,7 @@ export const EXAM_INDEX: ExamIndexEntry[] = [
     questionCount: 25,
     estimatedMinutes: 90,
     whyStudy: 'Only exam testing revenue-based fixed cost allocation for product profitability.',
-    available: false,
+    available: true,
   },
 
   // Tier 2 — Fill gaps
@@ -46,7 +46,7 @@ export const EXAM_INDEX: ExamIndexEntry[] = [
     questionCount: 28,
     estimatedMinutes: 100,
     whyStudy: 'Like C&L but adds new product pricing plus delayed depreciation.',
-    available: false,
+    available: true,
   },
   {
     id: 'bistrot',
@@ -68,7 +68,7 @@ export const EXAM_INDEX: ExamIndexEntry[] = [
     questionCount: 6,
     estimatedMinutes: 30,
     whyStudy: 'Purest transfer pricing problem. All four methods. Corporate overhead as root cause.',
-    available: false,
+    available: true,
   },
   {
     id: 'cdf',
@@ -79,7 +79,7 @@ export const EXAM_INDEX: ExamIndexEntry[] = [
     questionCount: 0,
     estimatedMinutes: 60,
     whyStudy: 'Only case with market size, share, and mix decomposition.',
-    available: false,
+    available: true,
   },
   {
     id: 'speedcontrol',
@@ -90,7 +90,7 @@ export const EXAM_INDEX: ExamIndexEntry[] = [
     questionCount: 10,
     estimatedMinutes: 45,
     whyStudy: 'Transfer pricing plus investment plus residual income combined in one scenario.',
-    available: false,
+    available: true,
   },
 
   // Tier 2.5 — LIMON (our custom addition)
@@ -106,7 +106,42 @@ export const EXAM_INDEX: ExamIndexEntry[] = [
     available: true,
   },
 
+  // XtremeClimb sub-cases
+  {
+    id: 'barcelona-med-food',
+    title: 'Barcelona Mediterranean Food',
+    tier: 2,
+    difficulty: 2,
+    topics: ['variance-analysis', 'cost-plus-pricing'],
+    questionCount: 7,
+    estimatedMinutes: 30,
+    whyStudy: 'Comprehensive variance analysis for a food company with overhead rate variance.',
+    available: true,
+  },
+
   // Tier 3 — Target weak spots
+  {
+    id: 'medev',
+    title: 'MeDev',
+    tier: 3,
+    difficulty: 2,
+    topics: ['residual-income', 'investment-cashflows', 'transfer-pricing'],
+    questionCount: 7,
+    estimatedMinutes: 30,
+    whyStudy: 'Residual income with economic value added and transfer pricing for medical devices.',
+    available: true,
+  },
+  {
+    id: 'machtex',
+    title: 'Machtex SA',
+    tier: 3,
+    difficulty: 2,
+    topics: ['transfer-pricing', 'goal-congruence', 'corp-oh-distortion'],
+    questionCount: 4,
+    estimatedMinutes: 20,
+    whyStudy: 'Transfer pricing with multiple methods and corporate overhead distortion.',
+    available: true,
+  },
   {
     id: 'frankfurt',
     title: 'Frank Furt',
@@ -116,7 +151,7 @@ export const EXAM_INDEX: ExamIndexEntry[] = [
     questionCount: 2,
     estimatedMinutes: 15,
     whyStudy: 'Simplest variance analysis. Start here if shaky.',
-    available: false,
+    available: true,
   },
   {
     id: 'weather',
@@ -127,7 +162,7 @@ export const EXAM_INDEX: ExamIndexEntry[] = [
     questionCount: 3,
     estimatedMinutes: 20,
     whyStudy: 'Overhead allocation changes when order accepted.',
-    available: false,
+    available: true,
   },
   {
     id: 'dimelurbents',
@@ -138,7 +173,7 @@ export const EXAM_INDEX: ExamIndexEntry[] = [
     questionCount: 3,
     estimatedMinutes: 10,
     whyStudy: 'Shortest transfer pricing drill. Ten minutes.',
-    available: false,
+    available: true,
   },
   {
     id: 'smartdonkey',
@@ -149,7 +184,7 @@ export const EXAM_INDEX: ExamIndexEntry[] = [
     questionCount: 6,
     estimatedMinutes: 25,
     whyStudy: 'Simplest residual income drill.',
-    available: false,
+    available: true,
   },
   {
     id: 'intlgoods',
@@ -160,7 +195,7 @@ export const EXAM_INDEX: ExamIndexEntry[] = [
     questionCount: 12,
     estimatedMinutes: 40,
     whyStudy: 'Residual income variance analysis plus transfer pricing policy change.',
-    available: false,
+    available: true,
   },
   {
     id: 'gameco',
@@ -171,7 +206,7 @@ export const EXAM_INDEX: ExamIndexEntry[] = [
     questionCount: 8,
     estimatedMinutes: 35,
     whyStudy: 'Transfer pricing for development work.',
-    available: false,
+    available: true,
   },
   {
     id: 'triprince',
@@ -182,7 +217,7 @@ export const EXAM_INDEX: ExamIndexEntry[] = [
     questionCount: 2,
     estimatedMinutes: 20,
     whyStudy: 'Activity-based costing channel profitability.',
-    available: false,
+    available: true,
   },
   {
     id: 'crazyoffice',
@@ -193,7 +228,7 @@ export const EXAM_INDEX: ExamIndexEntry[] = [
     questionCount: 5,
     estimatedMinutes: 25,
     whyStudy: 'Traditional versus activity-based costing cross-subsidization.',
-    available: false,
+    available: true,
   },
   {
     id: 'specialcomp',
@@ -204,7 +239,7 @@ export const EXAM_INDEX: ExamIndexEntry[] = [
     questionCount: 7,
     estimatedMinutes: 30,
     whyStudy: 'Corporate overhead reallocation. Make versus buy.',
-    available: false,
+    available: true,
   },
   {
     id: 'deliciousmeals',
@@ -215,7 +250,7 @@ export const EXAM_INDEX: ExamIndexEntry[] = [
     questionCount: 4,
     estimatedMinutes: 20,
     whyStudy: 'Variance analysis with outsourced production.',
-    available: false,
+    available: true,
   },
   {
     id: 'localwings',
@@ -226,6 +261,6 @@ export const EXAM_INDEX: ExamIndexEntry[] = [
     questionCount: 10,
     estimatedMinutes: 45,
     whyStudy: 'Airline subsidiary. Transfer pricing for ground services.',
-    available: false,
+    available: true,
   },
 ]

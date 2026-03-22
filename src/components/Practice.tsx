@@ -7,6 +7,24 @@ import type { Simulation } from '../data/artisanGardeners'
 import { LE_BISTROT_PARISIEN } from '../data/leBistrotParisien'
 import { CIPRIANI_LOMBARDI } from '../data/ciprianiLombardi'
 import { LIQUEURS_DE_MONTAGNE } from '../data/liqueursDeMontagne'
+import { FRESHBREAD } from '../data/freshbread'
+import { XTREMECLIMB } from '../data/xtremeclimb'
+import { GAMECO } from '../data/gameco'
+import { INTERNATIONAL_GOODS } from '../data/internationalGoods'
+import { BARCELONA_MED_FOOD } from '../data/barcelonaMedFood'
+import { LOCALWINGS } from '../data/localwings'
+import { SPEED_CONTROL } from '../data/speedControl'
+import { DELICIOUS_MEALS } from '../data/deliciousMeals'
+import { SPECIAL_COMPONENTS } from '../data/specialComponents'
+import { SMART_DONKEY } from '../data/smartDonkey'
+import { REPAP_ESAB } from '../data/repapEsab'
+import { DIME_LURBENTS } from '../data/dimeLurbents'
+import { TRIPRINCE } from '../data/triprince'
+import { MEDEV } from '../data/medev'
+import { CRAZY_OFFICE } from '../data/crazyOffice'
+import { MACHTEX } from '../data/machtex'
+import { FRANKFURTER } from '../data/frankfurter'
+import { WEATHER_CORP } from '../data/weatherCorp'
 import { TOPIC_PROBLEMS } from '../data/topicProblems'
 import type { TopicProblem } from '../data/topicProblems'
 import { EXAM_INDEX } from '../data/examIndex'
@@ -19,6 +37,24 @@ const EXAM_DATA: Record<string, Simulation> = {
   bistrot: LE_BISTROT_PARISIEN,
   cl: CIPRIANI_LOMBARDI,
   limon: LIQUEURS_DE_MONTAGNE,
+  freshbread: FRESHBREAD,
+  xtremeclimb: XTREMECLIMB,
+  gameco: GAMECO,
+  intlgoods: INTERNATIONAL_GOODS,
+  'barcelona-med-food': BARCELONA_MED_FOOD,
+  machtex: MACHTEX,
+  medev: MEDEV,
+  localwings: LOCALWINGS,
+  speedcontrol: SPEED_CONTROL,
+  deliciousmeals: DELICIOUS_MEALS,
+  specialcomp: SPECIAL_COMPONENTS,
+  smartdonkey: SMART_DONKEY,
+  rec: REPAP_ESAB,
+  dimelurbents: DIME_LURBENTS,
+  triprince: TRIPRINCE,
+  crazyoffice: CRAZY_OFFICE,
+  frankfurt: FRANKFURTER,
+  weather: WEATHER_CORP,
 }
 
 const TIER_META: Record<1 | 2 | 3, { label: string; color: string; bg: string; description: string }> = {
@@ -272,8 +308,11 @@ function TopicProblemCard({ problem }: { problem: TopicProblem }) {
               <div style={{ padding: '14px 16px', background: 'var(--green-soft)', borderBottom: '1px solid var(--border-subtle)' }}>
                 <p style={{ margin: 0, fontSize: '14px', color: 'var(--text-primary)', fontWeight: 600 }}>{q.answer}</p>
               </div>
-              <div style={{ padding: '14px 16px', background: 'var(--accent-soft)' }}>
-                <p style={{ margin: 0, fontSize: '13px', color: 'var(--text-primary)', lineHeight: 1.6 }}>{q.keyTakeaway}</p>
+              <div style={{ padding: '14px 16px', background: 'rgba(251, 191, 36, 0.08)', borderLeft: '4px solid #f59e0b' }}>
+                <p style={{ margin: 0, fontSize: '13px', color: 'var(--text-primary)', lineHeight: 1.6 }}>
+                  <span role="img" aria-label="lightbulb" style={{ marginRight: '6px' }}>💡</span>
+                  {q.keyTakeaway}
+                </p>
               </div>
             </div>
           </details>
