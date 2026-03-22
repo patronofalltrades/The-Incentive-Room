@@ -70,9 +70,9 @@ export const MEDEV: Simulation = {
       formulaLegend:
         'NOPAT = Net income + Interest expense \u2212 Tax deduction; Tax deduction = 30% \u00D7 $500,000 = $150,000',
       approach: [
-        'Step 1: Understand why NOPAT adds back interest. Net income is computed after deducting interest expense, but NOPAT measures operating performance independent of financing decisions. Adding back interest removes the financing effect. However, since interest is tax-deductible, we only add back the after-tax portion.',
-        'Step 2: Compute the tax shield on interest. Tax deduction = Tax rate \u00D7 Interest expense = 30% \u00D7 $500,000 = $150,000. This is the tax savings from the interest deduction.',
-        'Step 3: Compute NOPAT. NOPAT = Net income + Interest expense \u2212 Tax deduction = $1,000,000 + $500,000 \u2212 $150,000 = $1,350,000. This represents the operating profit the division would have earned if it had no debt \u2014 a cleaner measure of operating performance.',
+        ' Understand why NOPAT adds back interest. Net income is computed after deducting interest expense, but NOPAT measures operating performance independent of financing decisions. Adding back interest removes the financing effect. However, since interest is tax-deductible, we only add back the after-tax portion.',
+        ' Compute the tax shield on interest. Tax deduction = Tax rate \u00D7 Interest expense = 30% \u00D7 $500,000 = $150,000. This is the tax savings from the interest deduction.',
+        ' Compute NOPAT. NOPAT = Net income + Interest expense \u2212 Tax deduction = $1,000,000 + $500,000 \u2212 $150,000 = $1,350,000. This represents the operating profit the division would have earned if it had no debt \u2014 a cleaner measure of operating performance.',
       ],
       answer: "MeDev's NOPAT for 2010 is $1,350,000.",
       keyTakeaway:
@@ -89,9 +89,9 @@ export const MEDEV: Simulation = {
       formulaLegend:
         'RI = NOPAT \u2212 cost of capital \u00D7 NOA = $1,350,000 \u2212 $1,288,000',
       approach: [
-        'Step 1: Compute the capital charge. The capital charge represents the minimum return investors require on the assets the division ties up. Capital charge = WACC \u00D7 NOA = 14% \u00D7 $9,200,000 = $1,288,000.',
-        'Step 2: Compute Residual Income. RI = NOPAT \u2212 capital charge = $1,350,000 \u2212 $1,288,000 = $62,000. The RI is barely positive, meaning MeDev only just covers its cost of capital.',
-        'Step 3: Interpret the result. Despite a net income of $1,000,000, the residual income is only $62,000. The large asset base ($9.2M) at 14% WACC creates a substantial capital charge. This shows the true economic profit after accounting for the opportunity cost of the capital employed.',
+        ' Compute the capital charge. The capital charge represents the minimum return investors require on the assets the division ties up. Capital charge = WACC \u00D7 NOA = 14% \u00D7 $9,200,000 = $1,288,000.',
+        ' Compute Residual Income. RI = NOPAT \u2212 capital charge = $1,350,000 \u2212 $1,288,000 = $62,000. The RI is barely positive, meaning MeDev only just covers its cost of capital.',
+        ' Interpret the result. Despite a net income of $1,000,000, the residual income is only $62,000. The large asset base ($9.2M) at 14% WACC creates a substantial capital charge. This shows the true economic profit after accounting for the opportunity cost of the capital employed.',
       ],
       answer: "MeDev's residual income is $62,000.",
       keyTakeaway:
@@ -105,10 +105,10 @@ export const MEDEV: Simulation = {
       question:
         "What do you think about using residual income as a performance measure for divisional managers' compensation?",
       approach: [
-        'Step 1: Identify MeDev\'s organizational classification. MeDev is explicitly described as a profit center. This means headquarters has not delegated investment decisions to the division manager \u2014 the manager controls revenues and costs but not the level of assets.',
-        'Step 2: Assess the mismatch. Residual Income charges the division for the capital it employs (NOA). But if the manager does not control investment decisions, penalizing them for NOA violates the controllability principle \u2014 you should not hold someone accountable for what they cannot influence.',
-        'Step 3: Identify the appropriate alternative. For a profit center, a profit-based measure (like controllable profit or contribution margin) would be more appropriate. RI is designed for investment centers, where the manager controls both profit and the asset base.',
-        'Step 4: Conclude. RI is questionable for MeDev because it creates accountability without authority. The division manager may be penalized for investment decisions made by headquarters.',
+        ' Identify MeDev\'s organizational classification. MeDev is explicitly described as a profit center. This means headquarters has not delegated investment decisions to the division manager \u2014 the manager controls revenues and costs but not the level of assets.',
+        ' Assess the mismatch. Residual Income charges the division for the capital it employs (NOA). But if the manager does not control investment decisions, penalizing them for NOA violates the controllability principle \u2014 you should not hold someone accountable for what they cannot influence.',
+        ' Identify the appropriate alternative. For a profit center, a profit-based measure (like controllable profit or contribution margin) would be more appropriate. RI is designed for investment centers, where the manager controls both profit and the asset base.',
+        ' Conclude. RI is questionable for MeDev because it creates accountability without authority. The division manager may be penalized for investment decisions made by headquarters.',
       ],
       answer:
         'RI is questionable for MeDev because it is a profit center (not an investment center). The division manager does not control investment decisions, yet RI penalizes for capital employed.',
@@ -126,10 +126,10 @@ export const MEDEV: Simulation = {
       formulaLegend:
         'Transfer price = 1.5 \u00D7 full manufacturing cost ($30) = $45; External selling price = $50',
       approach: [
-        'Step 1: Compute the transfer price. Full manufacturing cost = variable ($22) + fixed ($8) = $30/unit. Transfer price = 1.5 \u00D7 $30 = $45/unit.',
-        'Step 2: Assess MeDev\'s opportunity cost. MeDev is at full capacity, meaning selling to HeDev requires giving up external sales. External selling price = $50/unit. The opportunity cost of each unit transferred is $50 (the forgone external revenue).',
-        'Step 3: Compare TP to opportunity cost. TP ($45) < external price ($50). Each unit transferred to HeDev costs MeDev $5 in lost revenue. Over 30,000 units: $5 \u00D7 30,000 = $150,000 loss for MeDev.',
-        'Step 4: Conclude. MeDev will not accept the internal transfer because it loses $5/unit compared to selling externally. At full capacity, the seller\'s floor price should equal the external market price, but the cost-plus TP falls short.',
+        ' Compute the transfer price. Full manufacturing cost = variable ($22) + fixed ($8) = $30/unit. Transfer price = 1.5 \u00D7 $30 = $45/unit.',
+        ' Assess MeDev\'s opportunity cost. MeDev is at full capacity, meaning selling to HeDev requires giving up external sales. External selling price = $50/unit. The opportunity cost of each unit transferred is $50 (the forgone external revenue).',
+        ' Compare TP to opportunity cost. TP ($45) < external price ($50). Each unit transferred to HeDev costs MeDev $5 in lost revenue. Over 30,000 units: $5 \u00D7 30,000 = $150,000 loss for MeDev.',
+        ' Conclude. MeDev will not accept the internal transfer because it loses $5/unit compared to selling externally. At full capacity, the seller\'s floor price should equal the external market price, but the cost-plus TP falls short.',
       ],
       answer:
         'No. MeDev would not accept because the transfer price of $45 is below the external selling price of $50, and MeDev is at full capacity.',
@@ -148,9 +148,9 @@ export const MEDEV: Simulation = {
       formulaLegend:
         'Internal: TP = $45, no transportation; External: $42 purchase + $10 transportation = $52 total per unit',
       approach: [
-        'Step 1: Compute HeDev\'s cost of buying internally. Internal cost = TP \u00D7 30,000 = $45 \u00D7 30,000 = $1,350,000. No transportation cost because internal transfers do not require it.',
-        'Step 2: Compute HeDev\'s cost of buying externally. External price = $42/unit + $10/unit transportation = $52/unit total. External cost = $52 \u00D7 30,000 = $1,560,000.',
-        'Step 3: Compare. Internal ($1,350,000) < External ($1,560,000). HeDev saves $210,000 by buying internally. Even though the TP ($45) exceeds the supplier\'s price ($42), the $10/unit transportation cost makes the external option more expensive overall.',
+        ' Compute HeDev\'s cost of buying internally. Internal cost = TP \u00D7 30,000 = $45 \u00D7 30,000 = $1,350,000. No transportation cost because internal transfers do not require it.',
+        ' Compute HeDev\'s cost of buying externally. External price = $42/unit + $10/unit transportation = $52/unit total. External cost = $52 \u00D7 30,000 = $1,560,000.',
+        ' Compare. Internal ($1,350,000) < External ($1,560,000). HeDev saves $210,000 by buying internally. Even though the TP ($45) exceeds the supplier\'s price ($42), the $10/unit transportation cost makes the external option more expensive overall.',
       ],
       answer:
         'Yes. HeDev would prefer to buy from MeDev. While TP ($45) exceeds the supplier price ($42), HeDev saves $10/unit in transportation, making the total internal cost ($45) lower than the total external cost ($52).',
@@ -169,10 +169,10 @@ export const MEDEV: Simulation = {
       formulaLegend:
         'Company loses $50 \u2212 $22 = $28 per unit external margin but saves $52 per unit external cost of HeDev; net: \u2212$2 per unit',
       approach: [
-        'Step 1: Compute the company-wide trade-off. If MeDev sells externally and HeDev buys externally: MeDev earns ($50 \u2212 $22) \u00D7 30,000 = $840,000 contribution. HeDev pays ($42 + $10) \u00D7 30,000 = $1,560,000. Net company effect = +$840,000 \u2212 $1,560,000 = \u2212$720,000.',
-        'Step 2: If internal transfer occurs. MeDev loses the external sale but saves HeDev from paying $52/unit externally. MeDev costs = $22 \u00D7 30,000 = $660,000 (variable cost only). HeDev receives at TP but the TP cancels internally. Net company effect = \u2212$660,000 (MeDev costs) + $0 (internal transfer cancels) = \u2212$660,000.',
-        'Step 3: Compare. Internal transfer: company pays $660k in production costs. No internal transfer: company earns $840k from MeDev external sales but pays $1,560k for HeDev external purchases, net = \u2212$720k. Difference: internal is better by $720k \u2212 $660k = $60k. Alternatively: per unit, internal saves ($50 \u2212 $22) = $28 in lost margin but saves ($42 + $10) = $52 in external costs. Net = $52 \u2212 $28 \u2212 $22 = $2/unit savings \u00D7 30,000 = $60,000.',
-        'Step 4: Conclude. The internal transfer benefits Jay Company by $60,000. The key: the transportation cost savings ($10/unit) offset the lower margin, making internal trade worthwhile even at full capacity.',
+        ' Compute the company-wide trade-off. If MeDev sells externally and HeDev buys externally: MeDev earns ($50 \u2212 $22) \u00D7 30,000 = $840,000 contribution. HeDev pays ($42 + $10) \u00D7 30,000 = $1,560,000. Net company effect = +$840,000 \u2212 $1,560,000 = \u2212$720,000.',
+        ' If internal transfer occurs. MeDev loses the external sale but saves HeDev from paying $52/unit externally. MeDev costs = $22 \u00D7 30,000 = $660,000 (variable cost only). HeDev receives at TP but the TP cancels internally. Net company effect = \u2212$660,000 (MeDev costs) + $0 (internal transfer cancels) = \u2212$660,000.',
+        ' Compare. Internal transfer: company pays $660k in production costs. No internal transfer: company earns $840k from MeDev external sales but pays $1,560k for HeDev external purchases, net = \u2212$720k. Difference: internal is better by $720k \u2212 $660k = $60k. Alternatively: per unit, internal saves ($50 \u2212 $22) = $28 in lost margin but saves ($42 + $10) = $52 in external costs. Net = $52 \u2212 $28 \u2212 $22 = $2/unit savings \u00D7 30,000 = $60,000.',
+        ' Conclude. The internal transfer benefits Jay Company by $60,000. The key: the transportation cost savings ($10/unit) offset the lower margin, making internal trade worthwhile even at full capacity.',
       ],
       answer:
         'Yes, the internal transfer is in the best interest of Jay Company. It saves $60,000 compared to both divisions transacting externally.',
@@ -187,10 +187,10 @@ export const MEDEV: Simulation = {
       question:
         'In this case, is there goal congruence between the divisions and the company as a whole? If not, how would you fix it?',
       approach: [
-        'Step 1: Identify the goal congruence failure. The internal transfer benefits Jay Company by $60,000. HeDev wants to buy internally ($45 < $52). But MeDev refuses because TP ($45) < external price ($50). MeDev\'s rejection of a company-beneficial transfer is a goal congruence failure.',
-        'Step 2: Determine the seller\'s floor. At full capacity, MeDev\'s floor price = incremental cost + opportunity cost = $22 (variable) + ($50 \u2212 $22) (lost external margin) = $50. MeDev needs at least $50 to be indifferent.',
-        'Step 3: Determine the buyer\'s ceiling. HeDev\'s ceiling = external alternative = $42 + $10 = $52. HeDev will pay up to $52.',
-        'Step 4: Propose fixes. Fix 1: Set TP at market price ($50). MeDev would be indifferent, and HeDev would still save $2/unit ($50 vs. $52). Both accept, and the company benefits. Fix 2: Let divisions negotiate freely. The feasible range is $50 \u2264 TP \u2264 $52. Any price in this range makes both divisions at least as well off as their external options. The $2/unit surplus can be split via negotiation.',
+        ' Identify the goal congruence failure. The internal transfer benefits Jay Company by $60,000. HeDev wants to buy internally ($45 < $52). But MeDev refuses because TP ($45) < external price ($50). MeDev\'s rejection of a company-beneficial transfer is a goal congruence failure.',
+        ' Determine the seller\'s floor. At full capacity, MeDev\'s floor price = incremental cost + opportunity cost = $22 (variable) + ($50 \u2212 $22) (lost external margin) = $50. MeDev needs at least $50 to be indifferent.',
+        ' Determine the buyer\'s ceiling. HeDev\'s ceiling = external alternative = $42 + $10 = $52. HeDev will pay up to $52.',
+        ' Propose fixes. Fix 1: Set TP at market price ($50). MeDev would be indifferent, and HeDev would still save $2/unit ($50 vs. $52). Both accept, and the company benefits. Fix 2: Let divisions negotiate freely. The feasible range is $50 \u2264 TP \u2264 $52. Any price in this range makes both divisions at least as well off as their external options. The $2/unit surplus can be split via negotiation.',
       ],
       answer:
         'No goal congruence. MeDev rejects the transfer that benefits the company. Fixes: (1) set TP at market price ($50) so MeDev is indifferent and HeDev still saves on transportation, or (2) let divisions negotiate a price between $50 and $52.',

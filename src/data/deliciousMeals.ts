@@ -51,13 +51,13 @@ export const DELICIOUS_MEALS: Simulation = {
       formulaLegend:
         'Volume variance includes the incremental revenue from 1,000 extra meals minus the outsourcing cost of \u20AC5,000. Budgeted efficiency: 9,000/30,000 = 0.3 kg/meal; Actual: 12,000/30,000 = 0.4 kg/meal (computed over 30,000 in-house meals)',
       approach: [
-        'Step 1: Compute the volume variance. The restaurant sold 1,000 more meals than budgeted. Revenue from extra meals = 1,000 \u00D7 \u20AC15 (at budget price) = \u20AC15,000. However, these meals were outsourced at \u20AC5 each = \u20AC5,000 cost. Volume variance = \u20AC15,000 \u2212 \u20AC5,000 = +\u20AC10,000. We use the budget price because the selling price variance will capture the price difference separately.',
-        'Step 2: Compute the selling price variance. The actual price (\u20AC16) exceeded the budget (\u20AC15). Price variance = 31,000 \u00D7 (\u20AC16 \u2212 \u20AC15) = +\u20AC31,000. Evaluated at actual volume to avoid double-counting with the volume effect.',
-        'Step 3: Compute the input efficiency variance. Budget efficiency = 9,000 kg / 30,000 meals = 0.3 kg/meal. Actual efficiency = 12,000 kg / 30,000 in-house meals = 0.4 kg/meal (outsourced meals do not use materials). The kitchen used 0.1 more kg per meal. Variance = \u221230,000 \u00D7 (0.4 \u2212 0.3) \u00D7 \u20AC10 = \u2212\u20AC30,000. Valued at budget input price to isolate the efficiency effect.',
-        'Step 4: Compute the input price variance. Actual material price = \u20AC10.50/kg vs. budget = \u20AC10/kg. Variance = \u221230,000 \u00D7 0.4 \u00D7 (\u20AC10.50 \u2212 \u20AC10) = \u221212,000 \u00D7 \u20AC0.50 = \u2212\u20AC6,000. Valued at actual quantity to capture the full price impact.',
-        'Step 5: Compute the fixed cost variance. Fixed costs rose from \u20AC210,000 to \u20AC221,000. Variance = \u2212(\u20AC221,000 \u2212 \u20AC210,000) = \u2212\u20AC11,000. Unfavorable \u2014 additional fixed costs were incurred, possibly related to the higher volume.',
-        'Step 6: Compute the corporate overhead variance. Corporate OH dropped from \u20AC15,000 to \u20AC3,100. Variance = \u2212(\u20AC3,100 \u2212 \u20AC15,000) = +\u20AC11,900. This is a headquarters-driven change, not within the restaurant manager\'s control.',
-        'Step 7: Verify reconciliation. Total = +\u20AC10,000 + \u20AC31,000 \u2212 \u20AC30,000 \u2212 \u20AC6,000 \u2212 \u20AC11,000 + \u20AC11,900 = +\u20AC5,900. Check: \u20AC140,900 \u2212 \u20AC135,000 = \u20AC5,900. Reconciles perfectly.',
+        ' Compute the volume variance. The restaurant sold 1,000 more meals than budgeted. Revenue from extra meals = 1,000 \u00D7 \u20AC15 (at budget price) = \u20AC15,000. However, these meals were outsourced at \u20AC5 each = \u20AC5,000 cost. Volume variance = \u20AC15,000 \u2212 \u20AC5,000 = +\u20AC10,000. We use the budget price because the selling price variance will capture the price difference separately.',
+        ' Compute the selling price variance. The actual price (\u20AC16) exceeded the budget (\u20AC15). Price variance = 31,000 \u00D7 (\u20AC16 \u2212 \u20AC15) = +\u20AC31,000. Evaluated at actual volume to avoid double-counting with the volume effect.',
+        ' Compute the input efficiency variance. Budget efficiency = 9,000 kg / 30,000 meals = 0.3 kg/meal. Actual efficiency = 12,000 kg / 30,000 in-house meals = 0.4 kg/meal (outsourced meals do not use materials). The kitchen used 0.1 more kg per meal. Variance = \u221230,000 \u00D7 (0.4 \u2212 0.3) \u00D7 \u20AC10 = \u2212\u20AC30,000. Valued at budget input price to isolate the efficiency effect.',
+        ' Compute the input price variance. Actual material price = \u20AC10.50/kg vs. budget = \u20AC10/kg. Variance = \u221230,000 \u00D7 0.4 \u00D7 (\u20AC10.50 \u2212 \u20AC10) = \u221212,000 \u00D7 \u20AC0.50 = \u2212\u20AC6,000. Valued at actual quantity to capture the full price impact.',
+        ' Compute the fixed cost variance. Fixed costs rose from \u20AC210,000 to \u20AC221,000. Variance = \u2212(\u20AC221,000 \u2212 \u20AC210,000) = \u2212\u20AC11,000. Unfavorable \u2014 additional fixed costs were incurred, possibly related to the higher volume.',
+        ' Compute the corporate overhead variance. Corporate OH dropped from \u20AC15,000 to \u20AC3,100. Variance = \u2212(\u20AC3,100 \u2212 \u20AC15,000) = +\u20AC11,900. This is a headquarters-driven change, not within the restaurant manager\'s control.',
+        ' Verify reconciliation. Total = +\u20AC10,000 + \u20AC31,000 \u2212 \u20AC30,000 \u2212 \u20AC6,000 \u2212 \u20AC11,000 + \u20AC11,900 = +\u20AC5,900. Check: \u20AC140,900 \u2212 \u20AC135,000 = \u20AC5,900. Reconciles perfectly.',
       ],
       answer:
         'Sales volume: +\u20AC10,000; Selling price: +\u20AC31,000; Input efficiency: \u2212\u20AC30,000; Input price: \u2212\u20AC6,000; Fixed costs: \u2212\u20AC11,000; Corporate OH: +\u20AC11,900. Total change: +\u20AC5,900 (from \u20AC135,000 to \u20AC140,900).',
@@ -72,10 +72,10 @@ export const DELICIOUS_MEALS: Simulation = {
       question:
         'Given that actual profit exceeded budgeted profit, should the CFO congratulate the restaurant manager for his "success" and pay him a bonus? What was the main reason that actual profit exceeded budgeted profit?',
       approach: [
-        'Step 1: Identify the main driver of the profit increase. Without the corporate OH reduction (+\u20AC11,900), the total variance would be \u2212\u20AC6,000 \u2014 meaning profit would have been below budget. The corporate OH change is the factor that tipped the result from negative to positive.',
-        'Step 2: Assess controllability. The corporate overhead allocation is determined by headquarters, not by the restaurant manager. The manager has no influence over this variance. Giving credit (or blame) for it would violate the controllability principle.',
-        'Step 3: Evaluate the manager\'s actual performance. The manager did achieve a higher selling price (+\u20AC31,000) and higher volume (+\u20AC10,000), both favorable. But material efficiency deteriorated significantly (\u2212\u20AC30,000), and fixed costs rose (\u2212\u20AC11,000). The net of controllable variances is approximately zero.',
-        'Step 4: Conclude. It is not clear the manager deserves congratulations or a bonus. The profit increase was driven by a headquarters accounting change, not by operational excellence.',
+        ' Identify the main driver of the profit increase. Without the corporate OH reduction (+\u20AC11,900), the total variance would be \u2212\u20AC6,000 \u2014 meaning profit would have been below budget. The corporate OH change is the factor that tipped the result from negative to positive.',
+        ' Assess controllability. The corporate overhead allocation is determined by headquarters, not by the restaurant manager. The manager has no influence over this variance. Giving credit (or blame) for it would violate the controllability principle.',
+        ' Evaluate the manager\'s actual performance. The manager did achieve a higher selling price (+\u20AC31,000) and higher volume (+\u20AC10,000), both favorable. But material efficiency deteriorated significantly (\u2212\u20AC30,000), and fixed costs rose (\u2212\u20AC11,000). The net of controllable variances is approximately zero.',
+        ' Conclude. It is not clear the manager deserves congratulations or a bonus. The profit increase was driven by a headquarters accounting change, not by operational excellence.',
       ],
       answer:
         'The main driver of the profit increase was the lower corporate overhead charge (+\u20AC11,900), which is determined by headquarters, not the restaurant manager. It is not clear the manager deserves credit or a bonus for this.',
@@ -94,11 +94,11 @@ export const DELICIOUS_MEALS: Simulation = {
       formulaLegend:
         'Comparing the incremental revenue of 1,000 meals against incremental costs (outsourcing cost + additional fixed costs)',
       approach: [
-        'Step 1: Identify relevant costs and revenues. The relevance principle says: only costs and revenues that change with the decision matter. Irrelevant items (like materials for in-house meals, corporate OH) should be excluded because they would occur regardless of this decision.',
-        'Step 2: Compute incremental revenue. Revenue from extra 1,000 meals = 1,000 \u00D7 \u20AC16 = \u20AC16,000.',
-        'Step 3: Compute incremental costs. Outsourcing cost = \u20AC5,000 (the per-unit cost of having the other restaurant cook). No materials cost because the meals were outsourced, not cooked in-house. Additional fixed costs = \u20AC11,000 (the increase in fixed costs appears related to the higher volume).',
-        'Step 4: Compute net effect. Net = \u20AC16,000 \u2212 \u20AC5,000 \u2212 \u20AC11,000 = \u20AC0. The two alternatives (selling or turning away) are financially equivalent.',
-        'Step 5: Consider non-financial factors. Since the financial analysis yields indifference, the decision should be based on non-financial criteria: customer satisfaction, reputation, future demand potential, and the relationship with the outsourcing partner.',
+        ' Identify relevant costs and revenues. The relevance principle says: only costs and revenues that change with the decision matter. Irrelevant items (like materials for in-house meals, corporate OH) should be excluded because they would occur regardless of this decision.',
+        ' Compute incremental revenue. Revenue from extra 1,000 meals = 1,000 \u00D7 \u20AC16 = \u20AC16,000.',
+        ' Compute incremental costs. Outsourcing cost = \u20AC5,000 (the per-unit cost of having the other restaurant cook). No materials cost because the meals were outsourced, not cooked in-house. Additional fixed costs = \u20AC11,000 (the increase in fixed costs appears related to the higher volume).',
+        ' Compute net effect. Net = \u20AC16,000 \u2212 \u20AC5,000 \u2212 \u20AC11,000 = \u20AC0. The two alternatives (selling or turning away) are financially equivalent.',
+        ' Consider non-financial factors. Since the financial analysis yields indifference, the decision should be based on non-financial criteria: customer satisfaction, reputation, future demand potential, and the relationship with the outsourcing partner.',
       ],
       answer:
         'The two alternatives are financially equivalent (net effect = \u20AC0). Other criteria such as customer satisfaction and reputation would be needed to make a definitive judgment.',

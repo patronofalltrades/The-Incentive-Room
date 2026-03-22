@@ -116,9 +116,9 @@ export const CIPRIANI_LOMBARDI: Simulation = {
       formulaTex: 'V_{vol} = (N_a - N_b) \\times CM_b = (750{,}000 - 800{,}000) \\times 8.10 = -405{,}000',
       formulaLegend: 'N_a = actual pairs sold (750,000), N_b = budgeted pairs sold (800,000), CM_b = budgeted contribution margin per pair = selling price minus variable costs = 30 − 15 − 5 = €10',
       approach: [
-        'Budgeted CM per pair = Price − Materials VC − Other VC = 30 − (1.5 × 10) − 5 = €10.',
-        'Note: Corporate OH at €1.40/pair is also volume-dependent, so net CM = 10 − 1.40 = €8.60.',
-        'Volume Variance = (750,000 − 800,000) × 8.60 = −50,000 × 8.60 = −€430,000.',
+        'Budgeted CM per pair = Price €30 − Materials (1.5 × €10 = €15) − Other VC €5 = €10.',
+        'Corporate OH at €1.40/pair is volume-dependent. Net CM per pair = €10 − €1.40 = €8.60.',
+        'Volume Variance = (750,000 − 800,000) × €8.60 = −€430,000.',
       ],
       answer: '−€430,000 (Unfavorable)',
       keyTakeaway: 'Selling 50,000 fewer pairs than budget is the primary driver of the profit shortfall.',
@@ -131,10 +131,10 @@ export const CIPRIANI_LOMBARDI: Simulation = {
       formulaTex: 'V_{inf} = N_a \\times [(P_b \\times 0.06) - (MC_b \\times 0.06) - (OVC_b \\times 0.06)]',
       formulaLegend: 'All budgeted per-unit values inflated by 6%, applied to actual volume',
       approach: [
-        'Inflation-adjusted price = 30 × 1.06 = €31.80. Revenue gain = (31.80 − 30) × 750,000 = +€1,350,000.',
-        'Inflation-adjusted material cost = (1.5 × 10) × 1.06 = €15.90. Cost increase = (15.90 − 15) × 750,000 = −€675,000.',
-        'Inflation-adjusted other VC = 5 × 1.06 = €5.30. Cost increase = (5.30 − 5) × 750,000 = −€225,000.',
-        'Net inflation effect = 1,350,000 − 675,000 − 225,000 = +€450,000.',
+        'Inflation-adjusted price = €30 × 1.06 = €31.80. Revenue gain = (31.80 − 30) × 750,000 = +€1,350,000.',
+        'Inflation-adjusted material cost = €15 × 1.06 = €15.90. Cost increase = (15.90 − 15) × 750,000 = −€675,000.',
+        'Inflation-adjusted other VC = €5 × 1.06 = €5.30. Cost increase = (5.30 − 5) × 750,000 = −€225,000.',
+        'Net inflation effect = +€1,350,000 − €675,000 − €225,000 = +€450,000.',
       ],
       answer: '+€450,000 (Favorable)',
       keyTakeaway: 'Inflation has a net favorable effect because the price inflation (on €30) exceeds the cost inflation (on €15 + €5 = €20).',
@@ -313,12 +313,10 @@ export const CIPRIANI_LOMBARDI: Simulation = {
       formulaLegend:
         'VC = €20/pair, FC per pair at practical capacity = €4,800k/800k = €6, OH = €1.40/pair.',
       approach: [
-        'For MAN\'s reported Divisional Profit on the UFFS contract to be non-negative, the price must cover all allocated costs.',
-        'Variable cost = €20/pair (materials + other VC).',
-        'Fixed manufacturing cost allocation = 4,800,000 / 800,000 = €6/pair (at practical capacity).',
+        'Variable cost = €20/pair.',
+        'FC allocation at capacity = €4,800,000 / 800,000 = €6/pair.',
         'Corporate overhead = €1.40/pair.',
-        'Minimum price = 20 + 6 + 1.40 = €27.40 per pair.',
-        'Note: This is higher than the economic minimum (€21.40 from Q13) because FC allocation is included even though FC does not change with the order.',
+        'Minimum price for positive DP = €20 + €6 + €1.40 = €27.40 per pair.',
       ],
       answer: '€27.40 per pair',
       keyTakeaway:
@@ -335,10 +333,11 @@ export const CIPRIANI_LOMBARDI: Simulation = {
       formulaLegend:
         'N_exp = 280,000 pairs (expected volume), N_prac = 350,000 pairs (practical capacity).',
       approach: [
-        'At expected volume (280,000): FC/pair = 4,800,000 / 280,000 = €17.14. Full cost = 20 + 17.14 = €37.14. Price = 37.14 × 1.20 = €44.57.',
-        'At practical capacity (350,000): FC/pair = 4,800,000 / 350,000 = €13.71. Full cost = 20 + 13.71 = €33.71. Price = 33.71 × 1.20 = €40.46.',
-        'Compared to standard capacity (800,000): FC/pair = €6, full cost = €26, price = €31.20 (Q12).',
-        'Using expected volume inflates the price by €13.37 vs the standard capacity base — the "death spiral" risk where lower volume raises prices, further reducing volume.',
+        'At expected volume (280,000): FC/pair = 4,800,000 / 280,000 = €17.14. Full cost = €20 + €17.14 = €37.14.',
+        'Price at 280,000 = €37.14 × 1.20 = €44.57.',
+        'At practical capacity (350,000): FC/pair = 4,800,000 / 350,000 = €13.71. Full cost = €20 + €13.71 = €33.71.',
+        'Price at 350,000 = €33.71 × 1.20 = €40.46.',
+        'At standard capacity (800,000): FC/pair = €6. Full cost = €26. Price = €31.20 (from Q12).',
       ],
       answer:
         'At 280,000 pairs: €44.57 | At 350,000 pairs: €40.46 | At 800,000 pairs: €31.20 (Q12)',
@@ -356,11 +355,10 @@ export const CIPRIANI_LOMBARDI: Simulation = {
       formulaLegend:
         'UFFS willingness to pay = €32. Cost-plus prices depend on the FC allocation base.',
       approach: [
-        'At 800,000 capacity base: price = €31.20. UFFS offers €32 > €31.20 → Accept. ✓',
-        'At 350,000 capacity base: price = €40.46. UFFS offers €32 < €40.46 → Reject. ✗',
-        'At 280,000 capacity base: price = €44.57. UFFS offers €32 < €44.57 → Reject. ✗',
-        'Economic analysis: incremental profit = (32 − 21.40) × 30,000 = +€318,000. The order is value-creating.',
-        'The smaller allocation bases lead to rejecting a profitable order — illustrating the danger of cost-plus pricing with low-volume FC allocation.',
+        'UFFS offers €32/pair. At 800,000 base: cost-plus price = €31.20. €32 > €31.20, so accept.',
+        'At 350,000 base: cost-plus price = €40.46. €32 < €40.46, so reject.',
+        'At 280,000 base: cost-plus price = €44.57. €32 < €44.57, so reject.',
+        'Economic reality: incremental profit = (€32 − €21.40) × 30,000 = +€318,000. The order creates value under all scenarios.',
       ],
       answer:
         'Accept at 800k base (€31.20). Reject at 350k (€40.46) and 280k (€44.57) bases. All three miss the economic insight: the order generates +€318,000 incremental profit.',
@@ -421,14 +419,10 @@ export const CIPRIANI_LOMBARDI: Simulation = {
       formulaTex: 'TP_{min} = VC + OH = 20 + 1.40 = 21.40 \\quad TP_{max} = P_{ext} = 30',
       formulaLegend: 'For pairs within spare capacity: MAN min = VC + OH (no opportunity cost). DIS max = external price.',
       approach: [
-        'For 50,000 pairs (within spare capacity):',
-        '  MAN minimum = VC + corporate OH = 20 + 1.40 = €21.40 (no opportunity cost).',
-        '  DIS maximum = external price = €30.',
-        '  Range: €21.40 ≤ TP ≤ €30.',
-        'For 10,000 pairs (beyond capacity):',
-        '  MAN minimum = VC + OH + opportunity cost of displaced sales. If MAN must forgo regular sales at CM = 32.60 − 20 − 1.40 = €11.20, then min = 20 + 1.40 + 11.20 = €32.60.',
-        '  Since €32.60 > €30 (DIS max), no congruent TP exists for these 10k pairs.',
-        'Current TP of €32 is within range for spare capacity pairs but may be too high overall.',
+        'Within spare capacity (50,000 pairs): MAN minimum = VC + OH = €20 + €1.40 = €21.40. DIS maximum = external price = €30.',
+        'Congruent range for 50k pairs: €21.40 ≤ TP ≤ €30. Current TP of €32 is outside this range.',
+        'Beyond capacity (10,000 pairs): MAN opportunity cost = CM of displaced sales = €32.60 − €20 − €1.40 = €11.20.',
+        'MAN minimum for these 10k = €20 + €1.40 + €11.20 = €32.60. Since €32.60 > €30 (DIS max), no congruent TP exists.',
       ],
       answer: 'Spare capacity (50k): €21.40 ≤ TP ≤ €30. Beyond capacity (10k): no congruent range exists.',
       keyTakeaway: 'Goal congruence depends critically on spare capacity. For pairs beyond capacity, the opportunity cost of displaced sales makes internal transfer uneconomical.',
@@ -445,10 +439,9 @@ export const CIPRIANI_LOMBARDI: Simulation = {
       formulaLegend:
         'CAVE order = 20,000 pairs. TP = €32 (from Q14). External alternative for CAVE = €35/pair. OH = €1.40/pair applies under both alternatives.',
       approach: [
-        'Alt 1 (buy from MAN): DIS cost per pair = TP + OH = 32 + 1.40 = €33.40. Total = 20,000 × 33.40 = €668,000.',
-        'Alt 2 (buy externally): DIS cost per pair = 35 + 1.40 = €36.40. Total = 20,000 × 36.40 = €728,000.',
-        'DIS saves = 728,000 − 668,000 = €60,000 under Alt 1.',
-        'Unlike the earlier 60k-pair order (external at €30), the CAVE external supplier charges €35, making the internal TP of €32 competitive.',
+        'Alt 1 (buy from MAN): DIS cost per pair = TP €32 + OH €1.40 = €33.40. Total = 20,000 × €33.40 = €668,000.',
+        'Alt 2 (buy externally): DIS cost per pair = €35 + OH €1.40 = €36.40. Total = 20,000 × €36.40 = €728,000.',
+        'DIS saves €728,000 − €668,000 = €60,000 by sourcing internally.',
       ],
       answer:
         'Alt 1 saves DIS €60,000 vs Alt 2. DIS prefers buying internally at TP = €32.',
@@ -494,9 +487,10 @@ export const CIPRIANI_LOMBARDI: Simulation = {
       formulaTex: 'RI_t = \\Delta DP - 10\\% \\times BV_t',
       formulaLegend: 'BV depreciates by €800k/year. ΔDP = −€400k/year.',
       approach: [
-        'Year 1: BV = 2,400k. RI = −400,000 − 0.10 × 2,400,000 = −400,000 − 240,000 = −€640,000.',
-        'Year 2: BV = 1,600k. RI = −400,000 − 0.10 × 1,600,000 = −400,000 − 160,000 = −€560,000.',
-        'Year 3: BV = 800k. RI = −400,000 − 0.10 × 800,000 = −400,000 − 80,000 = −€480,000.',
+        'Annual ΔDP = €400,000 (cash flow) − €800,000 (depreciation) = −€400,000.',
+        'Year 1: Book value = €2,400k. Capital charge = 10% × 2,400,000 = €240,000. RI = −400,000 − 240,000 = −€640,000.',
+        'Year 2: Book value = €1,600k. Capital charge = 10% × 1,600,000 = €160,000. RI = −400,000 − 160,000 = −€560,000.',
+        'Year 3: Book value = €800k. Capital charge = 10% × 800,000 = €80,000. RI = −400,000 − 80,000 = −€480,000.',
       ],
       answer: 'Year 1: −€640,000 | Year 2: −€560,000 | Year 3: −€480,000',
       keyTakeaway: 'RI is deeply negative every year, confirming the investment should be rejected. Both DP and RI signal correctly here.',
@@ -512,10 +506,10 @@ export const CIPRIANI_LOMBARDI: Simulation = {
       formulaLegend:
         'Investment = €2,400,000. Depr = €800,000/year. ΔDP = −€400,000/year. BV at start of year t.',
       approach: [
-        'Year 2024: BV = €2,400,000. RI = −400,000 − 0.25 × 2,400,000 = −400,000 − 600,000 = −€1,000,000.',
-        'Year 2025: BV = €1,600,000. RI = −400,000 − 0.25 × 1,600,000 = −400,000 − 400,000 = −€800,000.',
-        'Year 2026: BV = €800,000. RI = −400,000 − 0.25 × 800,000 = −400,000 − 200,000 = −€600,000.',
-        'At 25% cost of capital, RI is substantially more negative than at 10% (Q20). The capital charge dominates in year 1.',
+        'Annual ΔDP = −€400,000 (same as Q19).',
+        '2024: Book value = €2,400,000. Capital charge = 25% × 2,400,000 = €600,000. RI = −400,000 − 600,000 = −€1,000,000.',
+        '2025: Book value = €1,600,000. Capital charge = 25% × 1,600,000 = €400,000. RI = −400,000 − 400,000 = −€800,000.',
+        '2026: Book value = €800,000. Capital charge = 25% × 800,000 = €200,000. RI = −400,000 − 200,000 = −€600,000.',
       ],
       answer:
         '2024: −€1,000,000 | 2025: −€800,000 | 2026: −€600,000',
@@ -533,11 +527,11 @@ export const CIPRIANI_LOMBARDI: Simulation = {
       formulaLegend:
         'RI_0 = 0 (pre-investment baseline). RI improves each year as book value declines.',
       approach: [
-        'RI_0 (before investment) = €0.',
-        '2024: RI = −€1,000,000. Change = −1,000,000 − 0 = −€1,000,000. Bonus = €0 (decrease).',
-        '2025: RI = −€800,000. Change = −800,000 − (−1,000,000) = +€200,000. Bonus = 10% × 200,000 = €20,000.',
-        '2026: RI = −€600,000. Change = −600,000 − (−800,000) = +€200,000. Bonus = 10% × 200,000 = €20,000.',
-        'Total bonus over 3 years = 0 + 20,000 + 20,000 = €40,000.',
+        'Baseline RI (before investment) = €0.',
+        '2024: RI = −€1,000,000. Change vs baseline = −€1,000,000. Bonus = €0 (RI decreased).',
+        '2025: RI = −€800,000. Change vs prior year = −800,000 − (−1,000,000) = +€200,000. Bonus = 10% × 200,000 = €20,000.',
+        '2026: RI = −€600,000. Change vs prior year = −600,000 − (−800,000) = +€200,000. Bonus = 10% × 200,000 = €20,000.',
+        'Total bonus over 3 years = €0 + €20,000 + €20,000 = €40,000.',
       ],
       answer:
         '2024: €0 | 2025: €20,000 | 2026: €20,000 | Total: €40,000',
@@ -552,11 +546,9 @@ export const CIPRIANI_LOMBARDI: Simulation = {
         'Based on your calculations, would Wang choose to make the equipment investment? Explain how the Residual Income pattern over the three years affects the investment decision.',
       approach: [
         'Company perspective: Total CF = −€1,200,000. The investment destroys value. Reject.',
-        'Wang under DP-based bonus: ΔDP = −€400,000/year. This worsens his already negative bonus gap. No incentive to invest. Reject — goal congruence.',
-        'Wang under RI-based bonus: Year 1 bonus = €0 (large RI drop). Years 2-3 bonus = €20,000 each. Total bonus = €40,000.',
-        'If Wang is patient (multi-year horizon), he might accept the investment for the €40k bonus despite it being value-destroying.',
-        'If Wang is short-term focused (year 1 only), he rejects because RI drops by €1M in year 1.',
-        'Goal incongruence: The RI-based bonus creates a perverse incentive to accept value-destroying investments because the declining book value mechanically generates RI "improvement" in later years.',
+        'Under DP-based bonus: ΔDP = −€400,000/year. No incentive to invest. Reject (goal congruence).',
+        'Under RI-based bonus: Year 1 bonus = €0. Years 2-3 bonus = €20,000 each. Total = €40,000.',
+        'A patient manager might accept for the €40k bonus despite −€1.2M total CF — goal incongruence.',
       ],
       answer:
         'Under DP bonus: reject (aligned). Under RI bonus with multi-year horizon: might accept for €40k bonus despite −€1.2M total CF — goal incongruence.',
@@ -570,12 +562,11 @@ export const CIPRIANI_LOMBARDI: Simulation = {
       questionTitle: 'System Critique',
       question: 'Analyze C&L\'s variance analysis, inflation treatment, transfer pricing, and investment incentives. Propose improvements.',
       approach: [
-        'Variance analysis with inflation: Decomposing into volume, inflation, and real variances is essential when inflation is significant (6% vs 0% forecast). The inflation step (+€450k) shows the net benefit of inflation to MAN. Without this step, the favorable price variance would be overstated.',
-        'Volume variance: −€430k is the largest adverse effect. Budget at 100% capacity (800k pairs) may have been unrealistic. Consider capacity-utilization benchmarks.',
-        'Material efficiency: −€795k is the most controllable adverse variance. Using 0.1 kg extra per pair is operationally significant and warrants investigation (quality of inputs, worker training, machine maintenance).',
-        'Transfer pricing: TP = 1.60 × VC (€32) works within spare capacity but fails beyond it. For 50k pairs within capacity, the congruent range is €21.40–€30. The current TP at €32 exceeds DIS external option (€30) — DIS would reject internal supply. Recommend dual pricing or negotiated TP.',
-        'Investment: The €2.4M equipment has negative total CF (−€1.2M) and deeply negative RI. Both manager and company correctly reject. However, the budget-based bonus means Hao Wang has no incentive for any project unless it closes the €625k budget gap — creating potential goal incongruence for value-creating investments.',
-        'Recommendations: (1) Use inflation-adjusted budgets to avoid penalizing managers for macro factors. (2) Investigate material efficiency variance operationally. (3) Set TP within congruence range or use negotiated pricing. (4) Consider multi-year bonus pools to avoid short-term bias.',
+        'Variance with inflation: 6% actual vs 0% forecast makes inflation adjustment essential. Without it, the favorable price variance is overstated.',
+        'Volume: −€430k is the largest adverse effect. Budget at 100% capacity (800k pairs) may be unrealistic.',
+        'Material efficiency: −€795k is the most controllable variance. 0.1 kg extra per pair warrants operational investigation.',
+        'Transfer pricing: TP = €32 exceeds DIS external option (€30). Congruent range for spare capacity is €21.40 to €30.',
+        'Investment: −€1.2M total CF. Both manager and company reject. Budget-based bonus blocks any project below the €625k gap.',
       ],
       answer: 'Key issues: (1) Budget assumed 0% inflation but actual was 6% — inflation-adjusted analysis is essential. (2) Material efficiency (−€795k) is the largest controllable variance. (3) TP at €32 exceeds DIS external option (€30), destroying goal congruence. (4) Budget-based bonus at 100% capacity is unrealistically high.',
       keyTakeaway: 'C&L illustrates why inflation adjustment in variance analysis is critical and how a TP based on variable cost markup can fail when it exceeds the external market price.',

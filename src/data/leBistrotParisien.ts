@@ -109,7 +109,7 @@ export const LE_BISTROT_PARISIEN: Simulation = {
       formulaTex: 'V_{vol} = (N_a - N_b) \\times CM_b = (52{,}000 - 60{,}000) \\times 32 = -256{,}000',
       formulaLegend: 'N_a = actual menus (52,000), N_b = prior year menus (60,000), CM_b = prior year contribution margin per customer',
       approach: [
-        'CM per customer (2023): menu margin + drinks margin = (40 − 14) + 2 × (5 − 2) = 26 + 6 = €32.',
+        'Menu margin = €40 − €14 = €26. Drink margin = 2 drinks × (€5 − €2) = €6. Total CM per customer = €26 + €6 = €32.',
         'Volume Variance = (52,000 − 60,000) × 32 = −8,000 × 32 = −€256,000.',
       ],
       answer: '−€256,000 (Unfavorable)',
@@ -222,11 +222,14 @@ export const LE_BISTROT_PARISIEN: Simulation = {
       formulaTex: 'ARP = Rev - VC - FC \\times \\frac{N}{N_{cap}}',
       formulaLegend: 'ARP = Adjusted Restaurant Profit, N_cap = 80,000 menus',
       approach: [
-        '2023: FC_alloc = 800 × (60,000/80,000) = €600k. ARP = (2,400 + 600) − (840 + 240) − 600 = 3,000 − 1,080 − 600 = €1,320k.',
-        '2024: FC_alloc = 800 × (52,000/80,000) = €520k. ARP = (1,820 + 468) − (728 + 187.2) − 520 = 2,288 − 915.2 − 520 = €852.8k.',
+        'Capacity = 80,000 menus. Fixed costs = €800,000.',
+        '2023: Used 60,000 of 80,000 capacity (75%). FC allocated = €800k × 75% = €600k.',
+        '2023 Adjusted Restaurant Profit (ARP) = Revenue €3,000k − Variable costs €1,080k − FC allocated €600k = €1,320k.',
+        '2024: Used 52,000 of 80,000 capacity (65%). FC allocated = €800k × 65% = €520k.',
+        '2024 ARP = Revenue €2,288k − Variable costs €915.2k − FC allocated €520k = €852.8k.',
         'Change = 852.8 − 1,320 = −€467.2k (decrease). Bonus = €0.',
       ],
-      answer: '2023 ARP = €1,320k | 2024 ARP = €852.8k | Bonus = €0',
+      answer: '2023 Adjusted Restaurant Profit = €1,320k | 2024 Adjusted Restaurant Profit = €852.8k | Bonus = €0',
       keyTakeaway: 'Capacity-adjusted profit is higher than unadjusted in both years (idle capacity cost excluded), but the decline persists so the bonus remains zero.',
     },
     // ===== PART 1b — Alternative Performance Measure =====
@@ -241,15 +244,17 @@ export const LE_BISTROT_PARISIEN: Simulation = {
       formulaLegend:
         'N_cap = 1,200 × 365 = 438,000 customers/year. N_a = actual customers.',
       approach: [
-        'N_cap = 1,200 × 365 = 438,000 customers/year.',
-        '2023: FC_alloc = 800,000 × (60,000 / 438,000) = €109,589. ARP = 3,000,000 − 1,080,000 − 109,589 = €1,810,411.',
-        '2024: FC_alloc = 800,000 × (52,000 / 438,000) = €94,977. ARP = 2,288,000 − 915,200 − 94,977 = €1,277,823.',
+        'Daily capacity = 1,200 customers × 365 days = 438,000 customers/year.',
+        '2023: Utilization = 60,000 / 438,000 = 13.7%. FC allocated = €800,000 × 13.7% = €109,589.',
+        '2023 Adjusted Restaurant Profit (ARP) = Revenue €3,000,000 − Variable costs €1,080,000 − FC allocated €109,589 = €1,810,411.',
+        '2024: Utilization = 52,000 / 438,000 = 11.9%. FC allocated = €800,000 × 11.9% = €94,977.',
+        '2024 ARP = Revenue €2,288,000 − Variable costs €915,200 − FC allocated €94,977 = €1,277,823.',
         'Change = 1,277,823 − 1,810,411 = −€532,588. Bonus = €0 (profit decreased).',
       ],
       answer:
-        '2023 ARP = €1,810,411 | 2024 ARP = €1,277,823 | Bonus = €0',
+        '2023 Adjusted Restaurant Profit = €1,810,411 | 2024 Adjusted Restaurant Profit = €1,277,823 | Bonus = €0',
       keyTakeaway:
-        'With a much larger capacity base (438,000 vs 80,000), very little FC is allocated — ARP is much higher than under the 80,000 capacity base, but the year-on-year decline persists so the bonus remains zero.',
+        'With a much larger capacity base (438,000 vs 80,000), very little FC is allocated — Adjusted Restaurant Profit is much higher than under the 80,000 capacity base, but the year-on-year decline persists so the bonus remains zero.',
     },
     {
       id: 'q24',
@@ -262,10 +267,9 @@ export const LE_BISTROT_PARISIEN: Simulation = {
       formulaLegend:
         'CM_b = contribution margin per customer (2023) = €32. FC/N_cap = 800,000/438,000 = €1.83.',
       approach: [
-        'Under capacity-adjusted profit, each customer "carries" FC/N_cap = 800,000/438,000 = €1.83 of fixed cost.',
-        'Effective CM per customer = 32 − 1.83 = €30.17.',
-        'Variance = (52,000 − 60,000) × 30.17 = −8,000 × 30.17 = −€241,370.',
-        'Compared to the standard volume variance of −€256,000, the capacity-adjusted variance is smaller because the FC penalty per lost customer is only €1.83 instead of the full €10 per menu (under 80,000 capacity).',
+        'FC per customer at capacity = 800,000 / 438,000 = €1.83.',
+        'Effective CM per customer = €32 (contribution margin) − €1.83 (FC charge) = €30.17.',
+        'Volume Variance = (52,000 − 60,000) × 30.17 = −€241,370.',
       ],
       answer: '−€241,370 (Unfavorable)',
       keyTakeaway:
@@ -325,13 +329,14 @@ export const LE_BISTROT_PARISIEN: Simulation = {
       formulaTex: 'ARP_{new} = ARP_{base} + \\Delta CF - \\Delta FC_{cap} ',
       formulaLegend: 'ΔFC_cap = change in capacity-allocated FC from adding 20k menus',
       approach: [
-        'Total menus = 52,000 + 20,000 = 72,000.',
-        'FC_alloc = (800 + 120) × (72,000/80,000) = 920 × 0.9 = €828k.',
-        'Rev = 2,288 + 600 = €2,888k. VC = 915.2 + 200 = €1,115.2k.',
-        'ARP = 2,888 − 1,115.2 − 828 = €944.8k.',
-        'vs 2023 ARP of €1,320k: still a decrease, bonus = €0.',
+        'Total menus with vegan = 52,000 + 20,000 = 72,000. Capacity = 80,000.',
+        'Total FC = €800k (existing) + €120k (vegan) = €920k.',
+        'FC allocated = €920k × (72,000 / 80,000) = €920k × 90% = €828k.',
+        'Total revenue = €2,288k + €600k = €2,888k. Total VC = €915.2k + €200k = €1,115.2k.',
+        'Adjusted Restaurant Profit (ARP) = €2,888k − €1,115.2k − €828k = €944.8k.',
+        'vs 2023 Adjusted Restaurant Profit of €1,320k: still a decrease, bonus = €0.',
       ],
-      answer: 'ARP = €944,800 | Bonus = €0',
+      answer: 'Adjusted Restaurant Profit = €944,800 | Bonus = €0',
       keyTakeaway: 'Even under capacity-adjusted profit, the vegan menu cannot close the gap to 2023, so the bonus remains zero.',
     },
     // ===== PART 3 — Transfer Pricing =====
@@ -536,9 +541,10 @@ export const LE_BISTROT_PARISIEN: Simulation = {
       formulaTex: 'RI_t = \\Delta RP - 10\\% \\times BV_t',
       formulaLegend: 'BV depreciates by €110k/year. ΔRP = −€50k/year.',
       approach: [
-        'Year 1: BV = 330k. RI = −50,000 − 0.10 × 330,000 = −50,000 − 33,000 = −€83,000.',
-        'Year 2: BV = 220k. RI = −50,000 − 0.10 × 220,000 = −50,000 − 22,000 = −€72,000.',
-        'Year 3: BV = 110k. RI = −50,000 − 0.10 × 110,000 = −50,000 − 11,000 = −€61,000.',
+        'Annual ΔRP = €60,000 (cash flow) − €110,000 (depreciation) = −€50,000.',
+        'Year 1: Book value = €330k. Capital charge = 10% × 330,000 = €33,000. RI = −50,000 − 33,000 = −€83,000.',
+        'Year 2: Book value = €220k. Capital charge = 10% × 220,000 = €22,000. RI = −50,000 − 22,000 = −€72,000.',
+        'Year 3: Book value = €110k. Capital charge = 10% × 110,000 = €11,000. RI = −50,000 − 11,000 = −€61,000.',
       ],
       answer: 'Year 1: −€83,000 | Year 2: −€72,000 | Year 3: −€61,000',
       keyTakeaway: 'RI is deeply negative every year, confirming the investment should be rejected — consistent with the negative total CF.',
@@ -567,10 +573,10 @@ export const LE_BISTROT_PARISIEN: Simulation = {
       formulaLegend:
         'Investment = €330,000. Depreciation = €110,000/year. ΔRP = ΔCF − Depr = 60,000 − 110,000 = −€50,000/year. BV at start of year t.',
       approach: [
-        'Year 2025: BV = €330,000. RI = −50,000 − 0.12 × 330,000 = −50,000 − 39,600 = −€89,600.',
-        'Year 2026: BV = €220,000. RI = −50,000 − 0.12 × 220,000 = −50,000 − 26,400 = −€76,400.',
-        'Year 2027: BV = €110,000. RI = −50,000 − 0.12 × 110,000 = −50,000 − 13,200 = −€63,200.',
-        'RI improves each year as the capital charge declines, but remains deeply negative throughout.',
+        'Annual ΔRP = €60,000 (cash flow) − €110,000 (depreciation) = −€50,000.',
+        '2025: Book value = €330,000. Capital charge = 12% × 330,000 = €39,600. RI = −50,000 − 39,600 = −€89,600.',
+        '2026: Book value = €220,000. Capital charge = 12% × 220,000 = €26,400. RI = −50,000 − 26,400 = −€76,400.',
+        '2027: Book value = €110,000. Capital charge = 12% × 110,000 = €13,200. RI = −50,000 − 13,200 = −€63,200.',
       ],
       answer:
         '2025: −€89,600 | 2026: −€76,400 | 2027: −€63,200',
@@ -588,11 +594,10 @@ export const LE_BISTROT_PARISIEN: Simulation = {
       formulaLegend:
         'RI_0 = 0 (no investment baseline). RI increases year-over-year as the capital charge declines.',
       approach: [
-        'RI_0 (before investment) = €0.',
-        '2025: RI = −€89,600. Change = −89,600 − 0 = −€89,600. Bonus = €0 (decrease).',
-        '2026: RI = −€76,400. Change = −76,400 − (−89,600) = +€13,200. Bonus = 10% × 13,200 = €1,320.',
-        '2027: RI = −€63,200. Change = −63,200 − (−76,400) = +€13,200. Bonus = 10% × 13,200 = €1,320.',
-        'Paradox: RI is negative every year (investment destroys value), yet Patrícia earns a bonus in years 2-3 because RI is improving mechanically as book value declines.',
+        'Baseline RI (before investment) = €0.',
+        '2025: RI = −€89,600. Change vs baseline = −€89,600. Bonus = €0 (RI decreased).',
+        '2026: RI = −€76,400. Change vs prior year = −76,400 − (−89,600) = +€13,200. Bonus = 10% × 13,200 = €1,320.',
+        '2027: RI = −€63,200. Change vs prior year = −63,200 − (−76,400) = +€13,200. Bonus = 10% × 13,200 = €1,320.',
       ],
       answer:
         '2025: €0 | 2026: €1,320 | 2027: €1,320',
@@ -606,11 +611,10 @@ export const LE_BISTROT_PARISIEN: Simulation = {
       questionTitle: 'System Critique',
       question: 'Analyze BP\'s variance analysis, incentive scheme, transfer pricing, and investment decisions. Propose improvements.',
       approach: [
-        'Variance analysis: The decomposition into customer volume, drinks/customer, prices, and costs reveals that Patrícia\'s cocktail strategy partially worked (drink price +€78k) but was overwhelmed by customer loss (−€256k) and menu price cuts (−€260k). The competitor impact is mostly in volume.',
-        'Incentive scheme: Bonus on improvement vs prior year is problematic when the prior year was a record. Patrícia has zero bonus incentive for any project that does not close the €547k gap. Consider a budget-based target or a multi-year rolling average.',
-        'Transfer pricing: Full-cost TP (€24) exceeds external price (€22), destroying goal congruence. With spare capacity, TP should be between VC (€14) and external price (€22). Market-based or negotiated TP would improve decisions.',
-        'Investment: The Fast Delivery investment has negative CF and negative RP — correctly rejected by both manager and company. However, the bonus scheme would also discourage value-creating investments in the current environment (since bonus = 0 regardless).',
-        'Recommendations: (1) Use budget-based bonus targets instead of prior-year comparison. (2) Set TP based on variable cost plus negotiated markup when spare capacity exists. (3) Use capacity-adjusted profit to avoid penalizing managers for idle capacity beyond their control.',
+        'Variance analysis: Cocktail strategy partially worked (drink price +€78k) but customer loss (−€256k) and menu price cuts (−€260k) dominated.',
+        'Incentive scheme: Bonus on improvement vs prior record year means zero incentive for any project below the €547k gap. A budget-based or rolling-average target would be better.',
+        'Transfer pricing: Full-cost TP (€24) exceeds external price (€22). With spare capacity, congruent range is €14 to €22.',
+        'Investment: Fast Delivery has negative CF and RP — correctly rejected. But the bonus scheme also blocks value-creating investments since bonus = €0 regardless.',
       ],
       answer: 'Key issues: (1) Prior-year bonus benchmark kills incentives after a record year, (2) full-cost TP destroys goal congruence with spare capacity, (3) the vegan menu creates goal incongruence — good for SF but zero bonus for Patrícia.',
       keyTakeaway: 'The core problem is the bonus-on-improvement design: after a record year, the manager cannot earn a bonus regardless of value-creating decisions, creating widespread goal incongruence.',

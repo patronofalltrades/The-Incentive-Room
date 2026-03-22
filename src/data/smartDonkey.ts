@@ -54,10 +54,10 @@ export const SMART_DONKEY: Simulation = {
       formulaLegend:
         'Year 1: NOPAT = 10\u00D710 \u2212 4\u00D710 \u2212 3\u00D710 \u2212 0.7\u00D740 = 2; NOA = 40 \u2212 28 = 12. Year 2: NOPAT = 10\u00D712 \u2212 4\u00D712 \u2212 3\u00D712 \u2212 0.3\u00D740 = 24; NOA = 12 \u2212 12 = 0',
       approach: [
-        'Step 1: Compute Year 1 NOPAT. Revenue = $10 \u00D7 10 = $100. Material = $4 \u00D7 10 = $40. Labor = $3 \u00D7 10 = $30. Depreciation = 70% \u00D7 $40 = $28 (accelerated front-loads the expense). NOPAT = $100 \u2212 $40 \u2212 $30 \u2212 $28 = $2.',
-        'Step 2: Compute Year 1 RI. NOA at the beginning of Year 1 = $40 (the full investment). The capital charge represents the minimum return investors require on the assets tied up. RI = NOPAT \u2212 cost of capital \u00D7 NOA = $2 \u2212 0.10 \u00D7 $40 = $2 \u2212 $4 = \u2212$2. Negative RI means the project did not earn enough to cover its cost of capital in Year 1.',
-        'Step 3: Compute Year 2 NOPAT. Revenue = $10 \u00D7 12 = $120. Material = $4 \u00D7 12 = $48. Labor = $3 \u00D7 12 = $36. Depreciation = 30% \u00D7 $40 = $12. NOPAT = $120 \u2212 $48 \u2212 $36 \u2212 $12 = $24.',
-        'Step 4: Compute Year 2 RI. NOA at beginning of Year 2 = $40 \u2212 $28 (Year 1 depreciation) = $12. RI = $24 \u2212 0.10 \u00D7 $12 = $24 \u2212 $1.2 = $22.80. The dramatically higher Year 2 RI occurs because most depreciation was absorbed in Year 1.',
+        ' Compute Year 1 NOPAT. Revenue = $10 \u00D7 10 = $100. Material = $4 \u00D7 10 = $40. Labor = $3 \u00D7 10 = $30. Depreciation = 70% \u00D7 $40 = $28 (accelerated front-loads the expense). NOPAT = $100 \u2212 $40 \u2212 $30 \u2212 $28 = $2.',
+        ' Compute Year 1 RI. NOA at the beginning of Year 1 = $40 (the full investment). The capital charge represents the minimum return investors require on the assets tied up. RI = NOPAT \u2212 cost of capital \u00D7 NOA = $2 \u2212 0.10 \u00D7 $40 = $2 \u2212 $4 = \u2212$2. Negative RI means the project did not earn enough to cover its cost of capital in Year 1.',
+        ' Compute Year 2 NOPAT. Revenue = $10 \u00D7 12 = $120. Material = $4 \u00D7 12 = $48. Labor = $3 \u00D7 12 = $36. Depreciation = 30% \u00D7 $40 = $12. NOPAT = $120 \u2212 $48 \u2212 $36 \u2212 $12 = $24.',
+        ' Compute Year 2 RI. NOA at beginning of Year 2 = $40 \u2212 $28 (Year 1 depreciation) = $12. RI = $24 \u2212 0.10 \u00D7 $12 = $24 \u2212 $1.2 = $22.80. The dramatically higher Year 2 RI occurs because most depreciation was absorbed in Year 1.',
       ],
       answer:
         'Year 1: NOPAT = $2, RI = \u2212$2. Year 2: NOPAT = $24, RI = $22.80.',
@@ -76,10 +76,10 @@ export const SMART_DONKEY: Simulation = {
       formulaLegend:
         'Cash flows: Year 0 = \u2212$40 investment; Year 1 = (10\u22124\u22123)\u00D710 = $30; Year 2 = (10\u22124\u22123)\u00D712 = $36',
       approach: [
-        'Step 1: Use NPV, not RI, for investment decisions. Shareholders care about value creation, measured by NPV. NPV discounts all future cash flows at the cost of capital and subtracts the initial investment.',
-        'Step 2: Compute operating cash flows (not NOPAT). Cash flows exclude depreciation (a non-cash expense). Year 1 cash flow = ($10 \u2212 $4 \u2212 $3) \u00D7 10 = $3 \u00D7 10 = $30. Year 2 cash flow = $3 \u00D7 12 = $36.',
-        'Step 3: Discount and sum. NPV = \u2212$40 + $30/1.1 + $36/1.1\u00B2 = \u2212$40 + $27.27 + $29.75 = +$17.02.',
-        'Step 4: Conclude. NPV > 0, so the project creates $17.02 of value for shareholders. It should be undertaken regardless of what the RI says in any individual year.',
+        ' Use NPV, not RI, for investment decisions. Shareholders care about value creation, measured by NPV. NPV discounts all future cash flows at the cost of capital and subtracts the initial investment.',
+        ' Compute operating cash flows (not NOPAT). Cash flows exclude depreciation (a non-cash expense). Year 1 cash flow = ($10 \u2212 $4 \u2212 $3) \u00D7 10 = $3 \u00D7 10 = $30. Year 2 cash flow = $3 \u00D7 12 = $36.',
+        ' Discount and sum. NPV = \u2212$40 + $30/1.1 + $36/1.1\u00B2 = \u2212$40 + $27.27 + $29.75 = +$17.02.',
+        ' Conclude. NPV > 0, so the project creates $17.02 of value for shareholders. It should be undertaken regardless of what the RI says in any individual year.',
       ],
       answer:
         'Yes. The NPV is $17.02 > 0, so the project is in shareholders\' best interest.',
@@ -94,9 +94,9 @@ export const SMART_DONKEY: Simulation = {
       question:
         'Given his character flaws, will Peter invest into this project given the proposed accounting policy (accelerated depreciation)?',
       approach: [
-        'Step 1: Apply Peter\'s decision rule. Peter cares only about Year 1 and only about whether he gets his bonus. The bonus requires positive RI in Year 1.',
-        'Step 2: Check Year 1 RI. With accelerated depreciation, Year 1 RI = \u2212$2 (negative). Peter would not receive his bonus.',
-        'Step 3: Conclude. Peter would reject the project despite its positive NPV of $17.02. This is a classic underinvestment problem caused by the combination of accelerated depreciation, short-term focus, and a bonus threshold at zero RI. The accounting policy choice (accelerated depreciation) directly causes a value-creating project to be rejected.',
+        ' Apply Peter\'s decision rule. Peter cares only about Year 1 and only about whether he gets his bonus. The bonus requires positive RI in Year 1.',
+        ' Check Year 1 RI. With accelerated depreciation, Year 1 RI = \u2212$2 (negative). Peter would not receive his bonus.',
+        ' Conclude. Peter would reject the project despite its positive NPV of $17.02. This is a classic underinvestment problem caused by the combination of accelerated depreciation, short-term focus, and a bonus threshold at zero RI. The accounting policy choice (accelerated depreciation) directly causes a value-creating project to be rejected.',
       ],
       answer:
         'No. Year 1 RI is negative (\u2212$2), so Peter would not receive a bonus and would reject the project despite its positive NPV.',
@@ -115,11 +115,11 @@ export const SMART_DONKEY: Simulation = {
       formulaLegend:
         'Year 1: NOPAT = 100 \u2212 40 \u2212 30 \u2212 20 = $10; NOA = $40; RI = $10 \u2212 $4 = $6',
       approach: [
-        'Step 1: Recompute Year 1 with straight-line depreciation. Depreciation = 50% \u00D7 $40 = $20 (vs. $28 under accelerated). NOPAT = $100 \u2212 $40 \u2212 $30 \u2212 $20 = $10.',
-        'Step 2: Compute Year 1 RI. NOA (beginning) = $40. RI = $10 \u2212 0.10 \u00D7 $40 = $10 \u2212 $4 = +$6. RI is positive.',
-        'Step 3: Check Peter\'s bonus condition. RI > 0, so Peter qualifies for his lump-sum bonus. He would invest.',
-        'Step 4: Compute Year 2 for completeness. NOPAT = $120 \u2212 $48 \u2212 $36 \u2212 $20 = $16. NOA = $40 \u2212 $20 = $20. RI = $16 \u2212 0.10 \u00D7 $20 = $14. Also positive.',
-        'Step 5: Key insight. The depreciation method choice directly affects whether a manager accepts or rejects a value-creating project. The underlying cash flows and NPV have not changed \u2014 only the accounting treatment did. Jim can solve the underinvestment problem by switching to straight-line depreciation.',
+        ' Recompute Year 1 with straight-line depreciation. Depreciation = 50% \u00D7 $40 = $20 (vs. $28 under accelerated). NOPAT = $100 \u2212 $40 \u2212 $30 \u2212 $20 = $10.',
+        ' Compute Year 1 RI. NOA (beginning) = $40. RI = $10 \u2212 0.10 \u00D7 $40 = $10 \u2212 $4 = +$6. RI is positive.',
+        ' Check Peter\'s bonus condition. RI > 0, so Peter qualifies for his lump-sum bonus. He would invest.',
+        ' Compute Year 2 for completeness. NOPAT = $120 \u2212 $48 \u2212 $36 \u2212 $20 = $16. NOA = $40 \u2212 $20 = $20. RI = $16 \u2212 0.10 \u00D7 $20 = $14. Also positive.',
+        ' Key insight. The depreciation method choice directly affects whether a manager accepts or rejects a value-creating project. The underlying cash flows and NPV have not changed \u2014 only the accounting treatment did. Jim can solve the underinvestment problem by switching to straight-line depreciation.',
       ],
       answer:
         'Yes. With straight-line depreciation, Year 1 RI = $6 > 0, so Peter receives his bonus and would invest.',
@@ -138,13 +138,13 @@ export const SMART_DONKEY: Simulation = {
       formulaLegend:
         'Actual: 18 units at $9; material = 18 \u00D7 2 \u00D7 1.1 kg at $2 \u00D7 0.9/kg; labor = 18 \u00D7 $3.30; cost of capital = 15%',
       approach: [
-        'Step 1: Compute the volume variance. Additional units = 18 \u2212 10 = 8. Budgeted contribution margin per unit = $10 \u2212 $4 \u2212 $3 = $3. Volume variance = 8 \u00D7 $3 = +$24. More units sold at the budgeted margin means higher profit.',
-        'Step 2: Compute the selling price variance. The price dropped from $10 to $9. Price variance = 18 \u00D7 ($9 \u2212 $10) = \u2212$18. Evaluated at actual volume (18 units) to avoid double-counting with the volume effect.',
-        'Step 3: Compute the material efficiency variance. Budget: 2 kg/unit. Actual: 2 \u00D7 1.1 = 2.2 kg/unit (10% more). Valued at budget price ($2/kg): Variance = \u221218 \u00D7 (2.2 \u2212 2.0) \u00D7 $2 = \u2212$7.20. Unfavorable because more material was used per unit.',
-        'Step 4: Compute the material input price variance. Budget: $2/kg. Actual: $2 \u00D7 0.9 = $1.80/kg (10% below budget). Valued at actual quantity: Variance = \u221218 \u00D7 2.2 \u00D7 ($1.80 \u2212 $2.00) = \u221239.6 \u00D7 (\u2212$0.20) = +$7.92. Favorable because cheaper materials were secured.',
-        'Step 5: Compute the labor cost variance. Budget: $3/unit. Actual: $3.30/unit. Variance = \u221218 \u00D7 ($3.30 \u2212 $3.00) = \u2212$5.40. Unfavorable due to higher labor rates.',
-        'Step 6: Compute the capital charge variance. Budget cost of capital = 10%. Actual = 15%. The capital charge is outside the manager\'s control. Variance = \u2212(0.15 \u2212 0.10) \u00D7 $40 = \u2212$2.00. Unfavorable.',
-        'Step 7: Reconcile. Total = +$24 \u2212 $18 \u2212 $7.20 + $7.92 \u2212 $5.40 \u2212 $2.00 = \u2212$0.68. Check: $6.00 \u2212 $5.32 = $0.68. Reconciles.',
+        ' Compute the volume variance. Additional units = 18 \u2212 10 = 8. Budgeted contribution margin per unit = $10 \u2212 $4 \u2212 $3 = $3. Volume variance = 8 \u00D7 $3 = +$24. More units sold at the budgeted margin means higher profit.',
+        ' Compute the selling price variance. The price dropped from $10 to $9. Price variance = 18 \u00D7 ($9 \u2212 $10) = \u2212$18. Evaluated at actual volume (18 units) to avoid double-counting with the volume effect.',
+        ' Compute the material efficiency variance. Budget: 2 kg/unit. Actual: 2 \u00D7 1.1 = 2.2 kg/unit (10% more). Valued at budget price ($2/kg): Variance = \u221218 \u00D7 (2.2 \u2212 2.0) \u00D7 $2 = \u2212$7.20. Unfavorable because more material was used per unit.',
+        ' Compute the material input price variance. Budget: $2/kg. Actual: $2 \u00D7 0.9 = $1.80/kg (10% below budget). Valued at actual quantity: Variance = \u221218 \u00D7 2.2 \u00D7 ($1.80 \u2212 $2.00) = \u221239.6 \u00D7 (\u2212$0.20) = +$7.92. Favorable because cheaper materials were secured.',
+        ' Compute the labor cost variance. Budget: $3/unit. Actual: $3.30/unit. Variance = \u221218 \u00D7 ($3.30 \u2212 $3.00) = \u2212$5.40. Unfavorable due to higher labor rates.',
+        ' Compute the capital charge variance. Budget cost of capital = 10%. Actual = 15%. The capital charge is outside the manager\'s control. Variance = \u2212(0.15 \u2212 0.10) \u00D7 $40 = \u2212$2.00. Unfavorable.',
+        ' Reconcile. Total = +$24 \u2212 $18 \u2212 $7.20 + $7.92 \u2212 $5.40 \u2212 $2.00 = \u2212$0.68. Check: $6.00 \u2212 $5.32 = $0.68. Reconciles.',
       ],
       answer:
         'Volume: +$24; Selling price: \u2212$18; Material efficiency: \u2212$7.20; Material input price: +$7.92; Labor: \u2212$5.40; Capital charge: \u2212$2.00. Total variance: \u2212$0.68 (from RI of $6.00 to $5.32).',
@@ -159,10 +159,10 @@ export const SMART_DONKEY: Simulation = {
       question:
         'Do you think that RI is a good performance measure for the production division and its manager? State your reason.',
       approach: [
-        'Step 1: Assess controllability. A good performance measure should only include factors within the manager\'s control. RI includes the cost of capital (which rose from 10% to 15%), an uncontrollable variable. This change alone reduced RI by $2, penalizing Peter for something he had no influence over.',
-        'Step 2: Evaluate incentive effects. The capital charge variance can have detrimental motivational effects. If the cost of capital rises unexpectedly, a manager who performed well operationally could lose their bonus due to an external factor.',
-        'Step 3: Propose a fix. Use the budgeted cost of capital (10%) rather than the actual cost of capital (15%) when computing RI for performance evaluation. This preserves the benefit of RI (encouraging efficient capital use) while eliminating the uncontrollable noise from capital market fluctuations.',
-        'Step 4: Broader consideration. RI is conceptually superior to Operating Profit (it charges for capital use), but its practical effectiveness depends on which inputs are based on actual vs. budgeted figures. The controllability principle suggests that uncontrollable inputs should be fixed at budget.',
+        ' Assess controllability. A good performance measure should only include factors within the manager\'s control. RI includes the cost of capital (which rose from 10% to 15%), an uncontrollable variable. This change alone reduced RI by $2, penalizing Peter for something he had no influence over.',
+        ' Evaluate incentive effects. The capital charge variance can have detrimental motivational effects. If the cost of capital rises unexpectedly, a manager who performed well operationally could lose their bonus due to an external factor.',
+        ' Propose a fix. Use the budgeted cost of capital (10%) rather than the actual cost of capital (15%) when computing RI for performance evaluation. This preserves the benefit of RI (encouraging efficient capital use) while eliminating the uncontrollable noise from capital market fluctuations.',
+        ' Broader consideration. RI is conceptually superior to Operating Profit (it charges for capital use), but its practical effectiveness depends on which inputs are based on actual vs. budgeted figures. The controllability principle suggests that uncontrollable inputs should be fixed at budget.',
       ],
       answer:
         'RI is problematic because it is sensitive to variables outside the manager\'s control (e.g., cost of capital, investment levels). A fix: use budgeted rather than actual cost of capital for evaluation.',

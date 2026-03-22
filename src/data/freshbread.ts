@@ -451,10 +451,8 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Amounts in \'000 $. Revenue from client = $70, VC for Division 1 = $45, Transportation = $10',
       approach: [
-        'Step 1: At the company level, only incremental external cash flows matter. Internal transfer prices cancel out. Division 1 has spare capacity (150,000 − 140,000 = 10,000 boxes), so no capacity is displaced.',
-        'Step 2: Revenue from external client = 10,000 × $7 = $70,000.',
-        'Step 3: Incremental costs. Variable production cost = 10,000 × $4.50 = $45,000 (the only real resource cost). Transportation = $10,000. Fixed costs are unaffected by this order.',
-        'Step 4: Cash flow effect = $70,000 − $45,000 − $10,000 = +$15,000. The order creates value for FB because the client price ($7) exceeds variable cost ($4.50) plus transport per box ($1).',
+        'Revenue = 10,000 × $7 = $70,000. VC = 10,000 × $4.50 = $45,000. Transport = $10,000.',
+        'Cash flow = $70,000 − $45,000 − $10,000 = +$15,000.',
       ],
       answer: '+$15,000',
       keyTakeaway:
@@ -471,10 +469,9 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'TP = transfer price = 4.5 + 732/150 = $9.38/box. Amounts in \'000 $.',
       approach: [
-        'Step 1: Division 1 is the seller in this internal transfer. Its revenue is the transfer price, not the external client price. The TP includes a fixed cost component that does not represent an incremental cost.',
-        'Step 2: Compute the transfer price. TP = variable cost + total fixed costs / capacity = $4.50 + $732,000 / 150,000 = $4.50 + $4.88 = $9.38/box.',
-        'Step 3: Division 1 revenue = $9.38 × 10,000 = $93,800. Division 1 variable cost = $4.50 × 10,000 = $45,000.',
-        'Step 4: Effect on Division 1 Divisional Profit = $93,800 − $45,000 = +$48,800. Division 1 benefits significantly because the full-cost TP ($9.38) far exceeds its incremental cost ($4.50).',
+        'TP = $4.50 + $732k / 150k = $9.38/box.',
+        'Div 1 revenue = $9.38 × 10,000 = $93,800. Div 1 VC = $4.50 × 10,000 = $45,000.',
+        'Effect on Div 1 profit = $93,800 − $45,000 = +$48,800.',
       ],
       answer: '+$48,800',
       keyTakeaway:
@@ -491,10 +488,8 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Revenue from client = $70,000, Cost at TP = $93,800, Transportation = $10,000',
       approach: [
-        'Step 1: Division 2 is the buyer in this transfer. It pays the TP to Division 1, sells at $7/box to the client, and pays transportation. Division 2 bears all the external-facing costs.',
-        'Step 2: Revenue from external client = 10,000 × $7 = $70,000.',
-        'Step 3: Cost of buying from Division 1 = 10,000 × $9.38 = $93,800. Transportation = $10,000.',
-        'Step 4: Effect = $70,000 − $93,800 − $10,000 = −$33,800. Division 2 would reject this order because the full-cost TP ($9.38) exceeds the client price ($7). This is a goal congruence failure: the order creates value for FB (+$15,000) but Division 2 refuses it.',
+        'Div 2 revenue = 10,000 × $7 = $70,000. Cost from Div 1 = 10,000 × $9.38 = $93,800. Transport = $10,000.',
+        'Effect = $70,000 − $93,800 − $10,000 = −$33,800. Division 2 would reject.',
       ],
       answer: '−$33,800',
       keyTakeaway:
@@ -511,10 +506,8 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Division 1 needs TP > VC ($4.50). Division 2 needs TP < client price minus transportation per box ($7 − $1 = $6).',
       approach: [
-        'Step 1: For goal congruence, both divisions must prefer to accept the order. We need to find a TP range where both say yes, which also means FB says yes (since the order is profitable at the company level).',
-        'Step 2: Division 1\u2019s minimum acceptable TP. Division 1 has idle capacity, so its only incremental cost is variable cost ($4.50/box). Division 1 accepts if TP > $4.50.',
-        'Step 3: Division 2\u2019s maximum acceptable TP. Division 2 earns $7/box from the client and pays $1/box in transport ($10,000 / 10,000). Division 2 accepts if TP < $7 − $1 = $6.00.',
-        'Step 4: Goal congruent range: $4.50 < TP < $6.00. The current full-cost TP of $9.38 is far above this range, destroying goal congruence.',
+        'Div 1 minimum: TP > $4.50 (variable cost). Div 2 maximum: TP < $7 − $1 = $6.00.',
+        'Goal congruent range: $4.50 < TP < $6.00. Current TP ($9.38) is far above.',
       ],
       answer: '$4.50 < TP < $6.00',
       keyTakeaway:
@@ -532,10 +525,8 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Division 2 prefers internal if TP < external price ($6). Division 1 accepts if TP > $4.50. Transportation costs cancel (same for both options).',
       approach: [
-        'Step 1: From FB\u2019s perspective, internal production is cheaper. Division 1\u2019s variable cost is $4.50/box vs the external supplier price of $6.00/box, saving $1.50/box. FB prefers internal sourcing.',
-        'Step 2: Division 1 still requires TP > $4.50 (its incremental cost). The external supplier does not change Division 1\u2019s economics.',
-        'Step 3: Division 2 now compares internal vs external sourcing. Internal: pays TP + $10,000 transport. External: pays $6/box + $10,000 transport. Transportation is the same either way, so Division 2 prefers internal if TP < $6.00.',
-        'Step 4: Goal congruent range = $4.50 < TP < $6.00, same as Q21. The external supplier price ($6) happens to match the upper bound, confirming the range.',
+        'Div 1 still needs TP > $4.50. Div 2 prefers internal if TP < $6.00 (external price).',
+        'Range is still $4.50 < TP < $6.00 — same as Q21.',
       ],
       answer: '$4.50 < TP < $6.00',
       keyTakeaway:
@@ -553,10 +544,8 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Divisional OH rate = 600/150 = $4/box. Division 1 now bears $4/box OH on additional production. Need TP > 8.5 AND TP < 6, which is impossible.',
       approach: [
-        'Step 1: Under idle capacity exclusion, producing the extra 10,000 boxes means Division 1 is charged Divisional OH on those units. The OH rate = $600,000 / 150,000 = $4/box. This turns a previously fixed cost into an incremental cost from Division 1\u2019s perspective.',
-        'Step 2: Division 1\u2019s effective incremental cost per box = $4.50 (variable) + $4.00 (OH allocation) = $8.50. Division 1 requires TP > $8.50.',
-        'Step 3: Division 2\u2019s constraint is unchanged: TP < $6.00 (client price minus transport).',
-        'Step 4: Since Division 1 requires TP > $8.50 and Division 2 requires TP < $6.00, there is no TP that satisfies both. Goal congruence is impossible. The idle capacity exclusion policy backfires here by making Division 1 bear an artificial incremental OH cost.',
+        'Div 1 now bears $4/box OH on extra production. Effective cost = $4.50 + $4.00 = $8.50. Needs TP > $8.50.',
+        'Div 2 still needs TP < $6.00. Since $8.50 > $6.00, no goal-congruent range exists.',
       ],
       answer:
         'No goal-congruent range exists. Division 1 requires TP > $8.50 while Division 2 requires TP < $6.00.',
@@ -575,10 +564,9 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Amounts in \'000 $. VC savings = $0.30/box × 140,000 boxes = $42,000/year',
       approach: [
-        'Step 1: Cash flow analysis considers real money in and out, ignoring accounting allocations like depreciation. The investment is paid by HQ at end of 2020.',
-        'Step 2: 2020 cash flow: Equipment purchase = −$90,000. No savings yet because the equipment is bought at year-end.',
-        'Step 3: 2021-2023 cash flow: The equipment reduces VC from $4.50 to $4.20 per box, saving $0.30/box. Annual savings = $0.30 × 140,000 = $42,000 per year.',
-        'Step 4: Total cash flows = −$90,000 + $42,000 × 3 = +$36,000. The investment is cash-positive over its life, creating value for shareholders (before discounting).',
+        '2020: Equipment purchase = −$90,000.',
+        '2021-2023: VC savings = $0.30/box × 140,000 = $42,000/year.',
+        'Total = −$90,000 + $42,000 × 3 = +$36,000 over the life.',
       ],
       answer:
         '2020: −$90,000 | 2021: +$42,000 | 2022: +$42,000 | 2023: +$42,000',
@@ -596,10 +584,8 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Amounts in \'000 $. Annual VC savings = 42, Annual depreciation = 90/3 = 30',
       approach: [
-        'Step 1: Divisional Profit differs from cash flow because it includes depreciation (a non-cash charge). The equipment cost is spread over 3 years via straight-line depreciation.',
-        'Step 2: Annual VC savings = $42,000 (same as cash flow). Annual depreciation = $90,000 / 3 = $30,000.',
-        'Step 3: Effect on Divisional Profit = $42,000 − $30,000 = +$12,000 per year, constant across all 3 years under straight-line depreciation.',
-        'Step 4: Since Divisional Profit increases, Nancy would earn a bonus from this investment: 10% × $12,000 = $1,200 per year. Her incentives align with shareholders\u2019 interests here.',
+        'Annual VC savings = $42,000. Annual depreciation = $90,000 / 3 = $30,000.',
+        'Profit effect = $42,000 − $30,000 = +$12,000 per year.',
       ],
       answer:
         '2021: +$12,000 | 2022: +$12,000 | 2023: +$12,000',
@@ -618,10 +604,9 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Amounts in \'000 $. RI impact = Profit impact − 15% × Book Value at start of year. BV: start 2021 = 90, start 2022 = 60, start 2023 = 30.',
       approach: [
-        'Step 1: Residual Income = Divisional Profit − Capital Charge. The capital charge = 15% × Book Value at start of year. RI penalizes the division for tying up capital, encouraging efficient asset use.',
-        'Step 2: 2021: Book value at start = $90,000 (full cost). Capital charge = 15% × $90,000 = $13,500. ΔRI = $12,000 (profit impact) − $13,500 = −$1,500. The capital charge exceeds the profit gain in year 1.',
-        'Step 3: 2022: Book value = $90,000 − $30,000 = $60,000. Capital charge = 15% × $60,000 = $9,000. ΔRI = $12,000 − $9,000 = +$3,000.',
-        'Step 4: 2023: Book value = $30,000. Capital charge = 15% × $30,000 = $4,500. ΔRI = $12,000 − $4,500 = +$7,500. RI improves each year as book value (and thus capital charge) declines through depreciation.',
+        '2021: Capital charge = 15% × $90,000 = $13,500. ΔRI = $12,000 − $13,500 = −$1,500.',
+        '2022: Capital charge = 15% × $60,000 = $9,000. ΔRI = $12,000 − $9,000 = +$3,000.',
+        '2023: Capital charge = 15% × $30,000 = $4,500. ΔRI = $12,000 − $4,500 = +$7,500.',
       ],
       answer:
         '2021: −$1,500 | 2022: +$3,000 | 2023: +$7,500',
@@ -639,10 +624,9 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Amounts in \'000 $. Bonus = 10% × max(0, ΔRI year-over-year). Change in RI: 2021 = −1.5, 2022 = +4.5 (from −1.5 to +3), 2023 = +4.5 (from +3 to +7.5).',
       approach: [
-        'Step 1: Nancy\u2019s bonus under RI = 10% of the increase in RI relative to the prior year. If RI decreases, the bonus is zero. The bonus rewards RI growth, not the RI level.',
-        'Step 2: 2021: ΔRI = −$1,500 (a decrease from baseline). Since RI fell, Nancy\u2019s bonus = $0. She gets no reward in the first year of a value-creating investment.',
-        'Step 3: 2022: Change in RI vs 2021 = $3,000 − (−$1,500) = +$4,500. Bonus = 10% × $4,500 = $450.',
-        'Step 4: 2023: Change in RI vs 2022 = $7,500 − $3,000 = +$4,500. Bonus = 10% × $4,500 = $450. The bonus-on-improvement structure creates a delayed incentive, which could discourage managers from making positive-NPV investments.',
+        '2021: ΔRI = −$1,500 (decrease), so bonus = $0.',
+        '2022: RI change = $3,000 − (−$1,500) = +$4,500. Bonus = 10% × $4,500 = $450.',
+        '2023: RI change = $7,500 − $3,000 = +$4,500. Bonus = 10% × $4,500 = $450.',
       ],
       answer:
         '2021: $0 | 2022: $450 | 2023: $450',
@@ -657,13 +641,9 @@ export const FRESHBREAD: Simulation = {
       question:
         'Analyze the following elements of FB\'s internal accounting and incentive systems and propose alternatives: (1) the variance analysis, (2) the cost system for product profitability, (3) the internal transfer pricing policy, (4) the performance measure, (5) the monetary incentives. Also comment on the idle capacity treatment (Parts 1.b, 2.b, 4.c) and residual income (Part 5.b).',
       approach: [
-        'Step 1 \u2014 Variance analysis: The current decomposition is a good starting point but has gaps. Adding Gourmand creates a need for product mix variance analysis (how much of the volume change is due to shifting product mix?). Decomposing the volume variance into market size vs. market share would yield more actionable insight. The catch-all "other variable costs" and fixed costs should be broken down further for transparency and controllability.',
-        'Step 2 \u2014 Cost system: Revenue-based allocation (system #1) is crude. It assumes each revenue dollar consumes the same proportion of fixed resources, which ignores actual resource usage. Gourmand (multigrain) may require different production processes than Regular bread. An Activity-Based Costing (ABC) system would trace costs to activities (mixing, baking, packaging) and allocate based on actual resource consumption, giving more accurate product profitability.',
-        'Step 3 \u2014 Transfer pricing: The full-cost TP ($9.38) far exceeds the goal-congruent range ($4.50\u2013$6.00), destroying goal congruence. Since an external market exists ($6/box), a market-based TP would be most appropriate. For occasional one-off transfers, negotiated pricing between divisions may work, subject to a TP floor at variable cost and a ceiling at market price.',
-        'Step 4 \u2014 Performance measure: As an investment center, Division 1 should use a metric reflecting capital employed (RI or ROI), not just Divisional Profit. However, RI with straight-line depreciation creates a year-1 disincentive (Q26\u2013Q27). Annuity depreciation or a level-based bonus (rather than improvement-based) could fix this timing distortion.',
-        'Step 5 \u2014 Incentives: Annual bonuses based solely on year-over-year financial improvement create ratchet effects (managers sandbag after a good year) and short-termism. Non-financial measures (quality, customer satisfaction, market share) should complement financial ones. Multi-year bonus pools or deferred compensation reduce gaming incentives.',
-        'Step 6 \u2014 Idle capacity (Parts 1.b, 2.b, 4.c): Excluding idle capacity helps in some contexts (Part 2.b: does not distort the Gourmand decision) but destroys goal congruence in others (Part 4.c: makes internal transfers impossible). The key trade-off: if managers control capacity utilization, charging idle capacity incentivizes them to use it; but if demand is uncontrollable, it penalizes them unfairly.',
-        'Step 7 \u2014 Residual income (Part 5.b): RI improves capital discipline vs. Divisional Profit, but the bonus-on-improvement scheme means no bonus in year 1 of a positive-NPV investment. A different depreciation schedule (annuity depreciation) or a level-based bonus (rewarding RI level rather than improvement) would better align incentives with value creation.',
+        'Full-cost TP ($9.38) destroys goal congruence — use market-based TP within $4.50–$6.00 range.',
+        'Revenue-based cost allocation is crude — consider ABC for product profitability.',
+        'Idle capacity exclusion helps Gourmand (Part 2.b) but kills transfers (Part 4.c). RI discourages year-1 investment (Part 5.b) — consider annuity depreciation or level-based bonuses.',
       ],
       answer:
         'Key issues: (1) Full-cost TP destroys goal congruence ($9.38 vs. range $4.50–$6.00), (2) revenue-based cost allocation is too rough for product profitability — consider ABC, (3) idle capacity exclusion helps in some contexts (Part 2.b) but destroys goal congruence in others (Part 4.c), (4) RI discourages investment in year 1, (5) year-over-year bonus creates ratchet risk and short-termism.',

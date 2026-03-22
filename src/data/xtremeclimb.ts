@@ -94,10 +94,9 @@ export const XTREMECLIMB: Simulation = {
       formulaLegend:
         "N_a = actual units sold in thousands (30), N_b = budget units (40), CM_b = budgeted contribution margin per thousand units = (3,400/40) \u2212 (80/40)\u00D715 \u2212 (360/40) \u2212 10 = 85 \u2212 30 \u2212 9 \u2212 10 = 36 ('000 \u20AC per thousand units)",
       approach: [
-        'Step 1: The sales volume variance isolates the profit impact of selling more or fewer units, holding all per-unit economics at budgeted levels. It answers: how much profit did we lose purely because we sold fewer units?',
-        'Step 2: Compute the budgeted contribution margin per unit. Revenue (\u20AC85) \u2212 Materials (2m \u00D7 \u20AC15 = \u20AC30) \u2212 Other VC (\u20AC9) \u2212 Corporate OH (\u20AC10) = \u20AC36. Corporate OH is included because it varies with units sold (\u20AC10/unit).',
-        'Step 3: Apply the volume change. Actual: 30,000 units. Budget: 40,000 units. Shortfall = 10,000 units.',
-        'Step 4: Volume variance = (30,000 \u2212 40,000) \u00D7 \u20AC36 = \u2212\u20AC360,000. This is the largest single driver of the profit shortfall, reflecting a severe demand or execution problem.',
+        'Budgeted CM per unit = \u20AC85 \u2212 \u20AC30 \u2212 \u20AC9 \u2212 \u20AC10 (corporate OH) = \u20AC36.',
+        'Volume shortfall = 30,000 \u2212 40,000 = \u221210,000 units.',
+        'Volume variance = \u221210,000 \u00D7 \u20AC36 = \u2212\u20AC360,000 (Unfavorable).',
       ],
       answer: '\u2212\u20AC360,000 (Unfavorable)',
       keyTakeaway:
@@ -114,10 +113,8 @@ export const XTREMECLIMB: Simulation = {
       formulaLegend:
         'P_a = actual selling price = 2,490/30 = \u20AC83, P_b = budget selling price = 3,400/40 = \u20AC85',
       approach: [
-        'Step 1: The selling price variance isolates the impact of charging a different price than budgeted, holding volume at the actual level. It reveals pricing deviations from the cost-plus policy.',
-        'Step 2: Compute prices. Actual price = \u20AC2,490,000 / 30,000 = \u20AC83. Budgeted price = \u20AC3,400,000 / 40,000 = \u20AC85. The actual price is \u20AC2 below budget.',
-        'Step 3: Selling price variance = 30,000 \u00D7 (\u20AC83 \u2212 \u20AC85) = \u2212\u20AC60,000.',
-        'Step 4: The \u20AC2 discount may reflect ad-hoc negotiations deviating from the standard cost-plus pricing policy, or competitive pressure forcing WD to lower prices.',
+        'Price dropped from \u20AC85 to \u20AC83, a decrease of \u20AC2 per unit.',
+        'Price variance = 30,000 \u00D7 (\u20AC83 \u2212 \u20AC85) = \u2212\u20AC60,000 (Unfavorable).',
       ],
       answer: '\u2212\u20AC60,000 (Unfavorable)',
       keyTakeaway:
@@ -134,10 +131,8 @@ export const XTREMECLIMB: Simulation = {
       formulaLegend:
         'q_a = actual fabric per unit = 84/30 = 2.8m, q_b = budget fabric per unit = 80/40 = 2.0m, C_b = budget price per meter = \u20AC15',
       approach: [
-        'Step 1: The efficiency variance isolates the profit impact of using more or less input per unit produced. It measures production efficiency, valued at the budgeted input price to avoid mixing price and quantity effects.',
-        'Step 2: Compute fabric usage per unit. Budget: 80,000m / 40,000 units = 2.0 m/unit. Actual: 84,000m / 30,000 units = 2.8 m/unit. Each unit consumed 0.8 meters more fabric than budgeted.',
-        'Step 3: Efficiency variance = \u221230,000 \u00D7 (2.8 \u2212 2.0) \u00D7 \u20AC15 = \u2212\u20AC360,000.',
-        'Step 4: This large unfavorable variance equals the volume variance. A possible explanation: WD may have purchased cheaper fabric (\u20AC13 vs \u20AC15 budgeted), which required more meters per unit. This efficiency-price trade-off is a classic variance analysis insight.',
+        'Fabric per unit: Budget = 2.0 m, Actual = 2.8 m (+0.8 m/unit).',
+        'Efficiency variance = \u221230,000 \u00D7 (2.8 \u2212 2.0) \u00D7 \u20AC15 = \u2212\u20AC360,000 (Unfavorable).',
       ],
       answer: '\u2212\u20AC360,000 (Unfavorable)',
       keyTakeaway:
@@ -154,10 +149,8 @@ export const XTREMECLIMB: Simulation = {
       formulaLegend:
         'C_a = actual price per meter = \u20AC13, C_b = budget price per meter = \u20AC15, q_a = actual fabric per unit = 84/30 = 2.8m',
       approach: [
-        'Step 1: The input price variance isolates the cost impact of paying a different price per unit of input, holding usage at the actual level. It answers: how much did we save (or overspend) because fabric price changed?',
-        'Step 2: Identify prices. Actual price = \u20AC13/meter. Budget price = \u20AC15/meter. Fabric was \u20AC2/meter cheaper than budgeted.',
-        'Step 3: Input price variance = \u221230,000 \u00D7 2.8 \u00D7 (\u20AC13 \u2212 \u20AC15) = \u221230,000 \u00D7 2.8 \u00D7 (\u22122) = +\u20AC168,000.',
-        'Step 4: The favorable price variance (+\u20AC168,000) partially offsets the unfavorable efficiency variance (\u2212\u20AC360,000). This supports the hypothesis that cheaper fabric led to excess usage \u2014 a quality-cost trade-off.',
+        'Fabric price fell from \u20AC15 to \u20AC13 (\u2212\u20AC2/meter).',
+        'Input price variance = \u221230,000 \u00D7 2.8 \u00D7 (\u20AC13 \u2212 \u20AC15) = +\u20AC168,000 (Favorable).',
       ],
       answer: '+\u20AC168,000 (Favorable)',
       keyTakeaway:
@@ -174,10 +167,8 @@ export const XTREMECLIMB: Simulation = {
       formulaLegend:
         'ovc_a = actual other VC per unit = 273/30 = \u20AC9.1, ovc_b = budget other VC per unit = 360/40 = \u20AC9',
       approach: [
-        'Step 1: This variance captures all non-fabric variable manufacturing cost changes (e.g., labor, energy, consumables). It isolates per-unit cost differences applied to actual volume.',
-        'Step 2: Compute per-unit other VC. Budget: \u20AC360,000 / 40,000 = \u20AC9.00/unit. Actual: \u20AC273,000 / 30,000 = \u20AC9.10/unit. Other VC was \u20AC0.10 higher per unit than budgeted.',
-        'Step 3: Other VC variance = \u221230,000 \u00D7 (\u20AC9.10 \u2212 \u20AC9.00) = \u2212\u20AC3,000.',
-        'Step 4: A small unfavorable variance of \u20AC3,000. This is negligible compared to the volume (\u2212\u20AC360,000) and efficiency (\u2212\u20AC360,000) variances, suggesting other variable costs are relatively well-controlled.',
+        'Other VC per unit: Budget = \u20AC9.00, Actual = \u20AC9.10 (+\u20AC0.10).',
+        'Other VC variance = \u221230,000 \u00D7 (\u20AC9.10 \u2212 \u20AC9.00) = \u2212\u20AC3,000 (Unfavorable).',
       ],
       answer: '\u2212\u20AC3,000 (Unfavorable)',
       keyTakeaway:
@@ -193,10 +184,7 @@ export const XTREMECLIMB: Simulation = {
       formulaLegend:
         'Bonus = 10% of (Actual Profit \u2212 Budget Profit) if positive, otherwise zero',
       approach: [
-        'Step 1: John\u2019s bonus = 10% of the excess of actual Divisional Profit over budgeted Divisional Profit. If actual is below budget, the bonus is zero \u2014 no penalty, just no reward.',
-        'Step 2: Compare actual vs budget. Actual Divisional Profit = \u2212\u20AC505,000. Budgeted Divisional Profit = \u20AC140,000. The shortfall is \u20AC645,000.',
-        'Step 3: Since actual (\u2212\u20AC505,000) is far below budget (\u20AC140,000), John receives no bonus.',
-        'Step 4: The massive shortfall is driven primarily by the volume variance (\u2212\u20AC360,000) and the efficiency variance (\u2212\u20AC360,000), partially offset by the favorable input price variance (+\u20AC168,000).',
+        'Actual Profit (\u2212\u20AC505,000) < Budget (\u20AC140,000), so bonus = \u20AC0.',
       ],
       answer: '\u20AC0 (No bonus)',
       keyTakeaway:
@@ -214,10 +202,8 @@ export const XTREMECLIMB: Simulation = {
       formulaLegend:
         'Replace actual variable OH (30\u00D710 = 300) with fixed OH (400); net change = \u2212100',
       approach: [
-        'Step 1: Understand the policy change. Originally, corporate OH was \u20AC10/unit (variable with sales volume). Now it is a fixed \u20AC400,000/division regardless of volume.',
-        'Step 2: Remove the old OH. The original actual profit (\u2212\u20AC505,000) already includes corporate OH of 30,000 \u00D7 \u20AC10 = \u20AC300,000.',
-        'Step 3: Add the new fixed OH. New actual profit = \u2212\u20AC505,000 + \u20AC300,000 (remove old) \u2212 \u20AC400,000 (add new) = \u2212\u20AC605,000.',
-        'Step 4: The fixed allocation costs \u20AC100,000 more than the variable one at 30,000 units (because \u20AC400,000 > 30,000 \u00D7 \u20AC10 = \u20AC300,000). Fixed OH penalizes low-volume divisions more.',
+        'Remove old variable OH: \u2212\u20AC505,000 + \u20AC300,000 (old OH) = \u2212\u20AC205,000.',
+        'Add new fixed OH: \u2212\u20AC205,000 \u2212 \u20AC400,000 = \u2212\u20AC605,000.',
       ],
       answer: '\u2212\u20AC605,000',
       keyTakeaway:
@@ -234,10 +220,8 @@ export const XTREMECLIMB: Simulation = {
       formulaLegend:
         'CM per unit now excludes the \u20AC10 corporate OH component because OH is fixed and does not vary with volume',
       approach: [
-        'Step 1: Under fixed OH, corporate OH does not vary with units sold. This means the \u20AC10/unit OH is no longer deducted from the per-unit margin in the volume variance calculation. The full contribution margin (before OH) drives the variance.',
-        'Step 2: New CM per unit (excluding fixed OH) = \u20AC85 \u2212 \u20AC30 \u2212 \u20AC9 = \u20AC46. Previously it was \u20AC36 (which included the \u20AC10 OH deduction).',
-        'Step 3: Sales volume variance = (30,000 \u2212 40,000) \u00D7 \u20AC46 = \u2212\u20AC460,000.',
-        'Step 4: The volume variance is now larger (\u2212\u20AC460,000 vs \u2212\u20AC360,000). Under variable OH, selling fewer units "saved" \u20AC10/unit in OH, partially cushioning the volume loss. With fixed OH, that cushion disappears, making the volume shortfall look worse.',
+        'New CM = \u20AC85 \u2212 \u20AC30 \u2212 \u20AC9 = \u20AC46 (no \u20AC10 OH deduction since OH is now fixed).',
+        'Volume variance = (30,000 \u2212 40,000) \u00D7 \u20AC46 = \u2212\u20AC460,000 (larger than \u2212\u20AC360,000 before).',
       ],
       answer: '\u2212\u20AC460,000 (Unfavorable)',
       keyTakeaway:
@@ -255,10 +239,9 @@ export const XTREMECLIMB: Simulation = {
       formulaLegend:
         'Revenue from transfer = 39\u00D71,000; Manufacturing cost = 39\u00D71,000; Additional corporate OH = 10\u00D71,000',
       approach: [
-        'Step 1: WD is the internal seller. Its revenue is the transfer price (\u20AC39/unit = standard variable cost with no markup). WD has idle capacity, so fixed costs and SG&A are unaffected.',
-        'Step 2: WD revenue from transfer = 1,000 \u00D7 \u20AC39 = \u20AC39,000. WD manufacturing variable cost = 1,000 \u00D7 \u20AC39 = \u20AC39,000. The TP exactly equals variable cost, so WD breaks even on the transfer itself.',
-        'Step 3: However, producing 1,000 more units triggers additional corporate OH = 1,000 \u00D7 \u20AC10 = \u20AC10,000 (because OH is allocated per unit sold).',
-        'Step 4: Net effect on WD = \u20AC39,000 \u2212 \u20AC39,000 \u2212 \u20AC10,000 = \u2212\u20AC10,000. WD loses money despite having idle capacity, because the TP does not cover the corporate OH triggered by the extra units.',
+        'WD revenue = 1,000 \u00D7 \u20AC39 = \u20AC39,000. WD cost = 1,000 \u00D7 \u20AC39 = \u20AC39,000. Breakeven on transfer.',
+        'But additional corporate OH = 1,000 \u00D7 \u20AC10 = \u20AC10,000.',
+        'Net effect on WD = \u20AC39,000 \u2212 \u20AC39,000 \u2212 \u20AC10,000 = \u2212\u20AC10,000.',
       ],
       answer: '\u2212\u20AC10,000',
       keyTakeaway:
@@ -275,10 +258,8 @@ export const XTREMECLIMB: Simulation = {
       formulaLegend:
         'Revenue from NW = 83,000; Cost of units from WD = 39,000; Transportation = 5,000; Corporate OH = 10,000',
       approach: [
-        'Step 1: ED is the intermediary \u2014 it buys from WD at the transfer price and resells to NW at \u20AC83/unit. ED bears the transportation cost from WD and the corporate OH on additional units.',
-        'Step 2: ED revenue from NW = 1,000 \u00D7 \u20AC83 = \u20AC83,000. Cost of units from WD = 1,000 \u00D7 \u20AC39 = \u20AC39,000.',
-        'Step 3: Additional costs for ED: Transportation WD\u2192ED = \u20AC5,000. Corporate OH = 1,000 \u00D7 \u20AC10 = \u20AC10,000.',
-        'Step 4: Net effect on ED = \u20AC83,000 \u2212 \u20AC39,000 \u2212 \u20AC5,000 \u2212 \u20AC10,000 = +\u20AC29,000. ED captures most of the deal\u2019s surplus because the TP is set at WD\u2019s variable cost, leaving ED with a large margin.',
+        'ED revenue = 1,000 \u00D7 \u20AC83 = \u20AC83,000. Cost from WD = \u20AC39,000. Transport = \u20AC5,000. OH = \u20AC10,000.',
+        'Net effect on ED = \u20AC83,000 \u2212 \u20AC39,000 \u2212 \u20AC5,000 \u2212 \u20AC10,000 = +\u20AC29,000.',
       ],
       answer: '+\u20AC29,000',
       keyTakeaway:
@@ -295,10 +276,8 @@ export const XTREMECLIMB: Simulation = {
       formulaLegend:
         'Revenue from NW = 83,000; Variable manufacturing cost = 39,000; Transportation = 5,000. Corporate OH washes out at company level.',
       approach: [
-        'Step 1: At the company level, the transfer price cancels out (it is just an internal bookkeeping entry). Only external cash flows matter: NW\u2019s payment and real resource costs.',
-        'Step 2: External revenue = 1,000 \u00D7 \u20AC83 = \u20AC83,000 (from NW). Manufacturing variable cost = 1,000 \u00D7 \u20AC39 = \u20AC39,000. Transportation = \u20AC5,000. NW pays its own \u20AC1,000 transport.',
-        'Step 3: Corporate OH cancels out at the company level \u2014 it is an internal allocation, not an incremental cost to XC.',
-        'Step 4: Net effect on XC = \u20AC83,000 \u2212 \u20AC39,000 \u2212 \u20AC5,000 = +\u20AC39,000. The deal is clearly profitable for XC, but WD would reject it (\u2212\u20AC10,000). This is a goal congruence failure caused by the variable corporate OH allocation.',
+        'Revenue = \u20AC83,000. Variable cost = \u20AC39,000. Transport = \u20AC5,000. OH cancels at company level.',
+        'Net effect on XC = \u20AC83,000 \u2212 \u20AC39,000 \u2212 \u20AC5,000 = +\u20AC39,000.',
       ],
       answer: '+\u20AC39,000',
       keyTakeaway:
@@ -316,10 +295,9 @@ export const XTREMECLIMB: Simulation = {
       formulaLegend:
         'Alt 1: transfer at 39/unit minus cost minus OH. Alt 2: sell to SF at 70/unit minus cost minus OH.',
       approach: [
-        'Step 1: WD is now at full capacity. Producing for ED means giving up the SouthFace (SF) order. We compare two alternatives from WD\u2019s perspective.',
-        'Step 2: Alt 1 (sell to ED at TP): Revenue = 1,000 \u00D7 \u20AC39 = \u20AC39,000. Cost = 1,000 \u00D7 \u20AC39 = \u20AC39,000. OH = 1,000 \u00D7 \u20AC10 = \u20AC10,000. Profit = \u2212\u20AC10,000.',
-        'Step 3: Alt 2 (sell to SF at \u20AC70): Revenue = 1,000 \u00D7 \u20AC70 = \u20AC70,000. Cost = 1,000 \u00D7 \u20AC39 = \u20AC39,000. OH = 1,000 \u00D7 \u20AC10 = \u20AC10,000. Profit = +\u20AC21,000.',
-        'Step 4: Difference = \u2212\u20AC10,000 \u2212 \u20AC21,000 = \u2212\u20AC31,000. WD strongly prefers SF because the TP (\u20AC39) is far below the external price (\u20AC70). The opportunity cost of serving ED is \u20AC31,000.',
+        'Alt 1 (sell to ED): \u20AC39k revenue \u2212 \u20AC39k cost \u2212 \u20AC10k OH = \u2212\u20AC10,000.',
+        'Alt 2 (sell to SF): \u20AC70k revenue \u2212 \u20AC39k cost \u2212 \u20AC10k OH = +\u20AC21,000.',
+        'Difference = \u2212\u20AC10,000 \u2212 \u20AC21,000 = \u2212\u20AC31,000. WD strongly prefers SF.',
       ],
       answer: '\u2212\u20AC31,000',
       keyTakeaway:
@@ -336,10 +314,8 @@ export const XTREMECLIMB: Simulation = {
       formulaLegend:
         'Same as Part 2.a: ED perspective is unchanged because ED alternatives are the same.',
       approach: [
-        'Step 1: ED\u2019s alternatives are the same regardless of WD\u2019s capacity situation. ED either does the NW deal (buying from WD) or rejects it.',
-        'Step 2: If ED does the deal: Revenue from NW = \u20AC83,000. Cost from WD = \u20AC39,000. Transport = \u20AC5,000. OH = \u20AC10,000. Net = +\u20AC29,000.',
-        'Step 3: ED\u2019s gain is +\u20AC29,000, identical to Part 2.a. ED is indifferent to whether WD has idle capacity or not \u2014 that is WD\u2019s problem.',
-        'Step 4: The asymmetry is clear: ED gains \u20AC29,000 while WD loses \u20AC31,000. The TP at variable cost overcompensates the buyer (ED) and undercompensates the seller (WD) when WD has an opportunity cost.',
+        'ED\u2019s calculation is identical to Part 2.a: \u20AC83k \u2212 \u20AC39k \u2212 \u20AC5k \u2212 \u20AC10k = +\u20AC29,000.',
+        'ED is indifferent to WD\u2019s capacity situation.',
       ],
       answer: '+\u20AC29,000',
       keyTakeaway:
@@ -356,10 +332,8 @@ export const XTREMECLIMB: Simulation = {
       formulaLegend:
         'Alt 1 revenue = 83,000, Alt 2 revenue = 70,000; manufacturing costs cancel; transport = 5,000',
       approach: [
-        'Step 1: At the company level, compare the two alternatives. Alt 1: sell to NW via ED. Alt 2: sell to SF directly from WD. Manufacturing costs are the same either way. The TP cancels out internally.',
-        'Step 2: Alt 1 (NW deal): External revenue = \u20AC83,000. Variable cost = \u20AC39,000. Transport = \u20AC5,000. XC profit = \u20AC39,000.',
-        'Step 3: Alt 2 (SF deal): External revenue = \u20AC70,000. Variable cost = \u20AC39,000. No transport (SF pays). XC profit = \u20AC31,000.',
-        'Step 4: Difference = \u20AC39,000 \u2212 \u20AC31,000 = +\u20AC8,000 in favor of Alt 1. XC prefers the NW deal, but the combined divisional surplus is negative (\u2212\u20AC31,000 + \u20AC29,000 = \u2212\u20AC2,000). The corporate OH distortion makes it impossible for divisions to agree.',
+        'Alt 1 (NW): \u20AC83k \u2212 \u20AC39k \u2212 \u20AC5k = \u20AC39k. Alt 2 (SF): \u20AC70k \u2212 \u20AC39k = \u20AC31k.',
+        'Difference = +\u20AC8,000 in favor of NW deal. But divisions can\u2019t agree (\u221231k + 29k = \u22122k).',
       ],
       answer: '+\u20AC8,000',
       keyTakeaway:
@@ -377,10 +351,8 @@ export const XTREMECLIMB: Simulation = {
       formulaLegend:
         'Fixed costs allocated based on capacity (40,000 units), not actual volume. Same for HC and LC.',
       approach: [
-        'Step 1: XC allocates manufacturing fixed costs based on maximum capacity (40,000 units), not expected or actual volume. This is a capacity-based allocation that spreads fixed costs evenly across all potential units.',
-        'Step 2: Fixed cost per unit = \u20AC800,000 / 40,000 units = \u20AC20/unit.',
-        'Step 3: Importantly, this rate is the same for both HC and LC. The allocation does not distinguish between products that may consume very different amounts of resources (HC uses expensive fabric; LC does not).',
-        'Step 4: This uniform allocation will significantly affect LC\u2019s pricing, as \u20AC20 in fixed costs is very large relative to LC\u2019s variable cost of \u20AC10.',
+        'Fixed cost per unit = \u20AC800,000 / 40,000 (capacity) = \u20AC20/unit.',
+        'Same rate for HC and LC, regardless of resource consumption.',
       ],
       answer: '\u20AC20 per unit',
       keyTakeaway:
@@ -397,10 +369,8 @@ export const XTREMECLIMB: Simulation = {
       formulaLegend:
         'Price = (variable cost + allocated fixed cost) \u00D7 1.45 markup',
       approach: [
-        'Step 1: XC\u2019s pricing policy is cost-plus: price = standard full manufacturing cost \u00D7 1.45 (45% markup). The full cost drives the external price.',
-        'Step 2: LC standard full cost = variable cost (\u20AC10) + allocated fixed cost (\u20AC20) = \u20AC30.',
-        'Step 3: LC price = \u20AC30 \u00D7 1.45 = \u20AC43.50.',
-        'Step 4: This seems paradoxical for a "low-cost" product. The uniform \u20AC20 fixed cost allocation makes LC\u2019s price high relative to its actual resource consumption, potentially pricing it out of the market and explaining the low 2,000-unit demand forecast.',
+        'LC full cost = \u20AC10 (VC) + \u20AC20 (FC) = \u20AC30.',
+        'LC price = \u20AC30 \u00D7 1.45 = \u20AC43.50.',
       ],
       answer: '\u20AC43.50 per unit',
       keyTakeaway:
@@ -417,10 +387,9 @@ export const XTREMECLIMB: Simulation = {
       formulaLegend:
         'Net effect = LC revenue + HC revenue change \u2212 LC variable cost \u2212 HC price drop effect',
       approach: [
-        'Step 1: At the company level, cash flows are what matter. Introducing LC has two effects: (a) new LC revenue and costs, and (b) cannibalization \u2014 HC price drops from \u20AC85 to \u20AC83 for all 30,000 units.',
-        'Step 2: LC contribution. Revenue = 2,000 \u00D7 \u20AC43.50 = \u20AC87,000. Variable cost = 2,000 \u00D7 \u20AC10 = \u20AC20,000. LC margin = +\u20AC67,000.',
-        'Step 3: HC cannibalization. Price drop = (\u20AC83 \u2212 \u20AC85) \u00D7 30,000 = \u2212\u20AC60,000. This is a real cash flow loss on existing products.',
-        'Step 4: Net effect on XC cash flows = \u20AC67,000 \u2212 \u20AC60,000 = +\u20AC7,000. Marginally positive, but the cannibalization effect nearly wipes out the LC contribution.',
+        'LC margin = 2,000 \u00D7 (\u20AC43.50 \u2212 \u20AC10) = +\u20AC67,000.',
+        'HC cannibalization = (\u20AC83 \u2212 \u20AC85) \u00D7 30,000 = \u2212\u20AC60,000.',
+        'Net = \u20AC67,000 \u2212 \u20AC60,000 = +\u20AC7,000.',
       ],
       answer: '+\u20AC7,000',
       keyTakeaway:
@@ -437,10 +406,8 @@ export const XTREMECLIMB: Simulation = {
       formulaLegend:
         'WD sees LC revenue 87, LC variable cost 20, HC price drop 60, and additional corporate OH 10\u00D72 = 20',
       approach: [
-        'Step 1: For John\u2019s bonus, we need the effect on WD\u2019s Divisional Profit, not XC\u2019s cash flows. The key difference: WD is charged corporate OH per unit sold.',
-        'Step 2: WD profit change from LC. LC revenue = +\u20AC87,000. LC variable cost = \u2212\u20AC20,000. HC price drop = \u2212\u20AC60,000. Additional corporate OH = 2,000 extra units \u00D7 \u20AC10 = \u2212\u20AC20,000.',
-        'Step 3: Total effect on WD profit = \u20AC87,000 \u2212 \u20AC20,000 \u2212 \u20AC60,000 \u2212 \u20AC20,000 = \u2212\u20AC13,000.',
-        'Step 4: Since WD profit decreases by \u20AC13,000, John receives no bonus from LC. This is a goal congruence failure: LC is profitable for XC (+\u20AC7,000) but unprofitable for WD (\u2212\u20AC13,000) because the corporate OH on extra units tips the balance.',
+        'WD: LC revenue \u20AC87k \u2212 LC cost \u20AC20k \u2212 HC price drop \u20AC60k \u2212 corporate OH (2k \u00D7 \u20AC10) \u20AC20k = \u2212\u20AC13,000.',
+        'WD profit decreases, so no bonus. Goal congruence failure: +\u20AC7k for XC but \u2212\u20AC13k for WD.',
       ],
       answer: 'No bonus (WD profit decreases by \u20AC13,000)',
       keyTakeaway:
@@ -458,10 +425,8 @@ export const XTREMECLIMB: Simulation = {
       formulaLegend:
         'Fixed cost per unit = 800,000 / 32,000 = \u20AC25; Full cost = 10 + 25 = \u20AC35',
       approach: [
-        'Step 1: Volume-based allocation spreads fixed costs over expected sales (not capacity). With fewer units than capacity, each unit absorbs more fixed cost, raising the cost base and the price.',
-        'Step 2: Expected total volume = 30,000 (HC) + 2,000 (LC) = 32,000 units. Fixed cost per unit = \u20AC800,000 / 32,000 = \u20AC25 (vs \u20AC20 under capacity-based).',
-        'Step 3: LC full cost = \u20AC10 + \u20AC25 = \u20AC35. Price = \u20AC35 \u00D7 1.45 = \u20AC50.75.',
-        'Step 4: This is even higher than the capacity-based price (\u20AC50.75 vs \u20AC43.50). Higher prices reduce demand, which raises per-unit costs further, which raises prices again \u2014 this is the "death spiral" dynamic where cost allocation reinforces low volume.',
+        'FC per unit = \u20AC800,000 / 32,000 = \u20AC25 (vs \u20AC20 under capacity-based).',
+        'LC price = 1.45 \u00D7 (\u20AC10 + \u20AC25) = \u20AC50.75 \u2014 even higher than \u20AC43.50.',
       ],
       answer: '\u20AC50.75 per unit',
       keyTakeaway:
@@ -479,10 +444,9 @@ export const XTREMECLIMB: Simulation = {
       formulaLegend:
         'Annual savings = variable cost reduction (10 \u00D7 30,000 = 300,000) + labor savings (100,000) = 400,000',
       approach: [
-        'Step 1: Cash flow analysis ignores accounting allocations (depreciation). We look at actual money in and out. The equipment is paid by XC headquarters at end of 2018.',
-        'Step 2: 2018: Equipment purchase = \u2212\u20AC900,000. No savings yet since the equipment is bought at year-end.',
-        'Step 3: 2019\u20132021: Two sources of annual savings. (a) Variable cost reduction: (\u20AC39 \u2212 \u20AC29) \u00D7 30,000 = \u20AC300,000/year. (b) Labor savings: \u20AC100,000/year. Total annual savings = \u20AC400,000/year.',
-        'Step 4: Total cash flows = \u2212\u20AC900,000 + \u20AC400,000 \u00D7 3 = +\u20AC300,000. The investment generates \u20AC1,200,000 in savings against a \u20AC900,000 outlay, clearly value-creating.',
+        '2018: Equipment purchase = \u2212\u20AC900,000.',
+        '2019\u20132021: VC savings = \u20AC300k + labor savings = \u20AC100k = \u20AC400k/year.',
+        'Total = \u2212\u20AC900k + \u20AC400k \u00D7 3 = +\u20AC300,000.',
       ],
       answer: '\u2212\u20AC900,000 in 2018; +\u20AC400,000 in each of 2019, 2020, and 2021',
       keyTakeaway:
@@ -499,10 +463,8 @@ export const XTREMECLIMB: Simulation = {
       formulaLegend:
         'Annual savings = 400; Annual depreciation = 900/3 = 300',
       approach: [
-        'Step 1: Divisional Profit differs from cash flow because it includes depreciation. The equipment cost is spread over 3 years via straight-line depreciation instead of being recognized entirely at purchase.',
-        'Step 2: Annual savings = \u20AC400,000 (same as cash flow \u2014 this is a real operational improvement). Annual depreciation = \u20AC900,000 / 3 = \u20AC300,000.',
-        'Step 3: Effect on Divisional Profit = \u20AC400,000 \u2212 \u20AC300,000 = +\u20AC100,000 per year. Corporate OH is unaffected (same number of units sold).',
-        'Step 4: The +\u20AC100,000 annual profit improvement is constant across all 3 years under straight-line depreciation, making it easy for John to predict his bonus impact.',
+        'Annual savings = \u20AC400,000. Annual depreciation = \u20AC900,000 / 3 = \u20AC300,000.',
+        'Profit effect = \u20AC400,000 \u2212 \u20AC300,000 = +\u20AC100,000 per year.',
       ],
       answer: '+\u20AC100,000 in each of 2019, 2020, and 2021',
       keyTakeaway:
@@ -520,10 +482,9 @@ export const XTREMECLIMB: Simulation = {
       formulaLegend:
         'Year 1: full capital charge on 900. Years 2\u20133: book value decreases by 300 each year, so RI improves by 0.1\u00D7300 = 30 per year.',
       approach: [
-        'Step 1: RI = Divisional Profit \u2212 10% \u00D7 Book Value at start of year. The capital charge penalizes tying up assets. Under straight-line depreciation, book value falls by \u20AC300,000/year, so the capital charge shrinks each year.',
-        'Step 2: 2019: Profit impact = +\u20AC100,000. Capital charge = 10% \u00D7 \u20AC900,000 = \u20AC90,000. \u0394RI = \u20AC100,000 \u2212 \u20AC90,000 = +\u20AC10,000. Bonus = 10% \u00D7 \u20AC10,000 = \u20AC1,000.',
-        'Step 3: 2020: Book value = \u20AC600,000. Profit still +\u20AC100,000. Capital charge = \u20AC60,000. \u0394RI = +\u20AC40,000. Year-over-year RI improvement = \u20AC40,000 \u2212 \u20AC10,000 = \u20AC30,000. Bonus = 10% \u00D7 \u20AC30,000 = \u20AC3,000.',
-        'Step 4: 2021: Same pattern. Book value = \u20AC300,000. \u0394RI = \u20AC100,000 \u2212 \u20AC30,000 = +\u20AC70,000. Improvement = \u20AC30,000. Bonus = \u20AC3,000. The bonus is small in year 1 and grows as the capital charge declines with book value.',
+        '2019: \u0394RI = \u20AC100k \u2212 10% \u00D7 \u20AC900k = +\u20AC10k. Bonus = 10% \u00D7 \u20AC10k = \u20AC1,000.',
+        '2020: \u0394RI = \u20AC100k \u2212 10% \u00D7 \u20AC600k = +\u20AC40k. Improvement = \u20AC30k. Bonus = \u20AC3,000.',
+        '2021: \u0394RI = \u20AC100k \u2212 10% \u00D7 \u20AC300k = +\u20AC70k. Improvement = \u20AC30k. Bonus = \u20AC3,000.',
       ],
       answer: '\u20AC1,000 in 2019; \u20AC3,000 in 2020; \u20AC3,000 in 2021',
       keyTakeaway:
@@ -540,10 +501,9 @@ export const XTREMECLIMB: Simulation = {
       formulaLegend:
         '2019 depreciation = 90, capital charge = 90, savings = 400. Years 2\u20133: accelerating depreciation causes RI to fall.',
       approach: [
-        'Step 1: Delayed depreciation (10%/30%/60%) front-loads savings and back-loads depreciation. In year 1, low depreciation means high profit but the capital charge is still based on full book value.',
-        'Step 2: 2019: Depreciation = 10% \u00D7 \u20AC900,000 = \u20AC90,000. Profit impact = \u20AC400,000 \u2212 \u20AC90,000 = \u20AC310,000. Capital charge = 10% \u00D7 \u20AC900,000 = \u20AC90,000. \u0394RI = \u20AC310,000 \u2212 \u20AC90,000 = +\u20AC220,000. Bonus = 10% \u00D7 \u20AC220,000 = \u20AC22,000.',
-        'Step 3: 2020: Depreciation = 30% \u00D7 \u20AC900,000 = \u20AC270,000. Profit = \u20AC400,000 \u2212 \u20AC270,000 = \u20AC130,000. Book value start = \u20AC810,000. Capital charge = \u20AC81,000. \u0394RI = \u20AC130,000 \u2212 \u20AC81,000 = \u20AC49,000. Year-over-year change = \u20AC49,000 \u2212 \u20AC220,000 = \u2212\u20AC171,000 < 0. Bonus = \u20AC0.',
-        'Step 4: 2021: Depreciation = \u20AC540,000. RI falls further. Bonus = \u20AC0. Delayed depreciation front-loads the entire bonus into year 1 (\u20AC22,000 vs \u20AC1,000 under straight-line). This may encourage investment but provides no incentive to follow through in later years.',
+        '2019: Dep = 10% \u00D7 \u20AC900k = \u20AC90k. Profit = \u20AC310k. \u0394RI = \u20AC310k \u2212 \u20AC90k = +\u20AC220k. Bonus = \u20AC22,000.',
+        '2020: Dep = \u20AC270k. \u0394RI = \u20AC49k. Year-over-year = \u2212\u20AC171k. Bonus = \u20AC0.',
+        '2021: Dep = \u20AC540k. RI falls further. Bonus = \u20AC0.',
       ],
       answer: '\u20AC22,000 in 2019; \u20AC0 in 2020; \u20AC0 in 2021',
       keyTakeaway:
