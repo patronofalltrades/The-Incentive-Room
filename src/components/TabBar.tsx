@@ -8,6 +8,7 @@ interface TabBarProps {
 const TABS: { id: Tab; label: string; icon: string }[] = [
   { id: 'exam-map', label: 'Exam Map', icon: '🗺' },
   { id: 'concepts', label: 'Concepts', icon: '🧠' },
+  { id: 'discovery', label: 'Discovery', icon: '🔬' },
   { id: 'practice', label: 'Practice', icon: '✏️' },
   { id: 'formulas', label: 'Formulas', icon: '∑' },
 ]
@@ -17,8 +18,8 @@ export default function TabBar({ activeTab, onTabChange }: TabBarProps) {
     <nav
       style={{
         display: 'flex',
-        borderTop: '1px solid #2a2a3a',
-        background: '#12121a',
+        borderTop: '1px solid var(--border)',
+        background: 'var(--surface)',
         flexShrink: 0,
       }}
     >
@@ -33,21 +34,21 @@ export default function TabBar({ activeTab, onTabChange }: TabBarProps) {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              gap: '4px',
-              padding: '10px 8px 12px',
+              gap: '3px',
+              padding: '10px 4px 12px',
               background: 'none',
               border: 'none',
               cursor: 'pointer',
-              borderTop: `2px solid ${isActive ? '#7c3aed' : 'transparent'}`,
+              borderTop: `2px solid ${isActive ? 'var(--accent)' : 'transparent'}`,
               transition: 'all 0.15s ease',
             }}
           >
-            <span style={{ fontSize: '18px', lineHeight: 1 }}>{tab.icon}</span>
+            <span style={{ fontSize: '17px', lineHeight: 1 }}>{tab.icon}</span>
             <span
               style={{
-                fontSize: '11px',
+                fontSize: '10px',
                 fontWeight: isActive ? 600 : 400,
-                color: isActive ? '#f0f0f8' : '#8888aa',
+                color: isActive ? 'var(--text-primary)' : 'var(--text-muted)',
                 letterSpacing: '0.02em',
                 transition: 'color 0.15s ease',
               }}

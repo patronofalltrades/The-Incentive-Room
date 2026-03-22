@@ -1,19 +1,61 @@
 @import "tailwindcss";
 
-@theme {
-  --color-bg: #0a0a0f;
-  --color-surface: #12121a;
-  --color-card: #1a1a26;
-  --color-border: #2a2a3a;
-  --color-text-primary: #f0f0f8;
-  --color-text-secondary: #8888aa;
-  --color-green: #22c55e;
-  --color-red: #ef4444;
-  --color-blue: #60a5fa;
-  --color-accent: #7c3aed;
+:root {
+  --bg: #f8f9fb;
+  --surface: #ffffff;
+  --card: #ffffff;
+  --card-hover: #f4f4f8;
+  --border: #e2e5ed;
+  --border-subtle: #eef0f5;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-muted: #9ca3af;
+  --accent: #7c3aed;
+  --accent-soft: #ede9fe;
+  --green: #16a34a;
+  --green-soft: #dcfce7;
+  --red: #dc2626;
+  --red-soft: #fee2e2;
+  --blue: #2563eb;
+  --blue-soft: #dbeafe;
+  --amber: #d97706;
+  --amber-soft: #fef3c7;
+  --pink: #e11d48;
+  --pink-soft: #ffe4e6;
+  --code-bg: #f1f5f9;
+  --input-bg: #f4f5f7;
+  --input-border: #d1d5db;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
 
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+.dark {
+  --bg: #0a0a0f;
+  --surface: #12121a;
+  --card: #16161f;
+  --card-hover: #1c1c28;
+  --border: #2a2a3a;
+  --border-subtle: #1f1f2e;
+  --text-primary: #f0f0f8;
+  --text-secondary: #9898b8;
+  --text-muted: #6b6b88;
+  --accent: #8b5cf6;
+  --accent-soft: #1e1038;
+  --green: #22c55e;
+  --green-soft: #052e16;
+  --red: #ef4444;
+  --red-soft: #2d0a0a;
+  --blue: #60a5fa;
+  --blue-soft: #0c1a30;
+  --amber: #f59e0b;
+  --amber-soft: #2d1f04;
+  --pink: #f43f5e;
+  --pink-soft: #2d0a14;
+  --code-bg: #1a1a26;
+  --input-bg: #1a1a26;
+  --input-border: #3a3a50;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 * {
@@ -27,24 +69,40 @@ html, body, #root {
 }
 
 body {
-  background-color: #0a0a0f;
-  color: #f0f0f8;
-  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #12121a;
+  background: var(--surface);
 }
 ::-webkit-scrollbar-thumb {
-  background: #2a2a3a;
+  background: var(--border);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3a3a50;
+  background: var(--text-muted);
+}
+
+/* Print styles */
+@media print {
+  header, nav, .tab-bar, button {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  * {
+    box-shadow: none !important;
+    border-color: #ddd !important;
+  }
 }
