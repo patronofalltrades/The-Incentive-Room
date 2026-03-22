@@ -15,6 +15,7 @@ export interface ExamPart {
   trap: string
   coreFormulaTex: string
   coreFormulaLegend: string
+  formulaDescription: string
 }
 
 export const EXAM_PARTS: ExamPart[] = [
@@ -34,7 +35,8 @@ export const EXAM_PARTS: ExamPart[] = [
     redFlag: 'An inflation adjustment is required before computing price and efficiency variances',
     trap: 'Forgetting to adjust the budget for inflation before computing selling price and variable cost efficiency variances',
     coreFormulaTex: 'V_{vol} = (N_a - N_b) \\times CM_b \\quad V_{price} = (P_a - P_b) \\times N_a \\quad V_{eff} = -(Q_a - Q_b) \\times C_b \\times N_a',
-    coreFormulaLegend: 'N = units, CM_b = budgeted contribution margin, P = price, Q = input per unit, C_b = budgeted input cost',
+    coreFormulaLegend: 'N_a = actual units sold, N_b = budgeted units sold, CM_b = budgeted contribution margin per unit, P_a = actual selling price, P_b = budgeted selling price, Q_a = actual input quantity per unit, Q_b = budgeted input quantity per unit, C_b = budgeted cost per unit of input',
+    formulaDescription: 'These three formulas decompose the profit gap into its drivers. The volume variance measures how many fewer (or more) units were sold, valued at budget margins. The price variance measures the revenue impact of charging a different price. The efficiency variance measures whether more or fewer inputs were used per unit.',
   },
   {
     part: 2,
@@ -52,7 +54,8 @@ export const EXAM_PARTS: ExamPart[] = [
     redFlag: 'Corporate overhead allocated on a per-unit basis creates a cost that behaves like a variable cost but does not change in cash',
     trap: 'Allocated overhead that does not change in cash leads the manager to reject a deal that the company would want to accept',
     coreFormulaTex: '\\Delta CF = N(P - VC) \\quad \\Delta DP = N(P - VC - OH)',
-    coreFormulaLegend: 'CF = cash flow, DP = divisional profit, N = units, P = price, VC = variable cost, OH = allocated overhead per unit',
+    coreFormulaLegend: 'CF = incremental cash flow (company perspective), DP = incremental divisional profit (manager perspective), N = number of units in the order, P = selling price per unit, VC = variable cost per unit, OH = allocated corporate overhead per unit',
+    formulaDescription: 'Compare two perspectives on the same deal. The company cash flow ignores allocated overhead (it does not change in cash). The manager divisional profit includes it. When the two formulas give opposite signs, there is goal incongruence — the manager rejects a deal that creates value for the company.',
   },
   {
     part: 3,
@@ -70,7 +73,8 @@ export const EXAM_PARTS: ExamPart[] = [
     redFlag: 'Corporate overhead allocated per unit sold inflates the seller floor price and can destroy the congruence zone',
     trap: 'Full-cost transfer pricing often fails because the fixed cost allocation inflates the seller minimum above the buyer maximum',
     coreFormulaTex: 'TP_{min} = VC_S + OC_S \\quad TP_{max} = P_{ext} - VC_B',
-    coreFormulaLegend: 'TP = transfer price, VC_S = seller variable cost, OC_S = seller opportunity cost, P_ext = buyer external price, VC_B = buyer other variable costs',
+    coreFormulaLegend: 'TP_{min} = minimum transfer price the seller will accept, TP_{max} = maximum transfer price the buyer will pay, VC_S = seller variable cost of production, OC_S = seller opportunity cost (lost margin from displaced sales; zero if spare capacity), P_{ext} = buyer external selling price to end customers, VC_B = buyer other variable costs beyond the transfer price',
+    formulaDescription: 'The seller will not trade below their incremental cost plus any opportunity cost. The buyer will not pay more than their alternative. Goal congruence exists when the minimum is below the maximum — any transfer price in this range makes both divisions and the company better off.',
   },
   {
     part: 4,
@@ -88,7 +92,8 @@ export const EXAM_PARTS: ExamPart[] = [
     redFlag: 'The book value at the beginning of the year is used for the residual income calculation, not the ending value',
     trap: 'Different depreciation schedules produce different bonus timing even though total cash flows remain identical across all methods',
     coreFormulaTex: 'RI_t = DP_t - r \\times BV_t \\quad DP_t = \\Delta CF - Depr',
-    coreFormulaLegend: 'RI = residual income, DP = divisional profit, r = cost of capital, BV_t = book value at start of year t, Depr = depreciation',
+    coreFormulaLegend: 'RI_t = residual income in year t (the value created above the cost of capital), DP_t = divisional profit in year t (cash flow minus depreciation), r = cost of capital rate (the minimum return investors require), BV_t = book value of assets at the beginning of year t (not the end), Depr = annual depreciation expense, \\Delta CF = incremental annual cash flow from the investment',
+    formulaDescription: 'Residual income measures whether the division earns more than its cost of capital. First compute divisional profit by subtracting depreciation from cash flow. Then subtract the capital charge (cost of capital times beginning book value). As the asset depreciates, book value drops, the capital charge shrinks, and residual income improves mechanically — even if nothing operational changes.',
   },
   {
     part: 5,
@@ -106,7 +111,8 @@ export const EXAM_PARTS: ExamPart[] = [
     redFlag: 'Moving-target bonuses, book-value-based asset charges, and volume-based overhead allocation are common distortion sources',
     trap: 'Describing the accounting issue without naming the behavioral distortion it creates — you must always state the "so what" in terms of manager incentives',
     coreFormulaTex: '\\text{Problem} \\to \\text{Behavioral Distortion} \\to \\text{Recommended Fix}',
-    coreFormulaLegend: 'For each dimension: name the accounting issue, explain how it distorts manager behavior, then propose an alternative',
+    coreFormulaLegend: 'For each of the six dimensions: name the specific accounting or measurement issue, explain the behavioral distortion it creates for the manager, then propose a concrete alternative design',
+    formulaDescription: 'The system critique is not a formula — it is a structured diagnostic framework. For each dimension of the control system (variance analysis, cost allocation, pricing, transfer pricing, performance measurement, and incentive design), you must identify the problem, explain its behavioral consequence, and propose a fix. Always connect back to specific numbers from earlier parts of the exam.',
   },
 ]
 

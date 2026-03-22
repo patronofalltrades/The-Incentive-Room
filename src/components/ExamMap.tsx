@@ -149,6 +149,20 @@ export default function ExamMap({ onTopicSelect }: ExamMapProps) {
                         Core Formula
                       </p>
                       <Formula tex={part.coreFormulaTex} legend={part.coreFormulaLegend} />
+                      {part.formulaDescription && (
+                        <p style={{
+                          margin: '12px 0 0',
+                          fontSize: '13px',
+                          color: 'var(--text-secondary)',
+                          lineHeight: 1.7,
+                          padding: '12px 14px',
+                          background: 'var(--card)',
+                          border: '1px solid var(--border)',
+                          borderRadius: '8px',
+                        }}>
+                          {part.formulaDescription}
+                        </p>
+                      )}
                     </div>
 
                     {/* Key Insight */}
