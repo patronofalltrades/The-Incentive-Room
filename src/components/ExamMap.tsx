@@ -139,31 +139,55 @@ export default function ExamMap({ onTopicSelect }: ExamMapProps) {
                       </p>
                     </div>
 
-                    {/* Core Formula */}
-                    <div style={{
-                      background: part.softColor,
-                      borderRadius: '10px',
-                      padding: '14px',
-                    }}>
-                      <p style={{ margin: '0 0 8px', fontSize: '11px', fontWeight: 600, color: part.color, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
-                        Core Formula
-                      </p>
-                      <Formula tex={part.coreFormulaTex} legend={part.coreFormulaLegend} />
-                      {part.formulaDescription && (
-                        <p style={{
-                          margin: '12px 0 0',
-                          fontSize: '13px',
-                          color: 'var(--text-secondary)',
-                          lineHeight: 1.7,
-                          padding: '12px 14px',
-                          background: 'var(--card)',
-                          border: '1px solid var(--border)',
-                          borderRadius: '8px',
-                        }}>
-                          {part.formulaDescription}
+                    {/* Formulas — each isolated with explanation */}
+                    {part.isolatedFormulas ? (
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                        <p style={{ margin: 0, fontSize: '11px', fontWeight: 700, color: part.color, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
+                          Core Formulas
                         </p>
-                      )}
-                    </div>
+                        {part.isolatedFormulas.map((f, fi) => (
+                          <div key={fi} style={{
+                            background: 'var(--card)',
+                            border: '1px solid var(--border)',
+                            borderLeft: `4px solid ${part.color}`,
+                            borderRadius: '0 12px 12px 0',
+                            overflow: 'hidden',
+                          }}>
+                            <div style={{
+                              padding: '10px 14px',
+                              background: part.softColor,
+                              borderBottom: '1px solid var(--border-subtle)',
+                            }}>
+                              <p style={{ margin: 0, fontSize: '13px', fontWeight: 700, color: part.color }}>
+                                {f.name}
+                              </p>
+                            </div>
+                            <div style={{ padding: '12px 14px' }}>
+                              <Formula tex={f.tex} legend={f.legend} />
+                              <p style={{
+                                margin: '10px 0 0',
+                                fontSize: '13px',
+                                color: 'var(--text-secondary)',
+                                lineHeight: 1.7,
+                              }}>
+                                {f.explanation}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div style={{
+                        background: part.softColor,
+                        borderRadius: '10px',
+                        padding: '14px',
+                      }}>
+                        <p style={{ margin: '0 0 8px', fontSize: '11px', fontWeight: 600, color: part.color, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
+                          Core Formula
+                        </p>
+                        <Formula tex={part.coreFormulaTex} legend={part.coreFormulaLegend} />
+                      </div>
+                    )}
 
                     {/* Key Insight */}
                     {KEY_INSIGHTS[part.part] && (

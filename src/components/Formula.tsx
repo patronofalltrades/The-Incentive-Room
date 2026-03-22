@@ -8,19 +8,44 @@ interface FormulaProps {
 }
 
 /**
- * Render legend with each variable as KaTeX inline math.
- * Splits on commas, then on " = " to separate symbol from definition.
- * Renders symbols like N_a, CM_b, TP_{min}, VC_S, etc. as proper KaTeX.
+ * Smart split: split on ", " followed by a letter/symbol that starts a new variable definition.
+ * This avoids breaking on commas inside numbers like "$1,450" or "(1,200)".
  */
+function splitLegend(legend: string): string[] {
+  const results: string[] = []
+  let current = ''
+  let i = 0
+
+  while (i < legend.length) {
+    if (legend[i] === ',' && i + 1 < legend.length && legend[i + 1] === ' ') {
+      // Check if the next non-space char starts a new definition (letter, \, Δ, etc.)
+      const rest = legend.slice(i + 2).trimStart()
+      const startsNewDef = /^[A-Za-zΔΠΣπ\\]/.test(rest)
+      // Also check it's not a number continuation like ", 200)" or ", 3"
+      const isNumberCont = /^[0-9(]/.test(rest)
+
+      if (startsNewDef && !isNumberCont) {
+        results.push(current.trim())
+        current = ''
+        i += 2 // skip ", "
+        continue
+      }
+    }
+    current += legend[i]
+    i++
+  }
+  if (current.trim()) results.push(current.trim())
+  return results
+}
+
 function renderLegend(legend: string) {
-  const parts = legend.split(',').map(s => s.trim()).filter(Boolean)
+  const parts = splitLegend(legend)
 
   return (
     <div style={{
-      display: 'grid',
-      gridTemplateColumns: 'auto 1fr',
-      gap: '6px 12px',
-      alignItems: 'baseline',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '8px',
     }}>
       {parts.map((part, i) => {
         const eqIdx = part.indexOf(' = ')
@@ -28,28 +53,29 @@ function renderLegend(legend: string) {
           const symbol = part.slice(0, eqIdx).trim()
           const definition = part.slice(eqIdx + 3).trim()
 
-          // Render symbol as KaTeX if it looks like math
-          // Matches: N_a, CM_b, TP_{min}, VC_S, BV_0, ΔCF, FC, VC, OH, RI, DP, P, r, m, π, i, etc.
           const isMath = /[_^\\{}]/.test(symbol)
             || /[ΔΠΣπ]/.test(symbol)
-            || /^[A-Z]{1,4}$/.test(symbol)         // FC, VC, OH, RI, DP, CF, BV, CM, TP
-            || /^[A-Z]+[_]/.test(symbol)            // N_a, P_b, VC_S, TP_{min}
-            || /^[a-z]$/.test(symbol)               // r, m, i, π
-            || /^\\/.test(symbol)                    // \Delta, \Pi, etc.
+            || /^[A-Z]{1,5}$/.test(symbol)
+            || /^[A-Z]+[_]/.test(symbol)
+            || /^\\Delta/.test(symbol)
+            || /^[a-z]$/.test(symbol)
 
           return (
-            <div key={i} style={{ display: 'contents' }}>
+            <div key={i} style={{
+              display: 'flex',
+              gap: '8px',
+              alignItems: 'baseline',
+              padding: '4px 0',
+              borderBottom: i < parts.length - 1 ? '1px solid var(--border-subtle)' : 'none',
+            }}>
               <span style={{
                 fontSize: '13px',
                 color: 'var(--accent)',
                 fontWeight: 600,
                 whiteSpace: 'nowrap',
+                minWidth: '40px',
               }}>
-                {isMath ? (
-                  <InlineMath math={symbol} />
-                ) : (
-                  symbol
-                )}
+                {isMath ? <InlineMath math={symbol} /> : symbol}
               </span>
               <span style={{
                 fontSize: '13px',
@@ -61,17 +87,16 @@ function renderLegend(legend: string) {
             </div>
           )
         }
-        // No "=" sign — render as a plain description spanning both columns
         return (
-          <span key={i} style={{
-            gridColumn: '1 / -1',
+          <p key={i} style={{
+            margin: 0,
             fontSize: '13px',
             color: 'var(--text-secondary)',
             lineHeight: 1.6,
             fontStyle: 'italic',
           }}>
             {part}
-          </span>
+          </p>
         )
       })}
     </div>
@@ -86,7 +111,6 @@ export default function Formula({ tex, block = true, legend }: FormulaProps) {
       borderRadius: '10px',
       overflow: 'auto',
     }}>
-      {/* Formula */}
       <div style={{
         padding: block ? '20px 18px' : '8px 12px',
         textAlign: 'center',
@@ -94,7 +118,6 @@ export default function Formula({ tex, block = true, legend }: FormulaProps) {
         {block ? <BlockMath math={tex} /> : <InlineMath math={tex} />}
       </div>
 
-      {/* Symbol Breakdown */}
       {legend && (
         <div style={{
           padding: '14px 18px',
@@ -103,14 +126,14 @@ export default function Formula({ tex, block = true, legend }: FormulaProps) {
           borderRadius: '0 0 10px 10px',
         }}>
           <p style={{
-            margin: '0 0 8px',
+            margin: '0 0 10px',
             fontSize: '10px',
             fontWeight: 700,
             color: 'var(--text-muted)',
             letterSpacing: '0.08em',
             textTransform: 'uppercase',
           }}>
-            Symbol Breakdown
+            Where
           </p>
           {renderLegend(legend)}
         </div>

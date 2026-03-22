@@ -16,6 +16,12 @@ export interface ExamPart {
   coreFormulaTex: string
   coreFormulaLegend: string
   formulaDescription: string
+  isolatedFormulas?: {
+    name: string
+    tex: string
+    legend: string
+    explanation: string
+  }[]
 }
 
 export const EXAM_PARTS: ExamPart[] = [
@@ -36,7 +42,27 @@ export const EXAM_PARTS: ExamPart[] = [
     trap: 'Forgetting to adjust the budget for inflation before computing selling price and variable cost efficiency variances',
     coreFormulaTex: 'V_{vol} = (N_a - N_b) \\times CM_b \\quad V_{price} = (P_a - P_b) \\times N_a \\quad V_{eff} = -(Q_a - Q_b) \\times C_b \\times N_a',
     coreFormulaLegend: 'N_a = actual units sold, N_b = budgeted units sold, CM_b = budgeted contribution margin per unit, P_a = actual selling price, P_b = budgeted selling price, Q_a = actual input quantity per unit, Q_b = budgeted input quantity per unit, C_b = budgeted cost per unit of input',
-    formulaDescription: 'These three formulas decompose the profit gap into its drivers. The volume variance measures how many fewer (or more) units were sold, valued at budget margins. The price variance measures the revenue impact of charging a different price. The efficiency variance measures whether more or fewer inputs were used per unit.',
+    formulaDescription: 'These three formulas decompose the profit gap into its drivers.',
+    isolatedFormulas: [
+      {
+        name: 'Volume Variance',
+        tex: 'V_{vol} = (N_a - N_b) \\times CM_b',
+        legend: 'N_a = actual units sold, N_b = budgeted units sold, CM_b = budgeted contribution margin per unit',
+        explanation: 'Measures the profit impact of selling more or fewer units than planned. Uses budgeted per-unit margins so the volume effect is isolated from price and cost changes.',
+      },
+      {
+        name: 'Selling Price Variance',
+        tex: 'V_{price} = (P_a - P_b) \\times N_a',
+        legend: 'P_a = actual selling price, P_b = budgeted selling price, N_a = actual units sold',
+        explanation: 'Measures the revenue impact of charging a different price than budgeted. Multiplied by actual volume because the price difference only applies to units actually sold.',
+      },
+      {
+        name: 'Efficiency Variance',
+        tex: 'V_{eff} = -(Q_a - Q_b) \\times C_b \\times N_a',
+        legend: 'Q_a = actual input per unit, Q_b = budgeted input per unit, C_b = budgeted cost per input unit, N_a = actual units',
+        explanation: 'Measures whether more or fewer inputs were used per unit than planned. Valued at budgeted input prices to isolate the quantity effect from the price effect.',
+      },
+    ],
   },
   {
     part: 2,
@@ -55,7 +81,21 @@ export const EXAM_PARTS: ExamPart[] = [
     trap: 'Allocated overhead that does not change in cash leads the manager to reject a deal that the company would want to accept',
     coreFormulaTex: '\\Delta CF = N(P - VC) \\quad \\Delta DP = N(P - VC - OH)',
     coreFormulaLegend: 'CF = incremental cash flow (company perspective), DP = incremental divisional profit (manager perspective), N = number of units in the order, P = selling price per unit, VC = variable cost per unit, OH = allocated corporate overhead per unit',
-    formulaDescription: 'Compare two perspectives on the same deal. The company cash flow ignores allocated overhead (it does not change in cash). The manager divisional profit includes it. When the two formulas give opposite signs, there is goal incongruence — the manager rejects a deal that creates value for the company.',
+    formulaDescription: 'Compare two perspectives on the same deal.',
+    isolatedFormulas: [
+      {
+        name: 'Company Cash Flow (Incremental)',
+        tex: '\\Delta CF = N \\times (P - VC)',
+        legend: 'N = number of units, P = selling price per unit, VC = variable cost per unit',
+        explanation: 'The company perspective ignores allocated overhead because it does not change in cash. Only truly incremental revenues and costs matter.',
+      },
+      {
+        name: 'Manager Divisional Profit (Incremental)',
+        tex: '\\Delta DP = N \\times (P - VC - OH)',
+        legend: 'OH = allocated corporate overhead per unit (does not change in cash but appears on the division income statement)',
+        explanation: 'The manager sees overhead as a real cost. When overhead is large enough to flip the sign from positive to negative, the manager rejects a deal that creates value for the company. This is goal incongruence.',
+      },
+    ],
   },
   {
     part: 3,
@@ -74,7 +114,21 @@ export const EXAM_PARTS: ExamPart[] = [
     trap: 'Full-cost transfer pricing often fails because the fixed cost allocation inflates the seller minimum above the buyer maximum',
     coreFormulaTex: 'TP_{min} = VC_S + OC_S \\quad TP_{max} = P_{ext} - VC_B',
     coreFormulaLegend: 'TP_{min} = minimum transfer price the seller will accept, TP_{max} = maximum transfer price the buyer will pay, VC_S = seller variable cost of production, OC_S = seller opportunity cost (lost margin from displaced sales; zero if spare capacity), P_{ext} = buyer external selling price to end customers, VC_B = buyer other variable costs beyond the transfer price',
-    formulaDescription: 'The seller will not trade below their incremental cost plus any opportunity cost. The buyer will not pay more than their alternative. Goal congruence exists when the minimum is below the maximum — any transfer price in this range makes both divisions and the company better off.',
+    formulaDescription: 'Find the range where both divisions benefit from trade.',
+    isolatedFormulas: [
+      {
+        name: 'Seller Minimum (Floor)',
+        tex: 'TP_{min} = VC_S + OC_S',
+        legend: 'VC_S = seller variable cost of production, OC_S = seller opportunity cost (zero if spare capacity; otherwise the lost margin from displaced sales)',
+        explanation: 'The lowest price the seller will accept. With spare capacity, the floor is just the variable cost. At full capacity, add the contribution margin lost from the order that must be displaced.',
+      },
+      {
+        name: 'Buyer Maximum (Ceiling)',
+        tex: 'TP_{max} = P_{ext} - VC_B',
+        legend: 'P_{ext} = buyer external selling price to end customers, VC_B = buyer other variable costs beyond the transfer price',
+        explanation: 'The highest price the buyer will pay. If the transfer price exceeds this, the buyer loses money on every unit and will refuse the deal.',
+      },
+    ],
   },
   {
     part: 4,
@@ -93,7 +147,21 @@ export const EXAM_PARTS: ExamPart[] = [
     trap: 'Different depreciation schedules produce different bonus timing even though total cash flows remain identical across all methods',
     coreFormulaTex: 'RI_t = DP_t - r \\times BV_t \\quad DP_t = \\Delta CF - Depr',
     coreFormulaLegend: 'RI_t = residual income in year t (the value created above the cost of capital), DP_t = divisional profit in year t (cash flow minus depreciation), r = cost of capital rate (the minimum return investors require), BV_t = book value of assets at the beginning of year t (not the end), Depr = annual depreciation expense, \\Delta CF = incremental annual cash flow from the investment',
-    formulaDescription: 'Residual income measures whether the division earns more than its cost of capital. First compute divisional profit by subtracting depreciation from cash flow. Then subtract the capital charge (cost of capital times beginning book value). As the asset depreciates, book value drops, the capital charge shrinks, and residual income improves mechanically — even if nothing operational changes.',
+    formulaDescription: 'Build a year-by-year table from cash flows to bonus.',
+    isolatedFormulas: [
+      {
+        name: 'Divisional Profit',
+        tex: 'DP_t = \\Delta CF - Depr',
+        legend: '\\Delta CF = incremental annual cash flow from the investment, Depr = annual depreciation expense (straight-line: cost divided by life)',
+        explanation: 'Operating cash flow minus the non-cash depreciation charge. Different depreciation methods produce different DP in each year even though total cash flows are identical.',
+      },
+      {
+        name: 'Residual Income',
+        tex: 'RI_t = DP_t - r \\times BV_t',
+        legend: 'r = cost of capital rate (the minimum return investors require), BV_t = book value of assets at the BEGINNING of year t (not the end)',
+        explanation: 'Deducts a capital charge for the assets the division ties up. As the asset depreciates, book value drops, the charge shrinks, and RI improves mechanically. A positive RI means the division creates value above its cost of capital.',
+      },
+    ],
   },
   {
     part: 5,
