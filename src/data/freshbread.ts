@@ -146,8 +146,10 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'N = volume in \'000 boxes, CM_{2019} = contribution margin per box in 2019 = 10 − 6×0.4 − 2.2 = $5.40',
       approach: [
-        'Contribution margin per box in 2019: Price − Material cost per box − Other VC per box = 10 − (6 × 0.4) − 2.2 = $5.40.',
-        'Volume variance = (140 − 150) × 5.40 = −10 × 5.40 = −$54,000.',
+        'Step 1: The sales volume variance isolates the profit impact of selling more or fewer units, holding all per-unit economics constant at prior-year (2019) levels.',
+        'Step 2: Compute the 2019 contribution margin per box. Price ($10) − Material cost per box (6 kg × $0.40 = $2.40) − Other VC ($2.20) = $5.40 per box.',
+        'Step 3: Apply the volume change. Division 1 sold 140,000 boxes in 2020 vs 150,000 in 2019, a decrease of 10,000 boxes.',
+        'Step 4: Volume variance = (140,000 − 150,000) × $5.40 = −$54,000. Each lost box costs $5.40 in contribution margin.',
       ],
       answer: '−$54,000 (Unfavorable)',
       keyTakeaway:
@@ -164,7 +166,10 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'P_{2020} = $9.50, P_{2019} = $10.00, N_{2020} = 140 (\'000 boxes)',
       approach: [
-        'Selling price variance = (9.5 − 10) × 140 = −0.5 × 140 = −$70,000.',
+        'Step 1: The selling price variance isolates the impact of a change in the average selling price, holding volume at the 2020 actual level. It answers: how much profit did we gain or lose purely because price changed?',
+        'Step 2: Identify the price change. Price fell from $10.00/box (2019) to $9.50/box (2020), a decrease of $0.50.',
+        'Step 3: Apply the price change to 2020 volume. Selling price variance = ($9.50 − $10.00) × 140,000 = −$0.50 × 140,000 = −$70,000.',
+        'Step 4: The $0.50 drop per box across 140,000 boxes erodes $70,000 in profit. This may reflect competitive pressure or a deliberate pricing decision.',
       ],
       answer: '−$70,000 (Unfavorable)',
       keyTakeaway:
@@ -181,8 +186,10 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'E = kg of premix per box (2019: 6, 2020: 5), IP_{2019} = input price in 2019 ($0.40/kg)',
       approach: [
-        'Efficiency ratio: 2019 = 900/150 = 6 kg/box, 2020 = 700/140 = 5 kg/box.',
-        'Efficiency variance = −(5 − 6) × 0.4 × 140 = 1 × 0.4 × 140 = +$56,000.',
+        'Step 1: The efficiency variance isolates the profit impact of using more or less raw material per unit of output. It measures operational efficiency, priced at the prior-year input price to avoid mixing price and quantity effects.',
+        'Step 2: Compute usage per box. 2019: 900,000 kg / 150,000 boxes = 6.0 kg/box. 2020: 700,000 kg / 140,000 boxes = 5.0 kg/box. Usage improved by 1 kg/box.',
+        'Step 3: Value the efficiency gain at the 2019 input price. Efficiency variance = −(5 − 6) × $0.40 × 140,000 = +1 × $0.40 × 140,000 = +$56,000.',
+        'Step 4: Using 1 kg less premix per box saves $56,000. This favorable variance could reflect a better recipe, improved processes, or a shift in product quality.',
       ],
       answer: '+$56,000 (Favorable)',
       keyTakeaway:
@@ -199,8 +206,10 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'IP = price per kg of premix (2019: $0.40, 2020: $0.50), E_{2020} = 5 kg/box',
       approach: [
-        'Input price: 2019 = 360/900 = $0.40/kg, 2020 = 350/700 = $0.50/kg.',
-        'Input price variance = −(0.5 − 0.4) × 5 × 140 = −0.1 × 700 = −$70,000.',
+        'Step 1: The input price variance isolates the impact of a change in the cost per kg of bread premix, holding quantity at the 2020 actual usage level. It answers: how much more (or less) did we pay purely because the input price changed?',
+        'Step 2: Compute input prices. 2019: $360,000 / 900,000 kg = $0.40/kg. 2020: $350,000 / 700,000 kg = $0.50/kg. Price rose by $0.10/kg.',
+        'Step 3: Apply the price increase to 2020 actual usage. Input price variance = −($0.50 − $0.40) × 5 kg/box × 140,000 boxes = −$0.10 × 700,000 = −$70,000.',
+        'Step 4: The $0.10/kg price increase costs $70,000. Note the possible trade-off: cheaper premix (lower quality?) might explain the efficiency gain in Q3, while more expensive premix may reflect a quality upgrade.',
       ],
       answer: '−$70,000 (Unfavorable)',
       keyTakeaway:

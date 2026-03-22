@@ -7,6 +7,43 @@ interface FormulaProps {
   legend?: string
 }
 
+/* Parse legend text: render math-like tokens (e.g. N_a, CM_b, P_ext, VC_S, BV_0, ΔCF) as KaTeX inline */
+function renderLegend(legend: string) {
+  // Split on commas to get individual definitions
+  const parts = legend.split(',').map(s => s.trim())
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+      {parts.map((part, i) => {
+        // Try to split on " = " to get symbol and definition
+        const eqIdx = part.indexOf(' = ')
+        if (eqIdx > 0) {
+          const symbol = part.slice(0, eqIdx).trim()
+          const definition = part.slice(eqIdx + 3).trim()
+          // Check if symbol looks like a math expression (contains _, ^, \, or Greek)
+          const isMath = /[_^\\]|[ΔΠΣ]/.test(symbol) || /^[A-Z]{1,3}[_]/.test(symbol) || /^[a-z]$/.test(symbol)
+          return (
+            <span key={i} style={{ fontSize: '12px', color: 'var(--text-muted)', lineHeight: 1.6 }}>
+              {isMath ? (
+                <>
+                  <InlineMath math={symbol} />
+                  {' = ' + definition}
+                </>
+              ) : (
+                part
+              )}
+            </span>
+          )
+        }
+        return (
+          <span key={i} style={{ fontSize: '12px', color: 'var(--text-muted)', lineHeight: 1.6 }}>
+            {part}
+          </span>
+        )
+      })}
+    </div>
+  )
+}
+
 export default function Formula({ tex, block = true, legend }: FormulaProps) {
   return (
     <div style={{
@@ -20,16 +57,13 @@ export default function Formula({ tex, block = true, legend }: FormulaProps) {
         {block ? <BlockMath math={tex} /> : <InlineMath math={tex} />}
       </div>
       {legend && (
-        <p style={{
+        <div style={{
           margin: '12px 0 0',
           paddingTop: '10px',
           borderTop: '1px solid var(--border-subtle)',
-          fontSize: '12px',
-          color: 'var(--text-muted)',
-          lineHeight: 1.6,
         }}>
-          {legend}
-        </p>
+          {renderLegend(legend)}
+        </div>
       )}
     </div>
   )

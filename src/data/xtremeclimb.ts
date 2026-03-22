@@ -90,7 +90,7 @@ export const XTREMECLIMB: Simulation = {
       question:
         'Compute the difference between the budgeted and actual Divisional Profit of WD in 2017 due to the change in the number of units sold.',
       formulaTex:
-        'V_{vol} = (N_a - N_b) \\times CM_b = (30 - 40) \\times 36 = -360 \\text{ (\'000 \\euro)}',
+        'V_{vol} = (N_a - N_b) \\times CM_b = (30 - 40) \\times 36 = -360 \\text{ (\'000 \\text{€})}',
       formulaLegend:
         "N_a = actual units sold in thousands (30), N_b = budget units (40), CM_b = budgeted contribution margin per thousand units = (3,400/40) \u2212 (80/40)\u00D715 \u2212 (360/40) \u2212 10 = 85 \u2212 30 \u2212 9 \u2212 10 = 36 ('000 \u20AC per thousand units)",
       approach: [
@@ -112,7 +112,7 @@ export const XTREMECLIMB: Simulation = {
       question:
         'Compute the difference between the budgeted and actual Divisional Profit of WD in 2017 due to the change in the average selling price per unit.',
       formulaTex:
-        'V_{price} = N_a \\times (P_a - P_b) = 30 \\times (83 - 85) = -60 \\text{ (\'000 \\euro)}',
+        'V_{price} = N_a \\times (P_a - P_b) = 30 \\times (83 - 85) = -60 \\text{ (\'000 \\text{€})}',
       formulaLegend:
         'P_a = actual selling price = 2,490/30 = \u20AC83, P_b = budget selling price = 3,400/40 = \u20AC85',
       approach: [
@@ -131,7 +131,7 @@ export const XTREMECLIMB: Simulation = {
       question:
         'Compute the difference between the budgeted and actual Divisional Profit of WD in 2017 due to the change in the average amount of fabric used to produce one unit.',
       formulaTex:
-        'V_{eff} = -N_a \\times (q_a - q_b) \\times C_b = -30 \\times (84/30 - 80/40) \\times 15 = -360 \\text{ (\'000 \\euro)}',
+        'V_{eff} = -N_a \\times (q_a - q_b) \\times C_b = -30 \\times (84/30 - 80/40) \\times 15 = -360 \\text{ (\'000 \\text{€})}',
       formulaLegend:
         'q_a = actual fabric per unit = 84/30 = 2.8m, q_b = budget fabric per unit = 80/40 = 2.0m, C_b = budget price per meter = \u20AC15',
       approach: [
@@ -150,7 +150,7 @@ export const XTREMECLIMB: Simulation = {
       question:
         'Compute the difference between the budgeted and actual Divisional Profit of WD in 2017 due to the change in the average price of one meter of fabric.',
       formulaTex:
-        'V_{input} = -N_a \\times q_a \\times (C_a - C_b) = -30 \\times (84/30) \\times (13 - 15) = +168 \\text{ (\'000 \\euro)}',
+        'V_{input} = -N_a \\times q_a \\times (C_a - C_b) = -30 \\times (84/30) \\times (13 - 15) = +168 \\text{ (\'000 \\text{€})}',
       formulaLegend:
         'C_a = actual price per meter = \u20AC13, C_b = budget price per meter = \u20AC15, q_a = actual fabric per unit = 84/30 = 2.8m',
       approach: [
@@ -167,7 +167,7 @@ export const XTREMECLIMB: Simulation = {
       question:
         'Compute the difference between the budgeted and actual Divisional Profit of WD in 2017 due to the change in the average "other manufacturing variable costs" per unit.',
       formulaTex:
-        'V_{ovc} = -N_a \\times (ovc_a - ovc_b) = -30 \\times (273/30 - 360/40) = -3 \\text{ (\'000 \\euro)}',
+        'V_{ovc} = -N_a \\times (ovc_a - ovc_b) = -30 \\times (273/30 - 360/40) = -3 \\text{ (\'000 \\text{€})}',
       formulaLegend:
         'ovc_a = actual other VC per unit = 273/30 = \u20AC9.1, ovc_b = budget other VC per unit = 360/40 = \u20AC9',
       approach: [
@@ -205,7 +205,7 @@ export const XTREMECLIMB: Simulation = {
       question:
         'Compute the actual Divisional Profit of WD in 2017 if Corporate OH is a fixed allocation of \u20AC400,000 per division.',
       formulaTex:
-        '\\text{Profit}_{new} = -505 - (-30 \\times 10) - 400 = -505 + 300 - 400 = -605 \\text{ (\'000 \\euro)}',
+        '\\text{Profit}_{new} = -505 - (-30 \\times 10) - 400 = -505 + 300 - 400 = -605 \\text{ (\'000 \\text{€})}',
       formulaLegend:
         'Replace actual variable OH (30\u00D710 = 300) with fixed OH (400); net change = \u2212100',
       approach: [
@@ -224,7 +224,7 @@ export const XTREMECLIMB: Simulation = {
       question:
         'Compute the sales volume variance under the fixed OH allocation. How does this change from Part 1.a?',
       formulaTex:
-        'V_{vol}^{new} = (30 - 40) \\times [(3{,}400/40) - (80/40) \\times 15 - (360/40)] = -460 \\text{ (\'000 \\euro)}',
+        'V_{vol}^{new} = (30 - 40) \\times [(3{,}400/40) - (80/40) \\times 15 - (360/40)] = -460 \\text{ (\'000 \\text{€})}',
       formulaLegend:
         'CM per unit now excludes the \u20AC10 corporate OH component because OH is fixed and does not vary with volume',
       approach: [
@@ -365,7 +365,7 @@ export const XTREMECLIMB: Simulation = {
       question:
         'Compute the amount of manufacturing fixed costs allocated to each unit of LC for external pricing purposes if WD starts producing and selling this product.',
       formulaTex:
-        '\\text{FC per unit} = \\frac{800{,}000}{40{,}000} = \\euro 20 \\text{ per unit}',
+        '\\text{FC per unit} = \\frac{800{,}000}{40{,}000} = \\text{€} 20 \\text{ per unit}',
       formulaLegend:
         'Fixed costs allocated based on capacity (40,000 units), not actual volume. Same for HC and LC.',
       approach: [
@@ -383,7 +383,7 @@ export const XTREMECLIMB: Simulation = {
       question:
         "Compute the price of one unit of LC according to the firm's external pricing policy.",
       formulaTex:
-        'P_{LC} = 1.45 \\times (10 + 20) = 1.45 \\times 30 = \\euro 43.50',
+        'P_{LC} = 1.45 \\times (10 + 20) = 1.45 \\times 30 = \\text{€} 43.50',
       formulaLegend:
         'Price = (variable cost + allocated fixed cost) \u00D7 1.45 markup',
       approach: [
@@ -401,7 +401,7 @@ export const XTREMECLIMB: Simulation = {
       question:
         "Compute the effect of manufacturing 2,000 units of LC on the cash flows of XC for 2018.",
       formulaTex:
-        '\\Delta CF_{XC} = (43.5 \\times 2 + 83 \\times 30) - (10 \\times 2 + 39 \\times 30) - (85 \\times 30 - 83 \\times 30 + 39 \\times 30 - 39 \\times 30) = +7 \\text{ (\'000 \\euro)}',
+        '\\Delta CF_{XC} = (43.5 \\times 2 + 83 \\times 30) - (10 \\times 2 + 39 \\times 30) - (85 \\times 30 - 83 \\times 30 + 39 \\times 30 - 39 \\times 30) = +7 \\text{ (\'000 \\text{€})}',
       formulaLegend:
         'Net effect = LC revenue + HC revenue change \u2212 LC variable cost \u2212 HC price drop effect',
       approach: [
@@ -421,7 +421,7 @@ export const XTREMECLIMB: Simulation = {
       question:
         "Compute the effect of producing and selling 2,000 units of LC on John's bonus for 2018.",
       formulaTex:
-        '\\Delta \\text{WD Profit} = 87 - 20 - 60 - 20 = -13 \\text{ (\'000 \\euro)} \\implies \\text{No bonus}',
+        '\\Delta \\text{WD Profit} = 87 - 20 - 60 - 20 = -13 \\text{ (\'000 \\text{€})} \\implies \\text{No bonus}',
       formulaLegend:
         'WD sees LC revenue 87, LC variable cost 20, HC price drop 60, and additional corporate OH 10\u00D72 = 20',
       approach: [
@@ -440,7 +440,7 @@ export const XTREMECLIMB: Simulation = {
       question:
         'What would the price per unit of LC be if manufacturing fixed costs were allocated based on expected sales volume (32,000 units) rather than capacity (40,000 units)?',
       formulaTex:
-        'P_{LC}^{vol} = 1.45 \\times \\left(10 + \\frac{800{,}000}{32{,}000}\\right) = 1.45 \\times (10 + 25) = \\euro 50.75',
+        'P_{LC}^{vol} = 1.45 \\times \\left(10 + \\frac{800{,}000}{32{,}000}\\right) = 1.45 \\times (10 + 25) = \\text{€} 50.75',
       formulaLegend:
         'Fixed cost per unit = 800,000 / 32,000 = \u20AC25; Full cost = 10 + 25 = \u20AC35',
       approach: [
@@ -460,7 +460,7 @@ export const XTREMECLIMB: Simulation = {
       question:
         'Compute the effect of investing in the new equipment on the cash flows of XC for 2018, 2019, 2020, and 2021.',
       formulaTex:
-        '\\Delta CF_{2018} = -900, \\quad \\Delta CF_{2019} = \\Delta CF_{2020} = \\Delta CF_{2021} = (39-29) \\times 30 + 100 = 400 \\text{ (\'000 \\euro)}',
+        '\\Delta CF_{2018} = -900, \\quad \\Delta CF_{2019} = \\Delta CF_{2020} = \\Delta CF_{2021} = (39-29) \\times 30 + 100 = 400 \\text{ (\'000 \\text{€})}',
       formulaLegend:
         'Annual savings = variable cost reduction (10 \u00D7 30,000 = 300,000) + labor savings (100,000) = 400,000',
       approach: [
@@ -480,7 +480,7 @@ export const XTREMECLIMB: Simulation = {
       question:
         'Compute the effect of investing in the new equipment on the Divisional Profit of WD for 2019, 2020, and 2021.',
       formulaTex:
-        '\\Delta \\text{Profit} = 400 - 900/3 = 400 - 300 = 100 \\text{ (\'000 \\euro) per year}',
+        '\\Delta \\text{Profit} = 400 - 900/3 = 400 - 300 = 100 \\text{ (\'000 \\text{€}) per year}',
       formulaLegend:
         'Annual savings = 400; Annual depreciation = 900/3 = 300',
       approach: [

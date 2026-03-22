@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
 import Formula from '../Formula'
 
 interface ExamPartSectionProps {
@@ -31,15 +31,6 @@ export default function ExamPartSection({
   tableTitle,
 }: ExamPartSectionProps) {
   const [revealedSet, setRevealedSet] = useState<Set<string>>(new Set())
-  const [isWide, setIsWide] = useState(false)
-  const containerRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const check = () => setIsWide(window.innerWidth >= 768)
-    check()
-    window.addEventListener('resize', check)
-    return () => window.removeEventListener('resize', check)
-  }, [])
 
   const toggleSolution = (id: string) => {
     setRevealedSet(prev => {
@@ -51,28 +42,25 @@ export default function ExamPartSection({
   }
 
   const tableElement = tableData ? (
-    <div style={{ marginBottom: isWide ? 0 : '20px' }}>
+    <div style={{ marginBottom: '20px' }}>
       {tableTitle && (
         <p style={{
           margin: '0 0 8px',
-          fontSize: '11px',
-          fontWeight: 600,
-          color: 'var(--text-muted)',
+          fontSize: '12px',
+          fontWeight: 700,
+          color: partColor,
           letterSpacing: '0.06em',
           textTransform: 'uppercase',
         }}>
-          {tableTitle}
+          📊 {tableTitle}
         </p>
       )}
       <div style={{
         overflowX: 'auto',
         background: 'var(--card)',
-        border: '1px solid var(--border)',
+        border: `1px solid ${partColor}40`,
         borderRadius: '10px',
-        ...(isWide ? {
-          position: 'sticky' as const,
-          top: '80px',
-        } : {}),
+        boxShadow: 'var(--shadow)',
       }}>
         <table style={{
           width: '100%',
@@ -171,14 +159,32 @@ export default function ExamPartSection({
 
             {/* Question body */}
             <div style={{ padding: '18px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              <p style={{
-                margin: 0,
-                fontSize: '14px',
-                color: 'var(--text-primary)',
-                lineHeight: 1.8,
+              <div style={{
+                background: 'var(--surface)',
+                border: '1px solid var(--border)',
+                borderRadius: '10px',
+                padding: '16px',
               }}>
-                {q.question}
-              </p>
+                <p style={{
+                  margin: '0 0 8px',
+                  fontSize: '11px',
+                  fontWeight: 700,
+                  color: partColor,
+                  letterSpacing: '0.06em',
+                  textTransform: 'uppercase',
+                }}>
+                  Question
+                </p>
+                <p style={{
+                  margin: 0,
+                  fontSize: '15px',
+                  color: 'var(--text-primary)',
+                  lineHeight: 1.8,
+                  fontWeight: 500,
+                }}>
+                  {q.question}
+                </p>
+              </div>
 
               {!revealed && (
                 <button
@@ -227,38 +233,59 @@ export default function ExamPartSection({
                     </div>
                   )}
 
-                  {/* Approach */}
+                  {/* Approach — Step by Step */}
                   <div style={{
-                    padding: '14px 16px',
+                    padding: '16px 18px',
                     borderBottom: '1px solid var(--border-subtle)',
                   }}>
                     <p style={{
-                      margin: '0 0 8px',
+                      margin: '0 0 12px',
                       fontSize: '11px',
-                      fontWeight: 600,
-                      color: 'var(--text-muted)',
+                      fontWeight: 700,
+                      color: 'var(--blue)',
                       letterSpacing: '0.06em',
                       textTransform: 'uppercase',
                     }}>
-                      Approach
+                      Step-by-Step Approach
                     </p>
-                    <ol style={{
-                      margin: 0,
-                      paddingLeft: '20px',
+                    <div style={{
                       display: 'flex',
                       flexDirection: 'column',
-                      gap: '6px',
+                      gap: '10px',
                     }}>
                       {q.approach.map((s, i) => (
-                        <li key={i} style={{
-                          fontSize: '13px',
-                          color: 'var(--text-secondary)',
-                          lineHeight: 1.6,
+                        <div key={i} style={{
+                          display: 'flex',
+                          gap: '12px',
+                          alignItems: 'flex-start',
                         }}>
-                          {s}
-                        </li>
+                          <span style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            width: '24px',
+                            height: '24px',
+                            borderRadius: '50%',
+                            background: 'var(--blue-soft)',
+                            color: 'var(--blue)',
+                            fontSize: '12px',
+                            fontWeight: 700,
+                            flexShrink: 0,
+                            marginTop: '2px',
+                          }}>
+                            {i + 1}
+                          </span>
+                          <p style={{
+                            margin: 0,
+                            fontSize: '14px',
+                            color: 'var(--text-secondary)',
+                            lineHeight: 1.7,
+                          }}>
+                            {s}
+                          </p>
+                        </div>
                       ))}
-                    </ol>
+                    </div>
                   </div>
 
                   {/* Answer */}
@@ -343,7 +370,7 @@ export default function ExamPartSection({
   )
 
   return (
-    <div ref={containerRef} style={{ marginBottom: '32px' }}>
+    <div style={{ marginBottom: '32px' }}>
       {/* Part header */}
       <div style={{
         borderLeft: `4px solid ${partColor}`,
@@ -370,23 +397,9 @@ export default function ExamPartSection({
         )}
       </div>
 
-      {/* Two-column or single-column layout */}
-      {tableData && isWide ? (
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '380px 1fr',
-          gap: '20px',
-          alignItems: 'start',
-        }}>
-          {tableElement}
-          {questionsElement}
-        </div>
-      ) : (
-        <>
-          {tableElement}
-          {questionsElement}
-        </>
-      )}
+      {/* Table always above questions for visibility */}
+      {tableElement}
+      {questionsElement}
     </div>
   )
 }
