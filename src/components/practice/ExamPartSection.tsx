@@ -52,7 +52,7 @@ export default function ExamPartSection({
           letterSpacing: '0.06em',
           textTransform: 'uppercase',
         }}>
-          📊 {tableTitle}
+          {tableTitle}
         </p>
       )}
       <div style={{
@@ -406,7 +406,7 @@ export default function ExamPartSection({
             letterSpacing: '0.06em',
             textTransform: 'uppercase',
           }}>
-            📋 Context for This Part
+            Context for This Part
           </p>
           <p style={{
             margin: 0,

@@ -82,7 +82,6 @@ export default function ExamMap({ onTopicSelect }: ExamMapProps) {
                   >
                     Part {part.part}
                   </span>
-                  <span style={{ fontSize: '24px', flexShrink: 0 }}>{part.icon}</span>
                   <span style={{ fontSize: '15px', fontWeight: 600, color: 'var(--text-primary)', flex: 1 }}>
                     {part.title}
                   </span>

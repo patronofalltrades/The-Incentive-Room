@@ -30,7 +30,7 @@ interface Concept {
 const CONCEPTS: Concept[] = [
   {
     id: 'variance',
-    icon: '📊',
+    icon: '',
     title: 'Variance Analysis',
     formulaTex: 'V_{vol} = (N_a - N_b) \\times CM_b',
     formulaLegend: 'N_a = actual units sold, N_b = budgeted units sold, CM_b = budgeted contribution margin per unit',
@@ -93,7 +93,7 @@ const CONCEPTS: Concept[] = [
   },
   {
     id: 'relevance',
-    icon: '⚖️',
+    icon: '',
     title: 'Relevance Analysis',
     formulaTex: '\\Delta CF = N(P - VC) \\quad \\Delta DP = N(P - VC - OH)',
     formulaLegend: 'CF = incremental cash flow, DP = incremental divisional profit, N = units, P = price, VC = variable cost, OH = allocated overhead per unit',
@@ -146,7 +146,7 @@ const CONCEPTS: Concept[] = [
   },
   {
     id: 'costAllocation',
-    icon: '🏗️',
+    icon: '',
     title: 'Cost Allocation and Pricing',
     formulaTex: 'P = (VC + \\frac{FC}{N_{base}}) \\times (1 + m)',
     formulaLegend: 'VC = variable cost per unit, FC = total fixed costs, N_{base} = allocation base (capacity or actual volume), m = markup percentage',
@@ -195,7 +195,7 @@ const CONCEPTS: Concept[] = [
   },
   {
     id: 'transfer',
-    icon: '🔄',
+    icon: '',
     title: 'Transfer Pricing',
     formulaTex: 'TP_{min} = VC_S + OC_S \\quad TP_{max} = P_{ext} - VC_B',
     formulaLegend: 'TP_{min} = seller minimum price, TP_{max} = buyer maximum price, VC_S = seller variable cost, OC_S = seller opportunity cost, P_{ext} = buyer external selling price, VC_B = buyer other variable costs',
@@ -250,7 +250,7 @@ const CONCEPTS: Concept[] = [
   },
   {
     id: 'ri',
-    icon: '📈',
+    icon: '',
     title: 'Residual Income and Investment',
     formulaTex: 'RI = DP - r \\times BV_0',
     formulaLegend: 'RI = residual income, DP = divisional profit after depreciation, r = cost of capital rate, BV_0 = book value of assets at beginning of period',
@@ -304,7 +304,7 @@ const CONCEPTS: Concept[] = [
   },
   {
     id: 'critique',
-    icon: '🔍',
+    icon: '',
     title: 'System Critique Framework',
     formulaTex: '\\text{Problem} \\to \\text{Behavioral Distortion} \\to \\text{Recommended Fix}',
     formulaLegend: 'For each of 6 dimensions: name the specific accounting issue, explain the behavioral distortion it creates for the manager, then propose a concrete alternative',
@@ -371,7 +371,6 @@ export default function Concepts() {
             alignItems: 'center',
             gap: '14px',
           }}>
-            <span style={{ fontSize: '26px' }}>{c.icon}</span>
             <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 700, color: 'var(--text-primary)' }}>
               {c.title}
             </h3>
@@ -443,7 +442,7 @@ export default function Concepts() {
             {/* Traps — Detailed */}
             <div>
               <p style={{ margin: '0 0 12px', fontSize: '11px', color: 'var(--red)', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
-                ⚠ Common Traps — Explained
+                Common Traps — Explained
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {c.traps.map((trap, i) => (
@@ -457,7 +456,7 @@ export default function Concepts() {
                     gap: '10px',
                   }}>
                     <p style={{ margin: 0, fontSize: '14px', fontWeight: 700, color: 'var(--text-primary)' }}>
-                      ⚠ {trap.title}
+                      {trap.title}
                     </p>
                     <p style={{ margin: 0, fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                       {trap.explanation}

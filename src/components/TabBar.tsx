@@ -1,3 +1,4 @@
+import { LayoutDashboard, FileText, BookOpen } from 'lucide-react'
 import type { Tab } from '../App'
 
 interface TabBarProps {
@@ -5,10 +6,10 @@ interface TabBarProps {
   onTabChange: (tab: Tab) => void
 }
 
-const TABS: { id: Tab; label: string; icon: string }[] = [
-  { id: 'home', label: 'Home', icon: '🗺' },
-  { id: 'practice', label: 'Practice', icon: '✏️' },
-  { id: 'formulas', label: 'Reference', icon: '∑' },
+const TABS: { id: Tab; label: string; Icon: typeof LayoutDashboard }[] = [
+  { id: 'home', label: 'Home', Icon: LayoutDashboard },
+  { id: 'practice', label: 'Practice', Icon: FileText },
+  { id: 'formulas', label: 'Reference', Icon: BookOpen },
 ]
 
 export default function TabBar({ activeTab, onTabChange }: TabBarProps) {
@@ -41,7 +42,7 @@ export default function TabBar({ activeTab, onTabChange }: TabBarProps) {
               transition: 'all 0.15s ease',
             }}
           >
-            <span style={{ fontSize: '17px', lineHeight: 1 }}>{tab.icon}</span>
+            <tab.Icon size={18} style={{ color: isActive ? 'var(--accent)' : 'var(--text-muted)' }} />
             <span
               style={{
                 fontSize: '10px',

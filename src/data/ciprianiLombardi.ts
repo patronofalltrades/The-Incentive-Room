@@ -114,7 +114,7 @@ export const CIPRIANI_LOMBARDI: Simulation = {
       questionTitle: 'Q1: Volume Variance',
       question: 'Compute the difference in Divisional Profit due to the change in number of pairs sold.',
       formulaTex: 'V_{vol} = (N_a - N_b) \\times CM_b = (750{,}000 - 800{,}000) \\times 8.10 = -405{,}000',
-      formulaLegend: 'N_a = 750,000, N_b = 800,000, CM_b = budgeted CM per pair = 30 − 15 − 5 − 1.40 = €8.60. Wait — CM should exclude FC. CM_b = 30 − (1.5×10) − 5 = 30 − 15 − 5 = €10.',
+      formulaLegend: 'N_a = actual pairs sold (750,000), N_b = budgeted pairs sold (800,000), CM_b = budgeted contribution margin per pair = selling price minus variable costs = 30 − 15 − 5 = €10',
       approach: [
         'Budgeted CM per pair = Price − Materials VC − Other VC = 30 − (1.5 × 10) − 5 = €10.',
         'Note: Corporate OH at €1.40/pair is also volume-dependent, so net CM = 10 − 1.40 = €8.60.',

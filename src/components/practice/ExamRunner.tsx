@@ -147,7 +147,7 @@ export default function ExamRunner({ simulation, onBack }: ExamRunnerProps) {
             alignItems: 'center',
             gap: '16px',
           }}>
-            <span style={{ fontSize: '36px' }}>📋</span>
+            <span style={{ fontSize: '14px', fontWeight: 700, color: 'var(--accent)', background: 'var(--accent-soft)', padding: '6px 12px', borderRadius: '8px' }}>Full Exam</span>
             <div>
               <p style={{
                 margin: '0 0 2px',
@@ -298,7 +298,7 @@ export default function ExamRunner({ simulation, onBack }: ExamRunnerProps) {
             borderBottom: '1px solid var(--border-subtle)',
             textAlign: 'center',
           }}>
-            <span style={{ fontSize: '40px', display: 'block', marginBottom: '12px' }}>🎉</span>
+            <span style={{ fontSize: '14px', fontWeight: 700, color: 'var(--green)', background: 'var(--green-soft)', padding: '6px 14px', borderRadius: '8px', display: 'inline-block', marginBottom: '12px' }}>Complete</span>
             <h2 style={{
               margin: '0 0 4px',
               fontSize: '22px',

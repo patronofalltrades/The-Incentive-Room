@@ -28,7 +28,7 @@ export const EXAM_PARTS: ExamPart[] = [
   {
     part: 1,
     title: 'Variance Analysis',
-    icon: '📊',
+    icon: '',
     tagline: 'Decompose the gap between budgeted and actual profit into its underlying drivers.',
     pattern: 'You receive a Budget versus Actual table showing units sold, selling price, variable costs, and fixed costs. Your job is to build a variance waterfall that traces each deviation.',
     dataIn: 'Budget and Actual figures for units sold, selling price per unit, variable cost per unit, and total fixed costs',
@@ -67,7 +67,7 @@ export const EXAM_PARTS: ExamPart[] = [
   {
     part: 2,
     title: 'Pricing and Relevance',
-    icon: '⚖️',
+    icon: '',
     tagline: 'Determine whether the company and the division manager should accept a special order.',
     pattern: 'A new client offers to buy a specific quantity at a given price. You must compute the incremental cash flow for the company and the incremental divisional profit for the manager, then check for goal incongruence.',
     dataIn: 'Offer price, additional volume, variable cost per unit, and the corporate overhead allocation rate',
@@ -100,7 +100,7 @@ export const EXAM_PARTS: ExamPart[] = [
   {
     part: 3,
     title: 'Transfer Pricing',
-    icon: '🔄',
+    icon: '',
     tagline: 'Find the transfer price range where both divisions benefit from internal trade.',
     pattern: 'Division A buys from Division B. You must find the minimum and maximum transfer price that achieves goal congruence, then test whether standard transfer pricing methods fall within that range.',
     dataIn: 'Seller variable cost, seller allocated fixed costs, buyer external selling price, buyer other costs, and corporate overhead per unit',
@@ -133,7 +133,7 @@ export const EXAM_PARTS: ExamPart[] = [
   {
     part: 4,
     title: 'Investment and Residual Income',
-    icon: '📈',
+    icon: '',
     tagline: 'Evaluate whether an investment improves residual income and how depreciation affects bonus timing.',
     pattern: 'The company is considering an investment of a given amount over a specified number of years. You must build a year-by-year table showing book value, divisional profit, residual income, and bonus under different depreciation methods.',
     dataIn: 'Investment amount, useful life, annual incremental operating profit, cost of capital rate, and depreciation method',
@@ -166,7 +166,7 @@ export const EXAM_PARTS: ExamPart[] = [
   {
     part: 5,
     title: 'System Critique',
-    icon: '🔍',
+    icon: '',
     tagline: 'Identify what is broken in the control system and explain the behavioral distortion it creates.',
     pattern: 'The exam asks you to analyze several elements of the management control system. Structure your answer across five to six dimensions, naming the problem, the behavior it causes, and the recommended fix.',
     dataIn: 'The full case scenario and any numerical results from Parts 1 through 4',
