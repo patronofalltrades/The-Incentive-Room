@@ -15,11 +15,20 @@ const KEY_INSIGHTS: Record<number, string> = {
   5: 'For each dimension, state the problem, name the behavioral distortion, and propose a concrete fix. Never describe the accounting without explaining the incentive consequence.',
 }
 
-interface ExamMapProps {
-  onNavigate: (tab: Tab) => void
+const PART_TOPIC: Record<number, string> = {
+  1: 'variance-analysis',
+  2: 'relevance-analysis',
+  3: 'transfer-pricing',
+  4: 'residual-income',
+  5: 'system-critique',
 }
 
-export default function ExamMap({ onNavigate }: ExamMapProps) {
+interface ExamMapProps {
+  onNavigate: (tab: Tab) => void
+  onTopicSelect?: (topicId: string) => void
+}
+
+export default function ExamMap({ onTopicSelect }: ExamMapProps) {
   const [expanded, setExpanded] = useState<number | null>(null)
 
   return (
@@ -193,13 +202,13 @@ export default function ExamMap({ onNavigate }: ExamMapProps) {
                       </div>
                     </div>
 
-                    {/* Weight + Quick Practice */}
+                    {/* Weight + Learn & Practice */}
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                       <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
                         Weight: {part.weight}
                       </span>
                       <button
-                        onClick={() => onNavigate('practice')}
+                        onClick={() => onTopicSelect?.(PART_TOPIC[part.part])}
                         style={{
                           padding: '8px 18px',
                           background: part.color,
@@ -211,7 +220,7 @@ export default function ExamMap({ onNavigate }: ExamMapProps) {
                           cursor: 'pointer',
                         }}
                       >
-                        Quick Practice →
+                        Learn and Practice →
                       </button>
                     </div>
                   </div>

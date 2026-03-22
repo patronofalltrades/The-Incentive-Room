@@ -646,9 +646,10 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Amounts in \'000 $. RI impact = Profit impact − 15% × Book Value at start of year. BV: start 2021 = 90, start 2022 = 60, start 2023 = 30.',
       approach: [
-        '2021: ΔRI = 42 − 30 − 0.15 × 90 = 12 − 13.5 = −$1,500.',
-        '2022: ΔRI = 42 − 30 − 0.15 × 60 = 12 − 9 = +$3,000.',
-        '2023: ΔRI = 42 − 30 − 0.15 × 30 = 12 − 4.5 = +$7,500.',
+        'Step 1: Residual Income = Divisional Profit − Capital Charge. The capital charge = 15% × Book Value at start of year. RI penalizes the division for tying up capital, encouraging efficient asset use.',
+        'Step 2: 2021: Book value at start = $90,000 (full cost). Capital charge = 15% × $90,000 = $13,500. ΔRI = $12,000 (profit impact) − $13,500 = −$1,500. The capital charge exceeds the profit gain in year 1.',
+        'Step 3: 2022: Book value = $90,000 − $30,000 = $60,000. Capital charge = 15% × $60,000 = $9,000. ΔRI = $12,000 − $9,000 = +$3,000.',
+        'Step 4: 2023: Book value = $30,000. Capital charge = 15% × $30,000 = $4,500. ΔRI = $12,000 − $4,500 = +$7,500. RI improves each year as book value (and thus capital charge) declines through depreciation.',
       ],
       answer:
         '2021: −$1,500 | 2022: +$3,000 | 2023: +$7,500',
@@ -666,9 +667,10 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Amounts in \'000 $. Bonus = 10% × max(0, ΔRI year-over-year). Change in RI: 2021 = −1.5, 2022 = +4.5 (from −1.5 to +3), 2023 = +4.5 (from +3 to +7.5).',
       approach: [
-        '2021: ΔRI = −1.5 (decrease from baseline) → Bonus = $0.',
-        '2022: Change in RI vs 2021 = 3 − (−1.5) = +4.5 → Bonus = 10% × 4,500 = $450.',
-        '2023: Change in RI vs 2022 = 7.5 − 3 = +4.5 → Bonus = 10% × 4,500 = $450.',
+        'Step 1: Nancy\u2019s bonus under RI = 10% of the increase in RI relative to the prior year. If RI decreases, the bonus is zero. The bonus rewards RI growth, not the RI level.',
+        'Step 2: 2021: ΔRI = −$1,500 (a decrease from baseline). Since RI fell, Nancy\u2019s bonus = $0. She gets no reward in the first year of a value-creating investment.',
+        'Step 3: 2022: Change in RI vs 2021 = $3,000 − (−$1,500) = +$4,500. Bonus = 10% × $4,500 = $450.',
+        'Step 4: 2023: Change in RI vs 2022 = $7,500 − $3,000 = +$4,500. Bonus = 10% × $4,500 = $450. The bonus-on-improvement structure creates a delayed incentive, which could discourage managers from making positive-NPV investments.',
       ],
       answer:
         '2021: $0 | 2022: $450 | 2023: $450',
@@ -683,13 +685,13 @@ export const FRESHBREAD: Simulation = {
       question:
         'Analyze the following elements of FB\'s internal accounting and incentive systems and propose alternatives: (1) the variance analysis, (2) the cost system for product profitability, (3) the internal transfer pricing policy, (4) the performance measure, (5) the monetary incentives. Also comment on the idle capacity treatment (Parts 1.b, 2.b, 4.c) and residual income (Part 5.b).',
       approach: [
-        'Variance analysis: Adding Gourmand calls for product mix analysis. Decomposing volume into market size vs. share would improve insight. "Other variable costs" and fixed costs should be broken down further for transparency.',
-        'Cost system: Revenue-based allocation (system #1) is rough. Higher-priced products like Gourmand may consume fewer production resources per unit despite higher per-unit cost. An ABC system would provide more accurate product profitability.',
-        'Transfer pricing: Full-cost TP ($9.38) destroys goal congruence. An external market exists, so market-based TP is preferable. At minimum, TP should be between VC ($4.50) and client price minus transport ($6). For occasional transfers, negotiated pricing may work best.',
-        'Performance measure: As an investment center, Division 1 should use a metric that reflects capital employed (e.g., RI or ROI). Current Divisional Profit ignores investment. Using RI makes Nancy forgo a bonus in 2021 for a positive-NPV investment. Changing the depreciation schedule (e.g., annuity depreciation) could fix the year-1 disincentive.',
-        'Incentives: Annual bonuses based solely on financial performance may induce short-termism. Non-financial measures (quality, customer satisfaction) should complement. Compensation based on a moving target (year-over-year improvement) can lead to ratchet effects (recall Vyaderm). Consider multi-year bonus pools or deferred compensation.',
-        'Idle capacity (Parts 1.b, 2.b, 4.c): Excluding idle capacity from Divisional Profit has pros and cons. If division managers can influence capacity utilization (likely in investment centers), charging idle capacity incentivizes them to reduce it. However, in extreme low-demand situations, excluding it avoids penalizing managers for uncontrollable factors. Part 4.c shows a downside: it destroys goal congruence for internal transfers.',
-        'Residual income (Part 5.b): RI improves capital discipline but the bonus-on-improvement scheme means no bonus in year 1 of a positive-NPV investment. A different depreciation schedule or a level-based bonus could fix this.',
+        'Step 1 \u2014 Variance analysis: The current decomposition is a good starting point but has gaps. Adding Gourmand creates a need for product mix variance analysis (how much of the volume change is due to shifting product mix?). Decomposing the volume variance into market size vs. market share would yield more actionable insight. The catch-all "other variable costs" and fixed costs should be broken down further for transparency and controllability.',
+        'Step 2 \u2014 Cost system: Revenue-based allocation (system #1) is crude. It assumes each revenue dollar consumes the same proportion of fixed resources, which ignores actual resource usage. Gourmand (multigrain) may require different production processes than Regular bread. An Activity-Based Costing (ABC) system would trace costs to activities (mixing, baking, packaging) and allocate based on actual resource consumption, giving more accurate product profitability.',
+        'Step 3 \u2014 Transfer pricing: The full-cost TP ($9.38) far exceeds the goal-congruent range ($4.50\u2013$6.00), destroying goal congruence. Since an external market exists ($6/box), a market-based TP would be most appropriate. For occasional one-off transfers, negotiated pricing between divisions may work, subject to a TP floor at variable cost and a ceiling at market price.',
+        'Step 4 \u2014 Performance measure: As an investment center, Division 1 should use a metric reflecting capital employed (RI or ROI), not just Divisional Profit. However, RI with straight-line depreciation creates a year-1 disincentive (Q26\u2013Q27). Annuity depreciation or a level-based bonus (rather than improvement-based) could fix this timing distortion.',
+        'Step 5 \u2014 Incentives: Annual bonuses based solely on year-over-year financial improvement create ratchet effects (managers sandbag after a good year) and short-termism. Non-financial measures (quality, customer satisfaction, market share) should complement financial ones. Multi-year bonus pools or deferred compensation reduce gaming incentives.',
+        'Step 6 \u2014 Idle capacity (Parts 1.b, 2.b, 4.c): Excluding idle capacity helps in some contexts (Part 2.b: does not distort the Gourmand decision) but destroys goal congruence in others (Part 4.c: makes internal transfers impossible). The key trade-off: if managers control capacity utilization, charging idle capacity incentivizes them to use it; but if demand is uncontrollable, it penalizes them unfairly.',
+        'Step 7 \u2014 Residual income (Part 5.b): RI improves capital discipline vs. Divisional Profit, but the bonus-on-improvement scheme means no bonus in year 1 of a positive-NPV investment. A different depreciation schedule (annuity depreciation) or a level-based bonus (rewarding RI level rather than improvement) would better align incentives with value creation.',
       ],
       answer:
         'Key issues: (1) Full-cost TP destroys goal congruence ($9.38 vs. range $4.50–$6.00), (2) revenue-based cost allocation is too rough for product profitability — consider ABC, (3) idle capacity exclusion helps in some contexts (Part 2.b) but destroys goal congruence in others (Part 4.c), (4) RI discourages investment in year 1, (5) year-over-year bonus creates ratchet risk and short-termism.',

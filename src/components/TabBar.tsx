@@ -6,11 +6,9 @@ interface TabBarProps {
 }
 
 const TABS: { id: Tab; label: string; icon: string }[] = [
-  { id: 'exam-map', label: 'Exam Map', icon: '🗺' },
-  { id: 'concepts', label: 'Concepts', icon: '🧠' },
-  { id: 'discovery', label: 'Discovery', icon: '🔬' },
+  { id: 'home', label: 'Home', icon: '🗺' },
   { id: 'practice', label: 'Practice', icon: '✏️' },
-  { id: 'formulas', label: 'Formulas', icon: '∑' },
+  { id: 'formulas', label: 'Reference', icon: '∑' },
 ]
 
 export default function TabBar({ activeTab, onTabChange }: TabBarProps) {

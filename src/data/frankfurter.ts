@@ -44,16 +44,15 @@ export const FRANKFURTER: Simulation = {
       formulaLegend:
         'CM per unit = selling price \u2212 material cost \u2212 labor cost per unit \u2212 marketing cost per unit',
       approach: [
-        'Budgeted unit contribution margin = 4.00 \u2212 0.85 \u2212 (15/300) \u2212 0.30 = \u20AC2.80.',
-        'Budgeted profit = 1,500,000 \u00D7 2.80 \u2212 900,000 = \u20AC3,300,000.',
-        'Actual profit = 1,200,000 \u00D7 3.70 \u2212 1,200,000 \u00D7 0.80 \u2212 (1,200,000/250) \u00D7 15 \u2212 1,200,000 \u00D7 0.40 \u2212 950,000 = \u20AC1,978,000.',
-        'Note: the column for labor cost per hour is omitted because there is no variation from the budget.',
-        'Sales volume variance = (0.8 \u2212 1) \u00D7 1,500,000 \u00D7 2.80 = \u2212\u20AC840,000.',
-        'Selling price variance = 0.8 \u00D7 1,500,000 \u00D7 (3.70 \u2212 4.00) = \u2212\u20AC360,000.',
-        'Material price variance = \u22120.8 \u00D7 1,500,000 \u00D7 (0.80 \u2212 0.85) = +\u20AC60,000.',
-        'Labor efficiency variance = \u22120.8 \u00D7 1,500,000 \u00D7 (15/250 \u2212 15/300) = \u2212\u20AC12,000.',
-        'Marketing cost variance = \u22120.8 \u00D7 1,500,000 \u00D7 (0.40 \u2212 0.30) = \u2212\u20AC120,000.',
-        'Fixed OH variance = \u2212(950,000 \u2212 900,000) = \u2212\u20AC50,000.',
+        'Step 1: Compute budgeted profit as the starting point. Budgeted labor cost per sausage = \u20AC15 / 300 = \u20AC0.05. Budgeted contribution margin per unit = \u20AC4.00 \u2212 \u20AC0.85 \u2212 \u20AC0.05 \u2212 \u20AC0.30 = \u20AC2.80. Budgeted profit = 1,500,000 \u00D7 \u20AC2.80 \u2212 \u20AC900,000 = \u20AC3,300,000.',
+        'Step 2: Compute actual profit. Actual labor cost per sausage = \u20AC15 / 250 = \u20AC0.06. Actual profit = 1,200,000 \u00D7 (\u20AC3.70 \u2212 \u20AC0.80 \u2212 \u20AC0.06 \u2212 \u20AC0.40) \u2212 \u20AC950,000 = 1,200,000 \u00D7 \u20AC2.44 \u2212 \u20AC950,000 = \u20AC1,978,000. Total variance = \u20AC1,978,000 \u2212 \u20AC3,300,000 = \u2212\u20AC1,322,000.',
+        'Step 3: Compute the sales volume variance. This isolates the impact of selling fewer units at the budgeted contribution margin. Volume ratio = 1,200,000 / 1,500,000 = 0.80 (80% of plan). Volume variance = (0.80 \u2212 1) \u00D7 1,500,000 \u00D7 \u20AC2.80 = \u22120.20 \u00D7 \u20AC4,200,000 = \u2212\u20AC840,000. This is the largest single variance.',
+        'Step 4: Compute the selling price variance. Evaluated at actual volume to avoid double-counting: 1,200,000 \u00D7 (\u20AC3.70 \u2212 \u20AC4.00) = 1,200,000 \u00D7 (\u2212\u20AC0.30) = \u2212\u20AC360,000. The premium price eroded, possibly due to competitive pressure.',
+        'Step 5: Compute the material price variance. Material cost fell from \u20AC0.85 to \u20AC0.80 per sausage. Variance = \u22121,200,000 \u00D7 (\u20AC0.80 \u2212 \u20AC0.85) = +\u20AC60,000. Favorable: cheaper materials were sourced.',
+        'Step 6: Compute the labor efficiency variance. Budget: \u20AC15/300 = \u20AC0.05/sausage. Actual: \u20AC15/250 = \u20AC0.06/sausage. Variance = \u22121,200,000 \u00D7 (\u20AC0.06 \u2212 \u20AC0.05) = \u2212\u20AC12,000. Unfavorable: lower productivity (250 vs. 300 sausages/hour). Note: the hourly labor rate stayed at \u20AC15, so there is no input price variance for labor.',
+        'Step 7: Compute the marketing cost variance. Budget: \u20AC0.30. Actual: \u20AC0.40. Variance = \u22121,200,000 \u00D7 (\u20AC0.40 \u2212 \u20AC0.30) = \u2212\u20AC120,000. Unfavorable: higher marketing spend per sausage, possibly an attempt to stimulate weak demand.',
+        'Step 8: Compute the fixed overhead variance. Fixed costs rose from \u20AC900,000 to \u20AC950,000. Variance = \u2212(\u20AC950,000 \u2212 \u20AC900,000) = \u2212\u20AC50,000. Unfavorable.',
+        'Step 9: Reconcile. Total = \u2212\u20AC840,000 \u2212 \u20AC360,000 + \u20AC60,000 \u2212 \u20AC12,000 \u2212 \u20AC120,000 \u2212 \u20AC50,000 = \u2212\u20AC1,322,000. Matches the total profit shortfall.',
       ],
       answer:
         'Sales volume: \u2212\u20AC840,000; Selling price: \u2212\u20AC360,000; Material price: +\u20AC60,000; Labor efficiency: \u2212\u20AC12,000; Marketing cost: \u2212\u20AC120,000; Fixed OH: \u2212\u20AC50,000. Total change: \u2212\u20AC1,322,000 (from \u20AC3,300,000 to \u20AC1,978,000).',
@@ -68,9 +67,10 @@ export const FRANKFURTER: Simulation = {
       question:
         'Provide a possible interpretation for the analysis.',
       approach: [
-        'The company has performed poorly along all dimensions.',
-        'One possible exception is that the firm obtained materials at a lower price than planned (+\u20AC60,000 favorable).',
-        'However, the saving in material costs could have come at the expense of lower production efficiency (perhaps those materials were of poorer quality and required extra work, as reflected in the labor efficiency variance of \u2212\u20AC12,000).',
+        'Step 1: Assess overall performance. The company performed poorly along nearly all dimensions. Volume fell 20%, price dropped \u20AC0.30, marketing costs rose, labor productivity declined, and fixed costs increased. Only material costs improved.',
+        'Step 2: Explore possible causal links. The favorable material price variance (+\u20AC60,000) could be related to the unfavorable labor efficiency variance (\u2212\u20AC12,000). Cheaper materials may have been of lower quality, requiring more labor time per sausage (250 vs. 300 per hour). If true, the net effect is \u20AC60,000 \u2212 \u20AC12,000 = +\u20AC48,000, still favorable, but the link suggests the material savings are partially illusory.',
+        'Step 3: Consider the demand picture. The volume shortfall (\u2212\u20AC840k) and price decline (\u2212\u20AC360k) together account for \u20AC1.2M of the \u20AC1.32M shortfall. This suggests a fundamental demand problem \u2014 perhaps the premium positioning is under pressure. The increased marketing spend (+\u20AC120k unfavorable) may have been an unsuccessful attempt to combat the demand weakness.',
+        'Step 4: Note the optimistic budgeting. Frank is described as an "eternal optimist." The 1,500,000 target may have been unrealistically ambitious, making the variances look worse than actual performance warrants.',
       ],
       answer:
         'The company has performed poorly along all dimensions. The only favorable variance is material cost, but this saving may have contributed to lower labor productivity (lower quality materials requiring more work).',

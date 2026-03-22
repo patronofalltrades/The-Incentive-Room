@@ -2,12 +2,11 @@ import { useState, useEffect, createContext, useContext } from 'react'
 import { Moon, Sun } from 'lucide-react'
 import TabBar from './components/TabBar'
 import ExamMap from './components/ExamMap'
-import Concepts from './components/Concepts'
-import Discovery from './components/Discovery'
 import Practice from './components/Practice'
 import Formulas from './components/Formulas'
+import TopicHub from './components/TopicHub'
 
-export type Tab = 'exam-map' | 'concepts' | 'discovery' | 'practice' | 'formulas'
+export type Tab = 'home' | 'practice' | 'formulas'
 
 interface ThemeContextType {
   isDark: boolean
@@ -18,7 +17,8 @@ export const ThemeContext = createContext<ThemeContextType>({ isDark: false, tog
 export const useTheme = () => useContext(ThemeContext)
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<Tab>('exam-map')
+  const [activeTab, setActiveTab] = useState<Tab>('home')
+  const [topicView, setTopicView] = useState<string | null>(null)
   const [isDark, setIsDark] = useState(() => {
     const saved = localStorage.getItem('theme')
     return saved === 'dark'
@@ -30,6 +30,16 @@ export default function App() {
   }, [isDark])
 
   const toggle = () => setIsDark(prev => !prev)
+
+  const handleTopicSelect = (topicId: string) => {
+    setTopicView(topicId)
+    window.scrollTo({ top: 0 })
+  }
+
+  const handleTopicBack = () => {
+    setTopicView(null)
+    window.scrollTo({ top: 0 })
+  }
 
   return (
     <ThemeContext.Provider value={{ isDark, toggle }}>
@@ -88,15 +98,19 @@ export default function App() {
 
         {/* Main content */}
         <main style={{ flex: 1, overflowY: 'auto', padding: '20px 24px 8px' }}>
-          {activeTab === 'exam-map' && <ExamMap onNavigate={setActiveTab} />}
-          {activeTab === 'concepts' && <Concepts />}
-          {activeTab === 'discovery' && <Discovery />}
-          {activeTab === 'practice' && <Practice />}
-          {activeTab === 'formulas' && <Formulas />}
+          {topicView ? (
+            <TopicHub topicId={topicView} onBack={handleTopicBack} onTopicSelect={handleTopicSelect} />
+          ) : (
+            <>
+              {activeTab === 'home' && <ExamMap onNavigate={setActiveTab} onTopicSelect={handleTopicSelect} />}
+              {activeTab === 'practice' && <Practice />}
+              {activeTab === 'formulas' && <Formulas />}
+            </>
+          )}
         </main>
 
         {/* Tab Bar */}
-        <TabBar activeTab={activeTab} onTabChange={setActiveTab} />
+        <TabBar activeTab={activeTab} onTabChange={(tab) => { setTopicView(null); setActiveTab(tab) }} />
       </div>
     </ThemeContext.Provider>
   )

@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import { ChevronRight, ArrowLeft, Star, Clock, HelpCircle } from 'lucide-react'
+import { ChevronRight, Star, Clock, HelpCircle } from 'lucide-react'
 import ExamRunner from './practice/ExamRunner'
-import Formula from './Formula'
 import { ARTISAN_GARDENERS } from '../data/artisanGardeners'
 import type { Simulation } from '../data/artisanGardeners'
 import { LE_BISTROT_PARISIEN } from '../data/leBistrotParisien'
@@ -25,8 +24,6 @@ import { CRAZY_OFFICE } from '../data/crazyOffice'
 import { MACHTEX } from '../data/machtex'
 import { FRANKFURTER } from '../data/frankfurter'
 import { WEATHER_CORP } from '../data/weatherCorp'
-import { TOPIC_PROBLEMS } from '../data/topicProblems'
-import type { TopicProblem } from '../data/topicProblems'
 import { EXAM_INDEX } from '../data/examIndex'
 import { TOPIC_LABELS } from '../data/types'
 import type { ExamIndexEntry } from '../data/types'
@@ -63,12 +60,8 @@ const TIER_META: Record<1 | 2 | 3, { label: string; color: string; bg: string; d
   3: { label: 'Target', color: 'var(--blue)', bg: 'var(--blue-soft)', description: 'Target specific weak spots' },
 }
 
-const TOPIC_FILTER_LIST = ['All', 'Variance Analysis', 'Transfer Pricing', 'Residual Income', 'Relevance Analysis', 'Cost Allocation'] as const
-
 export default function Practice() {
-  const [view, setView] = useState<'list' | 'topic-detail' | string>('list')
-  const [tab, setTab] = useState<'exams' | 'topics'>('exams')
-  const [topicFilter, setTopicFilter] = useState('All')
+  const [view, setView] = useState<string>('list')
 
   /* ── Exam runner view ── */
   const examData = EXAM_DATA[view]
@@ -76,125 +69,41 @@ export default function Practice() {
     return <ExamRunner simulation={examData} onBack={() => setView('list')} />
   }
 
-  /* ── Topic detail view ── */
-  if (view.startsWith('topic-')) {
-    const problemId = view.replace('topic-', '')
-    const problem = TOPIC_PROBLEMS.find(p => p.id === problemId)
-    if (!problem) { setView('list'); return null }
-    return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-        <button onClick={() => setView('list')} style={{ display: 'flex', alignItems: 'center', gap: '6px', background: 'none', border: 'none', cursor: 'pointer', color: 'var(--accent)', fontSize: '14px', fontWeight: 600, padding: 0 }}>
-          <ArrowLeft size={16} /> Back to Practice
-        </button>
-        <TopicProblemCard problem={problem} />
-      </div>
-    )
-  }
-
-  /* ── List view ── */
-  const filteredProblems = topicFilter === 'All' ? TOPIC_PROBLEMS : TOPIC_PROBLEMS.filter(p => p.topic === topicFilter)
-
+  /* ── Exam selector ── */
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-      {/* Tab switcher */}
-      <div style={{ display: 'flex', gap: '0', borderRadius: '10px', overflow: 'hidden', border: '1px solid var(--border)' }}>
-        {(['exams', 'topics'] as const).map(t => (
-          <button
-            key={t}
-            onClick={() => setTab(t)}
-            style={{
-              flex: 1, padding: '10px', border: 'none', cursor: 'pointer', fontSize: '14px', fontWeight: 600,
-              background: tab === t ? 'var(--accent)' : 'var(--card)',
-              color: tab === t ? '#ffffff' : 'var(--text-secondary)',
-              transition: 'all 0.15s ease',
-            }}
-          >
-            {t === 'exams' ? 'Full Exams' : 'Topic Based'}
-          </button>
-        ))}
-      </div>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+      <p style={{ margin: 0, fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+        Select an exam case to simulate. Work through all parts with data tables and step-by-step solutions.
+      </p>
 
-      {/* ═══════ Full Exams Tab ═══════ */}
-      {tab === 'exams' && (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-          <p style={{ margin: 0, fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-            Select an exam case to work through all parts. Questions are grouped by part with data tables alongside for context.
-          </p>
+      {([1, 2, 3] as const).map(tier => {
+        const tierExams = EXAM_INDEX.filter(e => e.tier === tier)
+        const meta = TIER_META[tier]
+        return (
+          <div key={tier} style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            {/* Tier header */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{
+                fontSize: '11px', fontWeight: 700, color: meta.color,
+                background: meta.bg, padding: '4px 12px', borderRadius: '8px',
+                letterSpacing: '0.06em', textTransform: 'uppercase',
+              }}>
+                Tier {tier} — {meta.label}
+              </span>
+              <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>{meta.description}</span>
+            </div>
 
-          {([1, 2, 3] as const).map(tier => {
-            const tierExams = EXAM_INDEX.filter(e => e.tier === tier)
-            const meta = TIER_META[tier]
-            return (
-              <div key={tier} style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                {/* Tier header */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <span style={{
-                    fontSize: '11px', fontWeight: 700, color: meta.color,
-                    background: meta.bg, padding: '4px 12px', borderRadius: '8px',
-                    letterSpacing: '0.06em', textTransform: 'uppercase',
-                  }}>
-                    Tier {tier} — {meta.label}
-                  </span>
-                  <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>{meta.description}</span>
-                </div>
-
-                {/* Exam cards */}
-                {tierExams.map(exam => (
-                  <ExamCard
-                    key={exam.id}
-                    exam={exam}
-                    onSelect={() => setView(exam.id)}
-                  />
-                ))}
-              </div>
-            )
-          })}
-        </div>
-      )}
-
-      {/* ═══════ Topic Based Tab ═══════ */}
-      {tab === 'topics' && (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-            {TOPIC_FILTER_LIST.map(t => (
-              <button
-                key={t}
-                onClick={() => setTopicFilter(t)}
-                style={{
-                  padding: '6px 14px', borderRadius: '8px', border: 'none', cursor: 'pointer', fontSize: '12px', fontWeight: 500,
-                  background: topicFilter === t ? 'var(--accent)' : 'var(--card-hover)',
-                  color: topicFilter === t ? '#ffffff' : 'var(--text-secondary)',
-                  transition: 'all 0.15s ease',
-                }}
-              >
-                {t}
-              </button>
+            {/* Exam cards */}
+            {tierExams.map(exam => (
+              <ExamCard
+                key={exam.id}
+                exam={exam}
+                onSelect={() => setView(exam.id)}
+              />
             ))}
           </div>
-
-          {filteredProblems.map(problem => (
-            <button
-              key={problem.id}
-              onClick={() => setView(`topic-${problem.id}`)}
-              style={{
-                display: 'flex', alignItems: 'center', gap: '16px', padding: '16px 20px',
-                background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '14px',
-                cursor: 'pointer', textAlign: 'left', width: '100%', boxShadow: 'var(--shadow)',
-              }}
-            >
-              <div style={{ flex: 1 }}>
-                <p style={{ margin: '0 0 2px', fontSize: '11px', color: 'var(--text-muted)', fontWeight: 500 }}>{problem.topic}</p>
-                <h3 style={{ margin: '0 0 2px', fontSize: '15px', fontWeight: 700, color: 'var(--text-primary)' }}>{problem.title}</h3>
-                <p style={{ margin: 0, fontSize: '12px', color: 'var(--text-muted)' }}>{problem.questions.length} question{problem.questions.length > 1 ? 's' : ''}</p>
-              </div>
-              <span style={{ fontSize: '12px', color: problem.difficultyColor, background: problem.difficultyBg, padding: '4px 10px', borderRadius: '8px', fontWeight: 500, flexShrink: 0 }}>
-                {problem.difficulty}
-              </span>
-              <ChevronRight size={18} style={{ color: 'var(--text-muted)', flexShrink: 0 }} />
-            </button>
-          ))}
-        </div>
-      )}
+        )
+      })}
     </div>
   )
 }
@@ -270,54 +179,3 @@ function ExamCard({ exam, onSelect }: { exam: ExamIndexEntry; onSelect: () => vo
   )
 }
 
-/* ── Topic Problem Card (unchanged from before) ── */
-function TopicProblemCard({ problem }: { problem: TopicProblem }) {
-  return (
-    <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '14px', overflow: 'hidden', boxShadow: 'var(--shadow)' }}>
-      <div style={{ padding: '16px 20px', borderBottom: '1px solid var(--border-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <div>
-          <p style={{ margin: '0 0 2px', fontSize: '11px', color: 'var(--text-muted)' }}>{problem.topic}</p>
-          <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 700, color: 'var(--text-primary)' }}>{problem.title}</h3>
-        </div>
-        <span style={{ fontSize: '12px', color: problem.difficultyColor, background: problem.difficultyBg, padding: '4px 10px', borderRadius: '8px', fontWeight: 500 }}>{problem.difficulty}</span>
-      </div>
-      <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-        <div style={{ background: 'var(--card-hover)', borderRadius: '10px', padding: '14px' }}>
-          <p style={{ margin: 0, fontSize: '14px', color: 'var(--text-primary)', lineHeight: 1.7 }}>{problem.scenario}</p>
-        </div>
-        {problem.questions.map((q, i) => (
-          <details key={i} style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '10px', overflow: 'hidden' }}>
-            <summary style={{ padding: '14px 16px', fontSize: '14px', color: 'var(--text-primary)', cursor: 'pointer', listStyle: 'none', display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-              <span style={{ color: 'var(--accent)', fontWeight: 700, flexShrink: 0 }}>Q{i + 1}</span>
-              <span style={{ lineHeight: 1.6 }}>{q.text}</span>
-              <span style={{ marginLeft: 'auto', color: 'var(--text-muted)', flexShrink: 0, fontSize: '12px' }}>Reveal →</span>
-            </summary>
-            <div style={{ borderTop: '1px solid var(--border-subtle)', display: 'flex', flexDirection: 'column' }}>
-              {q.formulaTex && (
-                <div style={{ padding: '14px 16px', borderBottom: '1px solid var(--border-subtle)' }}>
-                  <Formula tex={q.formulaTex} legend={q.formulaLegend} />
-                </div>
-              )}
-              <div style={{ padding: '14px 16px', borderBottom: '1px solid var(--border-subtle)' }}>
-                <ol style={{ margin: 0, paddingLeft: '18px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                  {q.approach.map((s, j) => (
-                    <li key={j} style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{s}</li>
-                  ))}
-                </ol>
-              </div>
-              <div style={{ padding: '14px 16px', background: 'var(--green-soft)', borderBottom: '1px solid var(--border-subtle)' }}>
-                <p style={{ margin: 0, fontSize: '14px', color: 'var(--text-primary)', fontWeight: 600 }}>{q.answer}</p>
-              </div>
-              <div style={{ padding: '14px 16px', background: 'rgba(251, 191, 36, 0.08)', borderLeft: '4px solid #f59e0b' }}>
-                <p style={{ margin: 0, fontSize: '13px', color: 'var(--text-primary)', lineHeight: 1.6 }}>
-                  <span role="img" aria-label="lightbulb" style={{ marginRight: '6px' }}>💡</span>
-                  {q.keyTakeaway}
-                </p>
-              </div>
-            </div>
-          </details>
-        ))}
-      </div>
-    </div>
-  )
-}

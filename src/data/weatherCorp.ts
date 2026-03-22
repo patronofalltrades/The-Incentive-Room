@@ -48,12 +48,10 @@ export const WEATHER_CORP: Simulation = {
       formulaLegend:
         'Incremental revenue (600 \u00D7 $200) minus incremental labor ($40,000), material ($34,000), and variable overhead ($30,000)',
       approach: [
-        'Incremental revenue = 600 \u00D7 $200 = $120,000.',
-        'Incremental labor costs = $40,000.',
-        'Incremental material costs = $34,000.',
-        'Incremental variable overhead = $30,000.',
-        'Incremental profit = $120,000 \u2212 $40,000 \u2212 $34,000 \u2212 $30,000 = $16,000.',
-        'The order should be accepted because it makes a positive contribution.',
+        'Step 1: Apply the relevance principle. From the company-wide perspective, only incremental costs and revenues matter. Fixed overhead ($80,000) is incurred regardless of the decision because the division has idle capacity. Existing product costs and the transfer price are unaffected and irrelevant.',
+        'Step 2: Compute incremental revenue. 600 units \u00D7 $200 = $120,000.',
+        'Step 3: Compute incremental costs. Additional direct labor = $40,000. Additional direct materials = $34,000. Additional variable overhead = $30,000. Total incremental costs = $104,000. Fixed overhead does not increase (idle capacity).',
+        'Step 4: Compute net effect. Incremental profit = $120,000 \u2212 $104,000 = +$16,000. The order should be accepted because it makes a positive contribution to Weather Corp\'s profit.',
       ],
       answer:
         'Yes, the order should be accepted. Weather Corp. earns $16,000 more profit.',
@@ -72,15 +70,13 @@ export const WEATHER_CORP: Simulation = {
       formulaLegend:
         'TP_A = transfer price if order accepted, TP_R = transfer price if rejected; the change in allocated OH per internal unit changes the transfer price',
       approach: [
-        'Without the new customer: total indirect costs = $240,000; total direct labor = $80,000; allocation rate = 240,000/80,000 = 3. Overhead allocated to internal product = 3 \u00D7 $40,000 = $120,000 per product line.',
-        'With the new customer: total indirect costs = $240,000 + $30,000 = $270,000; total direct labor = $80,000 + $40,000 = $120,000; allocation rate = 270,000/120,000 = 2.25. Overhead allocated to internal product = 2.25 \u00D7 $40,000 = $90,000.',
-        'Transfer price without new customer: TP_R per unit = 1.15 \u00D7 (60,000 + 40,000 + 120,000)/1,000 = 1.15 \u00D7 220 = $253.',
-        'Transfer price with new customer: TP_A per unit = 1.15 \u00D7 (60,000 + 40,000 + 90,000)/1,000 = 1.15 \u00D7 190 = $218.50.',
-        'Change in transfer price per unit: $218.50 \u2212 $253 = \u2212$34.50.',
-        'Change in internal revenue: \u2212$34.50 \u00D7 1,000 = \u2212$34,500.',
-        'Direct gain from new order: $16,000.',
-        'Net effect on HOT profit: \u2212$34,500 + $16,000 = \u2212$18,500.',
-        'HOT would not accept the order because it reduces divisional profit.',
+        'Step 1: Compute the overhead allocation rate without the new order. Total indirect costs = $240,000. Total direct labor = $40,000 (internal) + $40,000 (external) = $80,000. Allocation rate = $240,000 / $80,000 = 3.0. Overhead allocated to internal product = 3.0 \u00D7 $40,000 = $120,000.',
+        'Step 2: Compute the transfer price without the new order. Full cost of internal product = direct materials ($60,000) + direct labor ($40,000) + allocated OH ($120,000) = $220,000 for 1,000 units = $220/unit. Transfer price = 1.15 \u00D7 $220 = $253/unit. Total internal revenue = $253,000.',
+        'Step 3: Compute the overhead allocation rate with the new order. Total indirect costs = $240,000 + $30,000 (new variable OH) = $270,000. Total direct labor = $80,000 + $40,000 (new) = $120,000. New allocation rate = $270,000 / $120,000 = 2.25. Overhead allocated to internal product = 2.25 \u00D7 $40,000 = $90,000.',
+        'Step 4: Compute the new transfer price. Full cost of internal product = $60,000 + $40,000 + $90,000 = $190,000 for 1,000 units = $190/unit. New TP = 1.15 \u00D7 $190 = $218.50/unit. Total internal revenue = $218,500.',
+        'Step 5: Compute the revenue loss on internal sales. The lower allocation rate reduces the transfer price by $253 \u2212 $218.50 = $34.50/unit. Revenue loss on 1,000 internal units = \u2212$34,500. This is the hidden cost: accepting the new order spreads overhead over more products, lowering the per-unit rate and thus the cost-plus transfer price.',
+        'Step 6: Compute total effect on HOT. Gain from new order = +$16,000 (same as company-wide). Loss on internal revenue = \u2212$34,500. Net effect = \u2212$18,500. HOT would reject the order.',
+        'Step 7: Identify the distortion. The accounting system creates a perverse incentive: accepting a profitable order ($16k for the company) reduces HOT\'s divisional profit by $18.5k because the lower overhead allocation rate mechanically reduces the cost-plus transfer price on existing internal sales.',
       ],
       answer:
         'No, the HOT division would not accept the order. Accepting the order reduces HOT\'s divisional profit by $18,500 because the lower overhead allocation rate reduces the transfer price charged to COLD, losing $34,500 on internal sales while gaining only $16,000 from the new order.',
@@ -95,12 +91,12 @@ export const WEATHER_CORP: Simulation = {
       question:
         'Do you think there is a problem with the internal accounting system? If so, how would you fix it?',
       approach: [
-        'There is a lack of goal congruence: the HOT division might not accept the order while accepting is in the best interest of the company.',
-        'The root problem is that accepting the new customer changes the allocation of indirect costs and thus affects the transfer price on internal sales.',
-        'Fix 1: Define a fixed allocation of indirect costs, e.g., compute the allocation rate based on maximum capacity rather than actual usage, so it does not change when new orders are accepted.',
-        'Fix 2: Define transfer prices based on a standard set at the beginning of the year that is not subject to variations driven by changes in production during the year.',
-        'Fix 3: Measure the consumption of variable overhead by client rather than allocating it.',
-        'Fix 4: Base managerial compensation on corporate profits instead of divisional profits.',
+        'Step 1: Confirm the goal congruence failure. HOT rejects an order that benefits Weather Corp by $16,000. This is a clear failure of the internal accounting system to align divisional incentives with corporate interests.',
+        'Step 2: Diagnose the root cause. The problem has two interacting components: (a) overhead is allocated based on actual direct labor costs, so the rate changes whenever production volume changes; (b) the transfer price is set at full cost plus 15%, meaning any change in the allocation rate mechanically changes the TP. Together, these create a feedback loop where accepting new business lowers the TP on existing internal business.',
+        'Step 3: Propose Fix 1 \u2014 Capacity-based allocation. Compute the allocation rate based on maximum (or budgeted) capacity rather than actual usage. This keeps the rate constant regardless of new orders, eliminating the perverse feedback effect.',
+        'Step 4: Propose Fix 2 \u2014 Pre-determined transfer prices. Set transfer prices at the beginning of the year based on budgeted costs and volumes. Changes in actual production during the year would not affect the TP, removing the disincentive to accept profitable orders.',
+        'Step 5: Propose Fix 3 \u2014 Direct measurement of variable OH. Instead of allocating variable overhead using an average rate, measure the actual variable OH consumed by each product directly. This prevents the new customer\'s variable OH from reducing the allocation to the internal product.',
+        'Step 6: Propose Fix 4 \u2014 Corporate-level compensation. Base managerial bonuses on corporate profits instead of (or in addition to) divisional profits. This gives HOT\'s manager an incentive to consider the company-wide impact.',
       ],
       answer:
         'Yes, there is a goal congruence problem. Fixes include: (1) use capacity-based allocation rates instead of actual-volume rates, (2) set transfer prices based on pre-determined standards, (3) directly measure variable OH consumption by client, or (4) base compensation on corporate-level profits.',

@@ -52,11 +52,10 @@ export const CRAZY_OFFICE: Simulation = {
       formulaLegend:
         'Service dept cost ($360,000) divided by total machine hours (52,000 + 8,000 = 60,000)',
       approach: [
-        'Service department cost = $360,000.',
-        'Total machine hours = 52,000 (Machining) + 8,000 (Assembly) = 60,000.',
-        'Allocation rate = $360,000 / 60,000 = $6 per machine hour.',
-        'Allocated to Machining: $6 \u00D7 52,000 = $312,000.',
-        'Allocated to Assembly: $6 \u00D7 8,000 = $48,000.',
+        'Step 1: Identify the allocation base. The existing cost system uses a two-stage process. In stage 1, service department costs are allocated to production departments using machine hours as the allocation base. The rationale is that service department effort (engineering, management) is assumed to correlate with machine utilization.',
+        'Step 2: Compute total machine hours. Total = 52,000 (Machining) + 8,000 (Assembly) = 60,000 machine hours.',
+        'Step 3: Compute the allocation rate. Rate = $360,000 / 60,000 = $6 per machine hour.',
+        'Step 4: Apply to each department. Machining receives $6 \u00D7 52,000 = $312,000. Assembly receives $6 \u00D7 8,000 = $48,000. Total = $360,000 (check). Machining absorbs 87% of service costs because it uses 87% of machine hours.',
       ],
       answer: 'The allocation rate is $6 per machine hour.',
       keyTakeaway:
@@ -74,15 +73,13 @@ export const CRAZY_OFFICE: Simulation = {
       formulaLegend:
         'Machining dept own costs ($192,000) + allocated service ($312,000) = $504,000. Allocated using direct labor hours.',
       approach: [
-        'Machining dept total cost = $192,000 (own) + $312,000 (service allocation) = $504,000.',
-        'Machining allocation rate = $504,000 / 28,000 DLH = $18/DLH.',
-        'But more precisely: Dept rate = $192,000/28,000 = $6.857/DLH; Service rate = $312,000/28,000 = $11.143/DLH.',
-        'Regular: ($6.857 \u00D7 15,000) + ($11.143 \u00D7 15,000) = $102,855 + $167,145 = $269,850 (approx).',
-        'Luxury: ($6.857 \u00D7 13,000) + ($11.143 \u00D7 13,000) = $89,141 + $144,859 = $233,870 (approx).',
-        'Check: $269,850 + $233,870 \u2248 $503,720 (rounding).',
+        'Step 1: Compute total Machining department cost pool. In stage 2, each production department allocates its full cost pool (own costs + allocated service costs) to products. Machining total = $192,000 (own) + $312,000 (service allocation from Q1) = $504,000.',
+        'Step 2: Determine the allocation base. Stage 2 uses direct labor hours (DLH) to allocate costs to products. Machining DLH: Regular = 15,000, Luxury = 13,000, Total = 28,000.',
+        'Step 3: Compute the department allocation rate. Rate = $504,000 / 28,000 DLH = $18/DLH.',
+        'Step 4: Allocate to products. Regular: $18 \u00D7 15,000 = $270,000 (approximately). Luxury: $18 \u00D7 13,000 = $234,000 (approximately). The split is roughly proportional to labor hours, which is the key limitation of this system \u2014 it assumes all overhead correlates with labor time.',
       ],
       answer:
-        'From the Machining department: Regular staplers receive approximately $269,850 and Luxury staplers receive approximately $233,870.',
+        'From the Machining department: Regular staplers receive approximately $270,000 and Luxury staplers receive approximately $234,000.',
       keyTakeaway:
         'The allocation from Machining is based on direct labor hours, so the product with more labor hours in machining receives more overhead.',
     },
@@ -94,18 +91,14 @@ export const CRAZY_OFFICE: Simulation = {
       question:
         'With the existing cost system, what is the total manufacturing cost (in $) of one Regular stapler and one Luxury stapler?',
       formulaTex:
-        '\\text{Regular} = \\frac{420{,}000 + 269{,}850 + 81{,}000}{300{,}000} = \\$2.57',
+        '\\text{Regular} = \\frac{420{,}000 + 270{,}000 + 81{,}000}{300{,}000} \\approx \\$2.57',
       formulaLegend:
-        'Assembly allocation: Dept rate = $168,000/8,000; Service rate = $48,000/8,000. Regular: (21+6)\u00D73,000 = $81,000; Luxury: (21+6)\u00D75,000 = $135,000',
+        'Assembly allocation: Rate = $216,000/8,000 = $27/DLH. Regular: $27\u00D73,000 = $81,000; Luxury: $27\u00D75,000 = $135,000',
       approach: [
-        'Assembly dept total = $168,000 + $48,000 = $216,000.',
-        'Assembly allocation rate = $216,000 / 8,000 DLH = $27/DLH.',
-        'Regular from Assembly: $27 \u00D7 3,000 = $81,000.',
-        'Luxury from Assembly: $27 \u00D7 5,000 = $135,000.',
-        'Regular total cost = $420,000 (direct) + $269,850 (machining) + $81,000 (assembly) = $770,850.',
-        'Cost per Regular = $770,850 / 300,000 = $2.57.',
-        'Luxury total cost = $400,000 (direct) + $233,870 (machining) + $135,000 (assembly) = $768,870.',
-        'Cost per Luxury = $768,870 / 200,000 = $3.84.',
+        'Step 1: Compute Assembly department cost pool and allocation. Assembly total = $168,000 (own) + $48,000 (service) = $216,000. Rate = $216,000 / 8,000 DLH = $27/DLH. Regular from Assembly: $27 \u00D7 3,000 = $81,000. Luxury from Assembly: $27 \u00D7 5,000 = $135,000.',
+        'Step 2: Sum total costs for Regular. Direct costs = $420,000. Machining overhead = $270,000. Assembly overhead = $81,000. Total = $771,000 (approximately). Cost per unit = $771,000 / 300,000 = $2.57.',
+        'Step 3: Sum total costs for Luxury. Direct costs = $400,000. Machining overhead = $234,000. Assembly overhead = $135,000. Total = $769,000 (approximately). Cost per unit = $769,000 / 200,000 = $3.84.',
+        'Step 4: Note the key observation. Under the existing system, both products receive roughly equal total overhead ($351k vs. $369k) because they consume equal total direct labor hours (18,000 each). This peanut-butter spreading may mask important cost differences that ABC would reveal.',
       ],
       answer:
         'Cost per Regular stapler: $2.57. Cost per Luxury stapler: $3.84.',
@@ -124,13 +117,11 @@ export const CRAZY_OFFICE: Simulation = {
       formulaLegend:
         'Orders: Regular = 300k/5k = 60, Luxury = 200k/2k = 100. Setup hours: Regular = 60\u00D73 = 180, Luxury = 100\u00D75 = 500. Total = 680.',
       approach: [
-        'Cost driver quantities: Regular orders = 300,000/5,000 = 60; Luxury orders = 200,000/2,000 = 100. Total orders = 160.',
-        'Setup hours: Regular = 60 \u00D7 3 = 180; Luxury = 100 \u00D7 5 = 500. Total = 680.',
-        'Allocation rates: Machining = $112,000/28,000 = $4/hr; Assembly = $96,000/8,000 = $12/hr; Orders = $240,000/250 = $960/order (based on max capacity); Setup = $272,000/680 = $400/hr.',
-        'Regular overhead: 4\u00D715,000 + 12\u00D73,000 + 960\u00D760 + 400\u00D7180 = 60,000 + 36,000 + 57,600 + 72,000 = $225,600.',
-        'Luxury overhead: 4\u00D713,000 + 12\u00D75,000 + 960\u00D7100 + 400\u00D7500 = 52,000 + 60,000 + 96,000 + 200,000 = $408,000.',
-        'Regular total = ($420,000 + $225,600) / 300,000 = $2.15.',
-        'Luxury total = ($400,000 + $408,000) / 200,000 = $4.04.',
+        'Step 1: Compute cost driver quantities. Regular orders = 300,000 / 5,000 = 60 orders. Luxury orders = 200,000 / 2,000 = 100 orders. Regular setup hours = 60 \u00D7 3 = 180 hours. Luxury setup hours = 100 \u00D7 5 = 500 hours. Total setup hours = 680.',
+        'Step 2: Compute ABC activity rates. Machining = $112,000 / 28,000 = $4/labor hour. Assembly = $96,000 / 8,000 = $12/labor hour. Order handling = $240,000 / 250 = $960/order (based on maximum capacity, not actual). Setup = $272,000 / 680 = $400/setup hour. Using maximum capacity for orders means idle capacity cost ($960 \u00D7 90 unused orders = $86,400) is excluded from product costs.',
+        'Step 3: Allocate to Regular. Machining: $4 \u00D7 15,000 = $60,000. Assembly: $12 \u00D7 3,000 = $36,000. Orders: $960 \u00D7 60 = $57,600. Setup: $400 \u00D7 180 = $72,000. Total overhead = $225,600. Total cost = ($420,000 + $225,600) / 300,000 = $2.15.',
+        'Step 4: Allocate to Luxury. Machining: $4 \u00D7 13,000 = $52,000. Assembly: $12 \u00D7 5,000 = $60,000. Orders: $960 \u00D7 100 = $96,000. Setup: $400 \u00D7 500 = $200,000. Total overhead = $408,000. Total cost = ($400,000 + $408,000) / 200,000 = $4.04.',
+        'Step 5: Compare with the traditional system. Regular: $2.15 (ABC) vs. $2.57 (traditional) \u2014 the traditional system overcosted Regular by $0.42. Luxury: $4.04 (ABC) vs. $3.84 (traditional) \u2014 the traditional system undercosted Luxury by $0.20. This cross-subsidization explains Crazy Office\'s declining profitability: the Luxury model is more expensive than previously thought.',
       ],
       answer:
         'ABC cost per Regular stapler: $2.15. ABC cost per Luxury stapler: $4.04.',
@@ -145,8 +136,9 @@ export const CRAZY_OFFICE: Simulation = {
       question:
         'Why is the cost of staplers with the ABC system different from the cost with the existing cost system?',
       approach: [
-        'Reason #1: The existing system allocates service costs (setup, orders) using direct labor hours, which are equal for both products (18,000 each). But the actual consumption of these activities differs significantly: Luxury has many more orders (100 vs. 60) and much more setup time (500 vs. 180 hours).',
-        'Reason #2: The ABC system does not allocate idle capacity for the handling of orders activity (actual 160 orders vs. max 250). The existing system implicitly allocates all costs including idle capacity.',
+        'Step 1: Explain the misalignment of cost drivers. The existing system allocates all overhead (including order handling and setup) based on direct labor hours. Both products consume equal total labor hours (18,000 each), so they receive roughly equal overhead. But the actual consumption of activities differs dramatically: Luxury has 100 orders vs. Regular\'s 60, and 500 setup hours vs. Regular\'s 180. The traditional system cannot capture these differences because it uses a single allocation base.',
+        'Step 2: Explain the idle capacity treatment. The ABC system allocates order handling costs based on maximum capacity (250 orders), meaning idle capacity costs (90 unused order slots \u00D7 $960 = $86,400) are excluded from product costs. The traditional system implicitly allocates all costs, including idle capacity, to products. This is a conceptual improvement \u2014 products should not be penalized for unused capacity.',
+        'Step 3: Conclude. ABC provides more accurate product costs because it uses activity-specific cost drivers that reflect actual resource consumption patterns. When the traditional allocation base (direct labor hours) does not correlate with the actual drivers of overhead costs (orders, setups), the traditional system systematically cross-subsidizes: it overcharges the simple, high-volume product (Regular) and undercharges the complex, lower-volume product (Luxury).',
       ],
       answer:
         'Two reasons: (1) The existing system uses direct labor hours to allocate service costs, which are equal for both products, but actual activity consumption (orders, setup) differs significantly. (2) The ABC system excludes idle capacity costs from the order handling activity (160/250 orders).',

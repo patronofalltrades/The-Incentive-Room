@@ -47,10 +47,10 @@ export const DIME_LURBENTS: Simulation = {
       formulaLegend:
         'If TEFA buys externally, the company loses $15 per unit (pays $135 externally vs. $120 variable cost internally) across 1,000 units',
       approach: [
-        'If TEFA purchases internally, Dime Lurbents incurs variable cost of $120 \u00D7 1,000 = $120,000.',
-        'If TEFA purchases externally, Dime Lurbents pays $135 \u00D7 1,000 = $135,000.',
-        'The fixed costs of TEPP ($20 \u00D7 1,000 = $20,000) are sunk and incurred regardless.',
-        'Difference: buying externally costs the company $15,000 more.',
+        'Step 1: Apply the relevance principle. Only costs that change with the decision are relevant. TEPP\'s fixed costs ($20/unit = $20,000 total) are sunk \u2014 the specialized equipment is already installed and has no alternative use. These costs will be incurred regardless of whether TEFA buys from TEPP or not.',
+        'Step 2: Compare the relevant alternatives. If TEFA buys internally: Dime Lurbents incurs TEPP\'s variable cost = $120 \u00D7 1,000 = $120,000. If TEFA buys externally: Dime Lurbents pays the external supplier $135 \u00D7 1,000 = $135,000 (and still pays TEPP\'s fixed costs of $20,000 regardless).',
+        'Step 3: Compute the company-wide impact. Buying externally costs $135,000 vs. $120,000 internally \u2014 a net loss of $15,000 for the company. The fixed costs cancel out because they are incurred either way.',
+        'Step 4: Conclude. The company is worse off if TEFA sources externally. Internal sourcing saves $15/unit \u00D7 1,000 units = $15,000. The key insight: TEPP\'s fixed costs are irrelevant to this decision because the equipment has no alternative use.',
       ],
       answer:
         'No. The company as a whole is better off if TEFA purchases the part from TEPP rather than from outside suppliers. Buying externally costs $15,000 more.',
@@ -69,9 +69,10 @@ export const DIME_LURBENTS: Simulation = {
       formulaLegend:
         'TEPP needs TP > variable cost ($120) to benefit; TEFA needs TP < external price ($135) to prefer internal sourcing',
       approach: [
-        'TEPP perspective: Revenue = TP \u00D7 1,000; Variable cost = $120 \u00D7 1,000. TEPP gains if (TP \u2212 120) \u00D7 1,000 > 0, so TP > $120.',
-        'TEFA perspective: Internal cost = TP \u00D7 1,000; External cost = $135 \u00D7 1,000. TEFA gains if (\u2212TP + 135) \u00D7 1,000 > 0, so TP < $135.',
-        'Thus, the range is $120 < TP < $135.',
+        'Step 1: Determine the seller\'s floor price. TEPP (the seller) will only sell internally if the transfer price exceeds its incremental cost. Since fixed costs are sunk, TEPP\'s incremental cost is just the variable cost: $120/unit. Additionally, since there is no alternative use for the equipment, there is no opportunity cost. Seller\'s floor = $120.',
+        'Step 2: Determine the buyer\'s ceiling price. TEFA (the buyer) will only buy internally if the transfer price is below its best external alternative: $135/unit. Buyer\'s ceiling = $135.',
+        'Step 3: Establish the feasible range. For goal congruence, TP must satisfy both conditions: TP > $120 (TEPP earns a contribution) AND TP < $135 (TEFA prefers internal over external). The goal-congruent range is $120 < TP < $135.',
+        'Step 4: Interpret the range. Any TP in this range makes both divisions better off from internal trade, which aligns with the company\'s interest. The exact TP determines how the $15/unit surplus is split between the two divisions.',
       ],
       answer:
         'Minimum transfer price: $120. Maximum transfer price: $135.',
@@ -86,10 +87,9 @@ export const DIME_LURBENTS: Simulation = {
       question:
         'Is there a goal congruence problem? How would you fix it?',
       approach: [
-        'At TP = $150, there is a goal congruence problem: while it is in the best interest of the company that TEFA purchases from TEPP, TEFA would not be willing to do so and instead would resort to outside suppliers.',
-        'The root of the problem is that TEPP invested in new equipment without considering the market (TEFA\'s outside opportunities). Given that this is a relation-specific investment, TEPP should have consulted TEFA.',
-        'Since divisions have discretion to set prices, they can negotiate the transfer price. Given that the equipment investment is a sunk cost, TEPP will probably accept a price of $135 (unless they can sell externally at $150).',
-        'Another possibility: headquarters could set a corporate policy dictating that internal transfers be executed at market prices or at full manufacturing cost plus a mark-up (e.g., 10%).',
+        'Step 1: Identify the problem. At TP = $150 (TEPP\'s proposed price), TEFA would source externally at $135 because $150 > $135. But we showed in Q1 that internal sourcing saves the company $15,000. There is a goal congruence failure: TEFA\'s divisionally rational decision hurts the company.',
+        'Step 2: Diagnose the root cause. TEPP set its price at full cost ($120 + $20 = $140) plus a markup, yielding $150. The problem is that TEPP invested in specialized equipment without considering TEFA\'s external alternatives. This is a relation-specific investment \u2014 the equipment only produces parts for TEFA \u2014 and TEPP is now trying to recover sunk costs through the transfer price.',
+        'Step 3: Propose solutions. (a) Negotiation: since divisions have pricing discretion, they can negotiate. TEPP\'s rational fallback is any price above $120 (better than idle equipment). TEFA\'s ceiling is $135. A negotiated price between $120 and $135 would resolve the dispute. (b) Corporate policy: headquarters could mandate that internal transfers occur at market price ($135) or at a cost-plus price within the $120\u2013$135 range. (c) Prospective fix: before making relation-specific investments, divisions should negotiate transfer terms in advance to avoid hold-up problems.',
       ],
       answer:
         'Yes, there is a goal congruence problem at TP = $150. Solutions include letting divisions negotiate the price (TEPP would likely accept $135), or having headquarters set a policy based on market prices or cost-plus markup.',

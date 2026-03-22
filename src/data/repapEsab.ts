@@ -63,10 +63,10 @@ export const REPAP_ESAB: Simulation = {
       formulaLegend:
         'Upstream variable cost = $10 + $58 = $68; Downstream variable cost = $80 + $10 = $90; Revenue = $650/unit',
       approach: [
-        'Accept & produce internally: Revenue = $650 \u00D7 1,000 = $650,000; Upstream variable cost = $68 \u00D7 1,000 = $68,000; Downstream variable cost = $90 \u00D7 1,000 = $90,000. Profit = $492,000.',
-        'Accept & outsource intermediate: Revenue = $650,000; External purchase = $250 \u00D7 1,000 = $250,000; Downstream variable cost = $90,000. Profit = $310,000.',
-        'Reject: Profit = $0.',
-        'Accepting and producing internally yields the highest profit.',
+        'Step 1: Identify relevant costs. With idle capacity in both divisions, only variable costs are relevant \u2014 fixed costs and corporate overhead are incurred regardless of the decision. Upstream variable cost = $10 + $58 = $68/unit. Downstream variable cost = $80 + $10 = $90/unit.',
+        'Step 2: Evaluate accepting and producing internally. Revenue = $650 \u00D7 1,000 = $650,000. Variable costs = ($68 + $90) \u00D7 1,000 = $158,000. Contribution = $650,000 \u2212 $158,000 = $492,000.',
+        'Step 3: Evaluate accepting and outsourcing the intermediate. Revenue = $650,000. External purchase = $250 \u00D7 1,000 = $250,000. Downstream variable cost = $90,000. Contribution = $650,000 \u2212 $250,000 \u2212 $90,000 = $310,000.',
+        'Step 4: Compare all options. Accept internally: +$492k. Accept with outsourcing: +$310k. Reject: $0. Accepting and producing internally is clearly the best option because the internal variable cost ($68) is far below the external price ($250).',
       ],
       answer:
         'Yes. Accepting Adam\'s order is in shareholders\' best interest. Best option: accept and produce internally ($492,000 > $310,000 > $0).',
@@ -81,9 +81,9 @@ export const REPAP_ESAB: Simulation = {
       question:
         'What is in the best interest of shareholders: to produce the intermediate product internally or to outsource it?',
       approach: [
-        'Internal production profit: $492,000.',
-        'External sourcing profit: $310,000.',
-        'Internal production is better by $182,000.',
+        'Step 1: Compare the two sourcing options. Internal production profit = $492,000 (from Q1). External sourcing profit = $310,000 (from Q1).',
+        'Step 2: Compute the difference. Internal is better by $492,000 \u2212 $310,000 = $182,000. This equals the savings from producing at $68/unit internally vs. buying at $250/unit externally: ($250 \u2212 $68) \u00D7 1,000 = $182,000.',
+        'Step 3: Explain why. The large gap between internal variable cost ($68) and external price ($250) makes internal sourcing strongly preferable. The external price reflects the supplier\'s own costs, margins, and fixed cost recovery, whereas internally REC only incurs its variable costs because fixed costs are already sunk.',
       ],
       answer:
         'Internal production is in shareholders\' best interest ($492,000 vs. $310,000).',
@@ -102,11 +102,11 @@ export const REPAP_ESAB: Simulation = {
       formulaLegend:
         'Upstream needs TP > 268 (variable + fixed + OH = 68 + 100 + 100); Downstream needs TP < 260 (650 \u2212 90 \u2212 200 \u2212 100). No TP satisfies both.',
       approach: [
-        'Upstream divisional profit from internal: (TP \u2212 68 \u2212 100 \u2212 100) \u00D7 1,000 = (TP \u2212 268) \u00D7 1,000.',
-        'Downstream divisional profit from internal: (650 \u2212 TP \u2212 90 \u2212 200 \u2212 100) \u00D7 1,000 = (260 \u2212 TP) \u00D7 1,000.',
-        'For both to benefit: TP > 268 AND TP < 260. This is impossible.',
-        'None of the four policies achieves goal congruence. The sum of divisional profit changes is always negative regardless of TP.',
-        'The source of the problem is the corporate OH charge ($100 per unit per division = $200 total), which penalizes both divisions and offsets the positive contribution margin.',
+        'Step 1: Determine each division\'s breakeven transfer price. Upstream divisional profit from internal trade = (TP \u2212 variable cost \u2212 fixed cost \u2212 corporate OH) \u00D7 1,000 = (TP \u2212 $68 \u2212 $100 \u2212 $100) \u00D7 1,000 = (TP \u2212 $268) \u00D7 1,000. Upstream needs TP > $268 to show positive divisional profit.',
+        'Step 2: Downstream divisional profit = ($650 \u2212 TP \u2212 $90 \u2212 $200 \u2212 $100) \u00D7 1,000 = ($260 \u2212 TP) \u00D7 1,000. Downstream needs TP < $260 to show positive divisional profit.',
+        'Step 3: Check for a feasible range. For both to benefit: TP > $268 AND TP < $260. This is mathematically impossible \u2014 the ranges do not overlap.',
+        'Step 4: Diagnose the root cause. The combined divisional profit is always negative regardless of TP because the corporate OH charge ($100/unit per division = $200 total) exceeds the margin available. The company earns +$492k, but the accounting system assigns $200k in OH that makes the sum of divisional profits negative.',
+        'Step 5: Conclude. None of the four policies achieves goal congruence. The volume-based corporate overhead allocation destroys the incentive for internal trade by imposing $200/unit in overhead that the divisions cannot recover.',
       ],
       answer:
         'None of the four policies achieves goal congruence. No TP exists where both divisions gain from the internal trade, because the $200/unit combined corporate OH charge exceeds the margin available for distribution.',
@@ -125,10 +125,11 @@ export const REPAP_ESAB: Simulation = {
       formulaLegend:
         'Eve\'s profit = (270 \u2212 68) \u00D7 2,000 = $404,000. Option B allows serving both Adam (externally sourced) and Eve.',
       approach: [
-        'Option A (accept Adam, produce internally, drop Eve): $492,000 + $0 = $492,000.',
-        'Option B (accept Adam, buy externally, keep Eve): Adam profit = $310,000; Eve profit = (270 \u2212 68) \u00D7 2,000 = $404,000. Total = $714,000.',
-        'Option C (reject Adam, keep Eve): $0 + $404,000 = $404,000.',
-        'Option B maximizes company profits at $714,000.',
+        'Step 1: Compute Eve\'s contribution. Eve offers $270/unit for 2,000 units of corrugating medium. Variable cost = $68/unit. Contribution = ($270 \u2212 $68) \u00D7 2,000 = $404,000.',
+        'Step 2: Evaluate Option A (Adam internal, drop Eve). Adam contribution = $492,000. Eve contribution = $0 (dropped). Total = $492,000.',
+        'Step 3: Evaluate Option B (Adam external, keep Eve). Adam contribution with external sourcing = $310,000. Eve contribution = $404,000. Total = $714,000. This option is possible because buying the intermediate externally frees upstream capacity for Eve.',
+        'Step 4: Evaluate Option C (reject Adam, keep Eve). Eve contribution = $404,000. Total = $404,000.',
+        'Step 5: Compare. Option B ($714k) > Option A ($492k) > Option C ($404k). The key insight: when upstream is at capacity, the opportunity cost of producing Adam\'s intermediate internally is the forgone profit from Eve. Option B avoids this opportunity cost by outsourcing Adam\'s intermediate.',
       ],
       answer:
         'Option B: Accept Adam\'s order and buy corrugating medium externally ($714,000). This allows serving both Adam and Eve.',
@@ -147,10 +148,10 @@ export const REPAP_ESAB: Simulation = {
       formulaLegend:
         'Full cost TP = $268 per unit. Adam yields zero divisional profit. Eve yields $4,000.',
       approach: [
-        'At full cost TP = $268: Upstream profit from Adam = (268 \u2212 268) \u00D7 1,000 = $0.',
-        'Upstream profit from Eve = (270 \u2212 268) \u00D7 2,000 = $4,000.',
-        'The upstream division favors Eve (and thus Accept & Externally for Adam).',
-        'This aligns with the company-optimal decision (Option B).',
+        'Step 1: Compute the full cost transfer price. Full cost = variable ($68) + fixed ($100) + corporate OH ($100) = $268/unit.',
+        'Step 2: Compute upstream profit from Adam at full cost TP. Upstream profit = ($268 \u2212 $268) \u00D7 1,000 = $0. At full cost, upstream exactly breaks even on internal transfers \u2014 by definition, there is no margin.',
+        'Step 3: Compute upstream profit from Eve. Eve pays $270/unit externally. Upstream profit = ($270 \u2212 $268) \u00D7 2,000 = $4,000. Eve provides a small but positive margin.',
+        'Step 4: Conclude. Upstream prefers Eve ($4k > $0). This leads upstream to favor Option B (serve Eve externally, let downstream buy Adam\'s intermediate from outside). This happens to align with the company-optimal decision.',
       ],
       answer:
         'At full cost TP ($268), the upstream division favors Eve ($4,000 profit vs. $0 from Adam). This leads to Option B, which is also optimal for the company.',
@@ -165,11 +166,9 @@ export const REPAP_ESAB: Simulation = {
       question:
         'If possible, propose a transfer pricing policy that achieves goal congruence in this case.',
       approach: [
-        'Any transfer price achieves goal congruence in this case.',
-        'For the upstream division to prefer Adam over Eve (i.e., Accept & Internally): (TP \u2212 268) \u00D7 1,000 > 4,000, so TP > $272.',
-        'But at TP > $272, the downstream division loses: (260 \u2212 272) \u00D7 1,000 = \u2212$12,000 < 0.',
-        'So the downstream division would never accept internal sourcing at TP > $272.',
-        'As a result, any TP naturally steers both divisions toward Option B (external sourcing for Adam), which is the company-optimal outcome.',
+        'Step 1: Analyze the incentive structure. For upstream to prefer Adam over Eve (i.e., choose Option A): (TP \u2212 $268) \u00D7 1,000 > $4,000, so TP > $272. But downstream would lose at TP > $272: ($260 \u2212 $272) \u00D7 1,000 = \u2212$12,000 < 0. So downstream would reject internal sourcing at any TP that makes upstream prefer Adam.',
+        'Step 2: Recognize the natural alignment. At any TP \u2264 $272, upstream prefers Eve over Adam. And downstream, knowing upstream prefers Eve, would source Adam\'s intermediate externally. The result is Option B (both Adam and Eve served).',
+        'Step 3: Conclude. Any transfer price achieves goal congruence in this scenario. The capacity constraint naturally aligns incentives: upstream always prefers the more profitable external client (Eve), and downstream can still serve Adam by buying externally. The divisions naturally converge on the company-optimal Option B regardless of the specific TP.',
       ],
       answer:
         'Any transfer price achieves goal congruence. At any TP, the upstream division prefers Eve (Accept & Externally), and the downstream accepts Adam with external sourcing. The divisions naturally choose the company-optimal Option B.',
