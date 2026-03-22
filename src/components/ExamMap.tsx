@@ -8,11 +8,11 @@ const DIFFICULTY_COLOR = { 1: 'var(--green)', 2: 'var(--amber)', 3: 'var(--red)'
 const DIFFICULTY_BG = { 1: 'var(--green-soft)', 2: 'var(--amber-soft)', 3: 'var(--red-soft)' } as const
 
 const KEY_INSIGHTS: Record<number, string> = {
-  1: 'Each variance isolates one driver. The order matters: always start with volume, then work through price, efficiency, input cost, and fixed costs.',
-  2: 'The company sees cash flows. The manager sees divisional profit. When they disagree, there is goal incongruence \u2014 and that is the exam question.',
-  3: 'The transfer price range exists where both divisions prefer to trade. If the policy transfer price falls outside this range, value-creating trade will not occur.',
-  4: 'Residual income charges the division for capital used. As the asset depreciates, the charge shrinks and residual income improves mechanically \u2014 this is not real performance improvement.',
-  5: 'For each dimension, state the problem, name the behavioral distortion, and propose a concrete fix. Never describe the accounting without explaining the incentive consequence.',
+  1: 'On the exam, check whether an inflation adjustment is needed before computing variances. If inflation is given, the budgeted price and cost must be restated first — otherwise every variance after volume will be wrong.',
+  2: 'The exam typically asks: "Should the company accept?" then "Would the manager accept?" If the answers differ, you must name the cause (usually allocated overhead) and suggest a fix such as basing the bonus on cash flow instead.',
+  3: 'When the exam gives both idle and full capacity scenarios, the seller floor changes because opportunity cost appears at full capacity. Always recompute the goal-congruent range for each scenario separately.',
+  4: 'The exam often asks you to compute residual income across multiple years. Watch for the mechanical improvement as book value falls — if the bonus rises each year on a flat cash-flow investment, that is the distortion you must flag.',
+  5: 'On the exam, structure your critique around the specific numbers you computed earlier. Reference your variance, transfer pricing, and residual income results to show exactly where the system breaks down and what incentive it creates.',
 }
 
 const PART_TOPIC: Record<number, string> = {
