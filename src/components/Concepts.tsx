@@ -1,4 +1,5 @@
 import VarianceSandbox from './VarianceSandbox'
+import Formula from './Formula'
 
 const CONCEPTS = [
   {
@@ -6,6 +7,8 @@ const CONCEPTS = [
     icon: '📊',
     title: 'Variance Analysis',
     formula: 'Volume Variance = (Actual Units Sold − Budgeted Units Sold) × Budgeted Contribution Margin per Unit',
+    formulaTex: 'V_{vol} = (N_a - N_b) \\times CM_b',
+    formulaLegend: 'N_a = actual units sold, N_b = budgeted units sold, CM_b = budgeted contribution margin per unit',
     intuition: 'Break the gap between budgeted and actual profit into its underlying causes: units sold, selling price charged, production efficiency, and input costs. Each variance tells you which driver is responsible for the deviation.',
     examPattern: 'Given a Budget versus Actual table with unit-level data, build a waterfall chart that traces the path from Budgeted Profit to Actual Profit, with each variance shown as a step.',
     traps: [
@@ -20,6 +23,8 @@ const CONCEPTS = [
     icon: '⚖️',
     title: 'Relevance Analysis',
     formula: 'Accept the order if: Incremental Cash Flow is greater than zero (company view) AND Incremental Divisional Profit is greater than zero (manager view)',
+    formulaTex: '\\Delta CF = N(P - VC) \\quad \\Delta DP = N(P - VC - OH)',
+    formulaLegend: 'CF = cash flow, DP = divisional profit, N = units, P = price, VC = variable cost, OH = allocated overhead',
     intuition: 'The company cares about cash flows. The division manager cares about their divisional profit and loss statement. When allocated overhead that does not change in cash appears on the division income statement, it can make a profitable deal look unprofitable to the manager. This is goal incongruence.',
     examPattern: 'A new client offers to buy a quantity at a given price. Set up two columns: the company cash flow perspective versus the divisional profit perspective. Highlight any divergence between the two recommendations.',
     traps: [
@@ -33,6 +38,8 @@ const CONCEPTS = [
     icon: '🏗️',
     title: 'Cost Allocation and Pricing',
     formula: 'Price = Variable Cost per Unit + Fixed Cost Allocation per Unit (at the chosen allocation base) + Markup Percentage',
+    formulaTex: 'P = (VC + \\frac{FC}{N_{base}}) \\times (1 + m)',
+    formulaLegend: 'VC = variable cost, FC = total fixed costs, N_base = allocation base (capacity or actual), m = markup percentage',
     intuition: 'The method you choose for allocating fixed costs determines the product price floor. Allocating over practical capacity avoids the death spiral, where a price increase leads to lower volume, which raises the cost per unit, which triggers another price increase. Activity-based costing reveals the true profitability of each product or channel.',
     examPattern: 'Compare using practical capacity versus actual volume as the allocation base. Show the resulting cost-plus price under each method and explain whether it incentivizes product dumping or cross-subsidization.',
     traps: [
@@ -46,6 +53,8 @@ const CONCEPTS = [
     icon: '🔄',
     title: 'Transfer Pricing',
     formula: 'Minimum Transfer Price = Seller Variable Cost + Seller Opportunity Cost  |  Maximum Transfer Price = Buyer External Selling Price − Buyer Other Variable Costs',
+    formulaTex: 'TP_{min} = VC_S + OC_S \\quad TP_{max} = P_{ext} - VC_B',
+    formulaLegend: 'VC_S = seller variable cost, OC_S = seller opportunity cost, P_ext = buyer external price, VC_B = buyer other variable costs',
     intuition: 'The transfer price must leave incremental profit on the table for both the selling and buying division. When corporate overhead is allocated on a per-unit-sold basis, it inflates the seller floor price and can cause the congruence zone to disappear entirely.',
     examPattern: 'Division A supplies Division B. Find the minimum and maximum transfer price for goal congruence. Then test standard methods: variable cost, full cost, cost-plus, and market price. Show each division incremental profit at each transfer price.',
     traps: [
@@ -60,6 +69,8 @@ const CONCEPTS = [
     icon: '📈',
     title: 'Residual Income and Investment',
     formula: 'Residual Income = Divisional Profit − (Cost of Capital × Book Value of Assets at Beginning of Period)',
+    formulaTex: 'RI = DP - r \\times BV_0',
+    formulaLegend: 'DP = divisional profit, r = cost of capital rate, BV_0 = book value of assets at beginning of period',
     intuition: 'Residual income charges the division for the capital it uses. The depreciation method does not change total cash flows over the life of the investment, but it shifts the timing of reported profit and manager bonuses across years, creating powerful timing incentives.',
     examPattern: 'Given an investment amount, a useful life, and annual operating profit, build a year-by-year table showing: Book Value, Divisional Profit after Depreciation, Residual Income, and Bonus. Compare the results under straight-line versus accelerated versus delayed depreciation.',
     traps: [
@@ -74,6 +85,8 @@ const CONCEPTS = [
     icon: '🔍',
     title: 'System Critique Framework',
     formula: 'Structure your critique across six dimensions: Variance System → Cost Allocation System → Pricing Policy → Transfer Pricing Policy → Performance Measurement → Incentive Design',
+    formulaTex: '\\text{Problem} \\to \\text{Behavioral Distortion} \\to \\text{Recommended Fix}',
+    formulaLegend: 'For each of 6 dimensions: name the accounting issue, explain how it distorts manager behavior, then propose an alternative',
     intuition: 'Part 5 is synthesis. You are not solving for a number. You are diagnosing whether the management control system aligns manager behavior with company-wide value creation. For each dimension, you must name the specific behavioral distortion, not just describe the accounting mechanism.',
     examPattern: 'The exam asks you to analyze several elements of the control system. For each dimension: state what the problem is, explain what behavior it causes in the manager, and recommend what would fix the distortion.',
     traps: [
@@ -128,12 +141,16 @@ export default function Concepts() {
               padding: '14px 16px',
               opacity: 0.95,
             }}>
-              <p style={{ margin: '0 0 4px', fontSize: '11px', color: 'var(--accent)', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
+              <p style={{ margin: '0 0 8px', fontSize: '11px', color: 'var(--accent)', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
                 Formula
               </p>
-              <p style={{ margin: 0, fontSize: '14px', color: 'var(--text-primary)', lineHeight: 1.7, fontWeight: 500 }}>
-                {c.formula}
-              </p>
+              {c.formulaTex ? (
+                <Formula tex={c.formulaTex} legend={c.formulaLegend} />
+              ) : (
+                <p style={{ margin: 0, fontSize: '14px', color: 'var(--text-primary)', lineHeight: 1.7, fontWeight: 500 }}>
+                  {c.formula}
+                </p>
+              )}
             </div>
 
             {/* Intuition */}

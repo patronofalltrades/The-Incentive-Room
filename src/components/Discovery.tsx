@@ -632,7 +632,7 @@ export default function Discovery() {
                               fontSize: '13px',
                               fontWeight: 600,
                               color: topic.color,
-                              fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+                              fontVariantNumeric: 'tabular-nums',
                               flexShrink: 0,
                             }}>
                               {am.exampleValue}

@@ -495,7 +495,7 @@ export default function ExamRunner({ simulation, onBack }: ExamRunnerProps) {
             fontSize: '14px',
             fontWeight: 600,
             color: 'var(--text-secondary)',
-            fontFamily: 'monospace',
+            fontVariantNumeric: 'tabular-nums',
           }}>
             <Clock size={14} />
             {formatTime(elapsedSeconds)}
@@ -624,7 +624,7 @@ export default function ExamRunner({ simulation, onBack }: ExamRunnerProps) {
                               borderBottom: '1px solid var(--border-subtle)',
                               color: ci === 0 ? 'var(--text-secondary)' : 'var(--text-primary)',
                               fontWeight: ci === 0 ? 400 : 500,
-                              fontFamily: ci > 0 ? 'monospace' : 'inherit',
+                              fontVariantNumeric: ci > 0 ? 'tabular-nums' : 'normal',
                             }}>
                               {cell}
                             </td>

@@ -110,7 +110,7 @@ export default function ExamPartSection({
                     borderBottom: '1px solid var(--border-subtle)',
                     color: ci === 0 ? 'var(--text-secondary)' : 'var(--text-primary)',
                     fontWeight: ci === 0 ? 400 : 500,
-                    fontFamily: ci > 0 ? 'monospace' : 'inherit',
+                    fontVariantNumeric: ci > 0 ? 'tabular-nums' : 'normal',
                     whiteSpace: 'nowrap',
                   }}>
                     {cell}
