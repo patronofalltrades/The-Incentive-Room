@@ -146,10 +146,9 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'N = volume in \'000 boxes, CM_{2019} = contribution margin per box in 2019 = 10 − 6×0.4 − 2.2 = $5.40',
       approach: [
-        'Step 1: The sales volume variance isolates the profit impact of selling more or fewer units, holding all per-unit economics constant at prior-year (2019) levels.',
-        'Step 2: Compute the 2019 contribution margin per box. Price ($10) − Material cost per box (6 kg × $0.40 = $2.40) − Other VC ($2.20) = $5.40 per box.',
-        'Step 3: Apply the volume change. Division 1 sold 140,000 boxes in 2020 vs 150,000 in 2019, a decrease of 10,000 boxes.',
-        'Step 4: Volume variance = (140,000 − 150,000) × $5.40 = −$54,000. Each lost box costs $5.40 in contribution margin.',
+        'Budgeted CM per box = $10 − $2.40 − $2.20 = $5.40.',
+        'Volume change = 140,000 − 150,000 = −10,000 boxes.',
+        'Volume variance = −10,000 × $5.40 = −$54,000 (Unfavorable).',
       ],
       answer: '−$54,000 (Unfavorable)',
       keyTakeaway:
@@ -166,10 +165,8 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'P_{2020} = $9.50, P_{2019} = $10.00, N_{2020} = 140 (\'000 boxes)',
       approach: [
-        'Step 1: The selling price variance isolates the impact of a change in the average selling price, holding volume at the 2020 actual level. It answers: how much profit did we gain or lose purely because price changed?',
-        'Step 2: Identify the price change. Price fell from $10.00/box (2019) to $9.50/box (2020), a decrease of $0.50.',
-        'Step 3: Apply the price change to 2020 volume. Selling price variance = ($9.50 − $10.00) × 140,000 = −$0.50 × 140,000 = −$70,000.',
-        'Step 4: The $0.50 drop per box across 140,000 boxes erodes $70,000 in profit. This may reflect competitive pressure or a deliberate pricing decision.',
+        'Price dropped from $10.00 to $9.50, a decrease of $0.50 per box.',
+        'Price variance = ($9.50 − $10.00) × 140,000 = −$70,000 (Unfavorable).',
       ],
       answer: '−$70,000 (Unfavorable)',
       keyTakeaway:
@@ -186,10 +183,8 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'E = kg of premix per box (2019: 6, 2020: 5), IP_{2019} = input price in 2019 ($0.40/kg)',
       approach: [
-        'Step 1: The efficiency variance isolates the profit impact of using more or less raw material per unit of output. It measures operational efficiency, priced at the prior-year input price to avoid mixing price and quantity effects.',
-        'Step 2: Compute usage per box. 2019: 900,000 kg / 150,000 boxes = 6.0 kg/box. 2020: 700,000 kg / 140,000 boxes = 5.0 kg/box. Usage improved by 1 kg/box.',
-        'Step 3: Value the efficiency gain at the 2019 input price. Efficiency variance = −(5 − 6) × $0.40 × 140,000 = +1 × $0.40 × 140,000 = +$56,000.',
-        'Step 4: Using 1 kg less premix per box saves $56,000. This favorable variance could reflect a better recipe, improved processes, or a shift in product quality.',
+        'Usage per box: 2019 = 6.0 kg, 2020 = 5.0 kg — improved by 1 kg/box.',
+        'Efficiency variance = −(5 − 6) × $0.40 × 140,000 = +$56,000 (Favorable).',
       ],
       answer: '+$56,000 (Favorable)',
       keyTakeaway:
@@ -206,10 +201,8 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'IP = price per kg of premix (2019: $0.40, 2020: $0.50), E_{2020} = 5 kg/box',
       approach: [
-        'Step 1: The input price variance isolates the impact of a change in the cost per kg of bread premix, holding quantity at the 2020 actual usage level. It answers: how much more (or less) did we pay purely because the input price changed?',
-        'Step 2: Compute input prices. 2019: $360,000 / 900,000 kg = $0.40/kg. 2020: $350,000 / 700,000 kg = $0.50/kg. Price rose by $0.10/kg.',
-        'Step 3: Apply the price increase to 2020 actual usage. Input price variance = −($0.50 − $0.40) × 5 kg/box × 140,000 boxes = −$0.10 × 700,000 = −$70,000.',
-        'Step 4: The $0.10/kg price increase costs $70,000. Note the possible trade-off: cheaper premix (lower quality?) might explain the efficiency gain in Q3, while more expensive premix may reflect a quality upgrade.',
+        'Input price rose from $0.40/kg to $0.50/kg (+$0.10/kg).',
+        'Input price variance = −($0.50 − $0.40) × 5 × 140,000 = −$70,000 (Unfavorable).',
       ],
       answer: '−$70,000 (Unfavorable)',
       keyTakeaway:
@@ -226,10 +219,8 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'OVC = other variable cost per box (2019: $2.20, 2020: $2.00)',
       approach: [
-        'Step 1: This variance captures the profit effect of changes in all non-premix variable costs (e.g., labor, energy, packaging). It isolates per-unit cost changes, applied to 2020 volume.',
-        'Step 2: Compute per-box other VC. 2019: $330,000 / 150,000 = $2.20/box. 2020: $280,000 / 140,000 = $2.00/box. Costs fell by $0.20/box.',
-        'Step 3: Other VC variance = −($2.00 − $2.20) × 140,000 = +$0.20 × 140,000 = +$28,000.',
-        'Step 4: A $0.20/box reduction in other variable costs yields a $28,000 favorable variance, potentially from labor efficiencies or lower packaging costs.',
+        'Other VC per box fell from $2.20 to $2.00 (−$0.20/box).',
+        'Other VC variance = −($2.00 − $2.20) × 140,000 = +$28,000 (Favorable).',
       ],
       answer: '+$28,000 (Favorable)',
       keyTakeaway:
@@ -246,10 +237,8 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'FC = total fixed costs (Divisional OH + Corporate OH), unchanged at $732,000',
       approach: [
-        'Step 1: The fixed cost variance captures any change in total fixed costs (Divisional OH + Corporate OH) between the two years. Unlike variable cost variances, this is not a per-unit calculation — it is the total change.',
-        'Step 2: Compare totals. 2019 total fixed costs = $600,000 + $132,000 = $732,000. 2020 total fixed costs = $600,000 + $132,000 = $732,000.',
-        'Step 3: Fixed cost variance = −($732,000 − $732,000) = $0. No change in fixed costs.',
-        'Step 4: This means the entire profit decline (−$110,000) is fully explained by the volume, price, efficiency, input price, and other VC variances computed above.',
+        'Total fixed costs: 2019 = $732,000, 2020 = $732,000 — no change.',
+        'Fixed cost variance = $0.',
       ],
       answer: '$0 (No variance)',
       keyTakeaway:
@@ -265,10 +254,8 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Bonus = 10% × max(0, Profit_{2020} − Profit_{2019})',
       approach: [
-        'Step 1: Recall the bonus formula. Nancy earns 10% of the increase in Divisional Profit relative to the prior year. If profit declines, the bonus is zero — there is no penalty for a decrease, just no reward.',
-        'Step 2: Compare profits. Divisional Profit 2019 = $78,000. Divisional Profit 2020 = −$32,000. Profit fell by $110,000.',
-        'Step 3: Since Divisional Profit decreased ($−32,000 < $78,000), the bonus formula yields zero.',
-        'Step 4: Nancy receives no bonus for 2020. The variance analysis shows this was driven by lower volume (−$54,000), lower price (−$70,000), and higher input price (−$70,000), partially offset by efficiency gains (+$56,000) and other VC savings (+$28,000).',
+        'Divisional Profit 2020 (−$32,000) < Divisional Profit 2019 ($78,000).',
+        'Since profit decreased, bonus = $0.',
       ],
       answer: '$0',
       keyTakeaway:
@@ -286,10 +273,9 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Allocation rate = 600/150 = $4/box. Idle capacity = (150 − 140) × 4 = $40,000 excluded',
       approach: [
-        'Step 1: Understand the policy change. Instead of charging all $600,000 of Divisional OH to Division 1, the new system only charges for capacity actually used. Idle capacity costs are absorbed by the firm, not the division.',
-        'Step 2: Compute the allocation rate. Divisional OH rate = $600,000 / 150,000 boxes (max capacity) = $4/box.',
-        'Step 3: Compute charged vs. actual OH. Charged OH = 140,000 × $4 = $560,000. Actual OH = $600,000. The $40,000 difference represents idle capacity cost excluded from Divisional Profit.',
-        'Step 4: Adjusted Profit = −$32,000 + $40,000 = $8,000. Excluding idle capacity turns a $32,000 loss into an $8,000 profit, shielding Nancy from the cost of unused capacity.',
+        'OH rate = $600,000 / 150,000 = $4/box. Charged OH = 140,000 × $4 = $560,000.',
+        'Idle capacity excluded = $600,000 − $560,000 = $40,000.',
+        'Adjusted Profit = −$32,000 + $40,000 = $8,000.',
       ],
       answer: '$8,000',
       keyTakeaway:
@@ -306,10 +292,8 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'CM_{2019} = $5.40, net of Divisional OH rate ($4): $5.40 − $4.00 = $1.40 per box',
       approach: [
-        'Step 1: Under the new system, Divisional OH behaves like a variable cost ($4/box) from the division\u2019s perspective. This changes the contribution margin used in the volume variance calculation.',
-        'Step 2: Compute the adjusted CM. Original CM = $5.40/box. Subtract the new per-box OH charge: $5.40 − $4.00 = $1.40/box. The margin shrinks because OH is now \u201Cvariable\u201D in the divisional profit computation.',
-        'Step 3: Volume variance = (140,000 − 150,000) × $1.40 = −$14,000.',
-        'Step 4: The volume variance drops from −$54,000 to −$14,000. This is because part of what was the \u201Cvolume variance\u201D under the old system (the OH on lost units) is now reclassified as idle capacity cost excluded from the division.',
+        'Adjusted CM = $5.40 − $4.00 (OH rate) = $1.40/box.',
+        'Volume variance = (140,000 − 150,000) × $1.40 = −$14,000 (Unfavorable).',
       ],
       answer: '−$14,000 (Unfavorable)',
       keyTakeaway:
@@ -327,10 +311,9 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'All amounts in \'000 $. Revenue = 15 × 50 = 750, VC = 7 × 50 = 350, Additional Div OH = 100',
       approach: [
-        'Step 1: For cash flow analysis at the company level, only incremental external cash inflows and outflows matter. Corporate OH is unchanged, so it is excluded.',
-        'Step 2: Incremental revenue from Gourmand. 50,000 boxes × $15/box = $750,000. These are new external sales.',
-        'Step 3: Incremental costs. Variable costs = ($4 + $3) × 50,000 = $350,000 (premix + other). Additional Divisional OH = $100,000 (hiring additional workers). No additional Corporate OH.',
-        'Step 4: Cash flow effect = $750,000 − $350,000 − $100,000 = +$300,000. Gourmand generates $300,000 in incremental cash for the firm.',
+        'Revenue = 50,000 × $15 = $750,000. VC = ($4 + $3) × 50,000 = $350,000.',
+        'Additional Divisional OH = $100,000. No additional Corporate OH.',
+        'Cash flow = $750,000 − $350,000 − $100,000 = +$300,000.',
       ],
       answer: '+$300,000',
       keyTakeaway:
@@ -347,10 +330,8 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Amounts in \'000 $. Same as cash flow since no depreciation or Corporate OH changes',
       approach: [
-        'Step 1: Compare the Divisional Profit impact to the cash flow impact. Here, the two should align because there are no depreciation changes or Corporate OH changes.',
-        'Step 2: Incremental revenue = $750,000. Incremental variable costs = $350,000. Additional Divisional OH = $100,000. No additional Corporate OH (it is a fixed allocation equally distributed across divisions).',
-        'Step 3: Effect on Divisional Profit = $750,000 − $350,000 − $100,000 = +$300,000.',
-        'Step 4: The Divisional Profit effect equals the cash flow effect because Gourmand introduces no new depreciation or Corporate OH charges. This alignment is not always the case.',
+        'Same calculation as cash flow: $750,000 − $350,000 − $100,000 = +$300,000.',
+        'No new depreciation or Corporate OH, so Divisional Profit = cash flow effect.',
       ],
       answer: '+$300,000',
       keyTakeaway:
@@ -363,9 +344,8 @@ export const FRESHBREAD: Simulation = {
       question:
         'Was launching Gourmand in the best interest of shareholders? Focus only on monetary considerations and provide your rationale.',
       approach: [
-        'Step 1: Shareholders care about cash flows. A project creates value if it generates positive incremental cash flows (before considering financing).',
-        'Step 2: Gourmand generates +$300,000 in incremental cash flows (computed in Q10). There is no upfront investment or additional financing needed.',
-        'Step 3: Since the project is cash-flow positive with no offsetting costs, it creates value for shareholders. Launching Gourmand is in shareholders\u2019 interest.',
+        'Gourmand generates +$300,000 in incremental cash flows with no upfront investment.',
+        'Cash-flow positive = creates value for shareholders.',
       ],
       answer:
         'Yes. Launching Gourmand generates $300,000 in positive incremental cash flows for FB.',
@@ -379,10 +359,8 @@ export const FRESHBREAD: Simulation = {
       question:
         'Was launching Gourmand in the best interest of Nancy? Focus only on monetary considerations and provide your rationale.',
       approach: [
-        'Step 1: Nancy\u2019s bonus depends on Divisional Profit improvement. Her bonus = 10% of the increase in Divisional Profit relative to the prior year.',
-        'Step 2: Gourmand increases Divisional Profit by $300,000 (Q11). This improvement directly feeds into her bonus calculation.',
-        'Step 3: Bonus increase = 10% × $300,000 = $30,000. Nancy benefits personally from launching Gourmand.',
-        'Step 4: Goal congruence holds: both shareholders and Nancy benefit from launching Gourmand. The incentive system works correctly for this decision.',
+        'Gourmand increases Divisional Profit by $300,000.',
+        'Bonus increase = 10% × $300,000 = $30,000. Nancy benefits.',
       ],
       answer:
         'Yes. It has a positive effect on her bonus because Divisional Profit increases by $300,000.',
@@ -401,10 +379,9 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Without Gourmand: rate = 600/150 = $4/box, charge = 4 × 140 = 560. With Gourmand: rate = 700/200 = $3.50/box, charge = 3.5 × 190 = 665. Difference in OH charge = 105.',
       approach: [
-        'Step 1: Under idle capacity exclusion, Divisional OH is allocated as (actual volume / max capacity) × total OH. Adding Gourmand changes both the total OH and the capacity, so the rate itself changes.',
-        'Step 2: Without Gourmand: OH rate = $600,000 / 150,000 = $4.00/box. Charged OH = $4.00 × 140,000 = $560,000.',
-        'Step 3: With Gourmand: Total OH = $600,000 + $100,000 = $700,000. Capacity = 200,000 boxes. New rate = $700,000 / 200,000 = $3.50/box. Charged OH = $3.50 × 190,000 = $665,000. Incremental OH charge = $665,000 − $560,000 = $105,000.',
-        'Step 4: Effect on Divisional Profit = $750,000 − $350,000 − $105,000 = +$295,000. Slightly less than the $300,000 in Q11 because the capacity-based allocation spreads costs differently.',
+        'Without Gourmand: rate = $600k / 150k = $4.00/box, charge = $4.00 × 140k = $560k.',
+        'With Gourmand: rate = $700k / 200k = $3.50/box, charge = $3.50 × 190k = $665k.',
+        'Incremental OH = $665k − $560k = $105k. Profit = $750k − $350k − $105k = +$295,000.',
       ],
       answer: '+$295,000',
       keyTakeaway:
@@ -417,9 +394,8 @@ export const FRESHBREAD: Simulation = {
       question:
         'Would launching Gourmand have been in the best interest of Nancy under this alternative way to compute Divisional Profit? Focus only on monetary considerations.',
       approach: [
-        'Step 1: Under the idle capacity exclusion system, Divisional Profit still increases by $295,000 from Gourmand (Q14). This is a positive change.',
-        'Step 2: Nancy\u2019s bonus = 10% × $295,000 = $29,500. She benefits, though slightly less than under the standard system ($29,500 vs $30,000).',
-        'Step 3: Goal congruence is preserved under both systems for the Gourmand decision. The idle capacity treatment only slightly changes the magnitude, not the direction.',
+        'Divisional Profit increases by $295,000 from Gourmand.',
+        'Bonus = 10% × $295,000 = $29,500. Nancy still benefits.',
       ],
       answer:
         'Yes. It has a positive effect on her bonus because Divisional Profit increases by $295,000.',
@@ -438,10 +414,8 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Total fixed costs = Divisional OH (600 + 100) + Corporate OH (132) = 832. Total revenues = 1,330 + 750 = 2,080. All in \'000 $.',
       approach: [
-        'Step 1: Cost system #1 allocates all fixed costs to products in proportion to revenue. The logic is that higher-revenue products should absorb more fixed costs. This is a simple but rough allocation method.',
-        'Step 2: Compute total fixed costs. Divisional OH ($600,000 + $100,000 for Gourmand workers) + Corporate OH ($132,000) = $832,000.',
-        'Step 3: Compute total revenues. Regular ($1,330,000) + Gourmand ($750,000) = $2,080,000.',
-        'Step 4: Allocation rate = $832,000 / $2,080,000 = 0.40. This means $0.40 of every revenue dollar is allocated to fixed costs, regardless of actual resource consumption by each product.',
+        'Total fixed costs = $600k + $100k + $132k = $832k. Total revenue = $1,330k + $750k = $2,080k.',
+        'Allocation rate = $832k / $2,080k = 0.40 (40% of revenue).',
       ],
       answer: '0.4 (40% of revenue)',
       keyTakeaway:
@@ -458,10 +432,8 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Revenue = $750,000, VC = (4+3) × 50 = $350,000, Allocated FC = 0.4 × 750 = $300,000',
       approach: [
-        'Step 1: Apply cost system #1 to Gourmand. Revenue-based allocation means Gourmand absorbs 40% of its own revenue as fixed costs.',
-        'Step 2: Gourmand revenue = 50,000 × $15 = $750,000. Variable costs = ($4 + $3) × 50,000 = $350,000.',
-        'Step 3: Allocated fixed costs = 0.40 × $750,000 = $300,000.',
-        'Step 4: Gourmand profit = $750,000 − $350,000 − $300,000 = $100,000. Gourmand appears profitable, but the allocation method is questionable — it may over- or under-allocate depending on each product\u2019s actual resource consumption.',
+        'Revenue = $750,000. VC = $350,000. Allocated FC = 0.40 × $750,000 = $300,000.',
+        'Gourmand profit = $750,000 − $350,000 − $300,000 = $100,000.',
       ],
       answer: '$100,000',
       keyTakeaway:
