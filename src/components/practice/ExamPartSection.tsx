@@ -375,7 +375,7 @@ export default function ExamPartSection({
       <div style={{
         borderLeft: `4px solid ${partColor}`,
         paddingLeft: '16px',
-        marginBottom: '20px',
+        marginBottom: context ? '12px' : '20px',
       }}>
         <h3 style={{
           margin: 0,
@@ -385,17 +385,40 @@ export default function ExamPartSection({
         }}>
           {partLabel}
         </h3>
-        {context && (
+      </div>
+
+      {/* Context prompt — explicitly shown to link table with questions */}
+      {context && (
+        <div style={{
+          background: 'var(--card)',
+          border: `1px solid ${partColor}40`,
+          borderLeft: `4px solid ${partColor}`,
+          borderRadius: '0 12px 12px 0',
+          padding: '16px 20px',
+          marginBottom: '20px',
+          boxShadow: 'var(--shadow)',
+        }}>
           <p style={{
-            margin: '6px 0 0',
-            fontSize: '13px',
-            color: 'var(--text-secondary)',
-            lineHeight: 1.6,
+            margin: '0 0 8px',
+            fontSize: '11px',
+            fontWeight: 700,
+            color: partColor,
+            letterSpacing: '0.06em',
+            textTransform: 'uppercase',
+          }}>
+            📋 Context for This Part
+          </p>
+          <p style={{
+            margin: 0,
+            fontSize: '14px',
+            color: 'var(--text-primary)',
+            lineHeight: 1.8,
+            fontWeight: 500,
           }}>
             {context}
           </p>
-        )}
-      </div>
+        </div>
+      )}
 
       {/* Table always above questions for visibility */}
       {tableElement}

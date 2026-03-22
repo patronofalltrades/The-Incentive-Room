@@ -226,8 +226,10 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'OVC = other variable cost per box (2019: $2.20, 2020: $2.00)',
       approach: [
-        'Other VC per box: 2019 = 330/150 = $2.20, 2020 = 280/140 = $2.00.',
-        'Other VC variance = −(2.00 − 2.20) × 140 = 0.20 × 140 = +$28,000.',
+        'Step 1: This variance captures the profit effect of changes in all non-premix variable costs (e.g., labor, energy, packaging). It isolates per-unit cost changes, applied to 2020 volume.',
+        'Step 2: Compute per-box other VC. 2019: $330,000 / 150,000 = $2.20/box. 2020: $280,000 / 140,000 = $2.00/box. Costs fell by $0.20/box.',
+        'Step 3: Other VC variance = −($2.00 − $2.20) × 140,000 = +$0.20 × 140,000 = +$28,000.',
+        'Step 4: A $0.20/box reduction in other variable costs yields a $28,000 favorable variance, potentially from labor efficiencies or lower packaging costs.',
       ],
       answer: '+$28,000 (Favorable)',
       keyTakeaway:
@@ -244,8 +246,10 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'FC = total fixed costs (Divisional OH + Corporate OH), unchanged at $732,000',
       approach: [
-        'Total fixed costs: 2019 = 732, 2020 = 732. No change.',
-        'Fixed cost variance = −(732 − 732) = $0.',
+        'Step 1: The fixed cost variance captures any change in total fixed costs (Divisional OH + Corporate OH) between the two years. Unlike variable cost variances, this is not a per-unit calculation — it is the total change.',
+        'Step 2: Compare totals. 2019 total fixed costs = $600,000 + $132,000 = $732,000. 2020 total fixed costs = $600,000 + $132,000 = $732,000.',
+        'Step 3: Fixed cost variance = −($732,000 − $732,000) = $0. No change in fixed costs.',
+        'Step 4: This means the entire profit decline (−$110,000) is fully explained by the volume, price, efficiency, input price, and other VC variances computed above.',
       ],
       answer: '$0 (No variance)',
       keyTakeaway:
@@ -261,8 +265,10 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Bonus = 10% × max(0, Profit_{2020} − Profit_{2019})',
       approach: [
-        'Divisional Profit 2020 (−$32,000) < Divisional Profit 2019 ($78,000).',
-        'Since divisional profit decreased, the bonus is zero.',
+        'Step 1: Recall the bonus formula. Nancy earns 10% of the increase in Divisional Profit relative to the prior year. If profit declines, the bonus is zero — there is no penalty for a decrease, just no reward.',
+        'Step 2: Compare profits. Divisional Profit 2019 = $78,000. Divisional Profit 2020 = −$32,000. Profit fell by $110,000.',
+        'Step 3: Since Divisional Profit decreased ($−32,000 < $78,000), the bonus formula yields zero.',
+        'Step 4: Nancy receives no bonus for 2020. The variance analysis shows this was driven by lower volume (−$54,000), lower price (−$70,000), and higher input price (−$70,000), partially offset by efficiency gains (+$56,000) and other VC savings (+$28,000).',
       ],
       answer: '$0',
       keyTakeaway:
@@ -280,9 +286,10 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Allocation rate = 600/150 = $4/box. Idle capacity = (150 − 140) × 4 = $40,000 excluded',
       approach: [
-        'Divisional OH allocation rate = 600/150 = $4 per box.',
-        'Under the new system, only 140 × 4 = $560,000 of Divisional OH is charged (vs. $600,000).',
-        'New Profit = −32 + (600 − 560) = −32 + 40 = $8,000.',
+        'Step 1: Understand the policy change. Instead of charging all $600,000 of Divisional OH to Division 1, the new system only charges for capacity actually used. Idle capacity costs are absorbed by the firm, not the division.',
+        'Step 2: Compute the allocation rate. Divisional OH rate = $600,000 / 150,000 boxes (max capacity) = $4/box.',
+        'Step 3: Compute charged vs. actual OH. Charged OH = 140,000 × $4 = $560,000. Actual OH = $600,000. The $40,000 difference represents idle capacity cost excluded from Divisional Profit.',
+        'Step 4: Adjusted Profit = −$32,000 + $40,000 = $8,000. Excluding idle capacity turns a $32,000 loss into an $8,000 profit, shielding Nancy from the cost of unused capacity.',
       ],
       answer: '$8,000',
       keyTakeaway:
@@ -299,9 +306,10 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'CM_{2019} = $5.40, net of Divisional OH rate ($4): $5.40 − $4.00 = $1.40 per box',
       approach: [
-        'Under the new system, Divisional OH is variable at $4/box, so it enters the per-unit margin.',
-        'Adjusted CM per box = 5.40 − 4.00 = $1.40.',
-        'Volume variance = (140 − 150) × 1.40 = −$14,000.',
+        'Step 1: Under the new system, Divisional OH behaves like a variable cost ($4/box) from the division\u2019s perspective. This changes the contribution margin used in the volume variance calculation.',
+        'Step 2: Compute the adjusted CM. Original CM = $5.40/box. Subtract the new per-box OH charge: $5.40 − $4.00 = $1.40/box. The margin shrinks because OH is now \u201Cvariable\u201D in the divisional profit computation.',
+        'Step 3: Volume variance = (140,000 − 150,000) × $1.40 = −$14,000.',
+        'Step 4: The volume variance drops from −$54,000 to −$14,000. This is because part of what was the \u201Cvolume variance\u201D under the old system (the OH on lost units) is now reclassified as idle capacity cost excluded from the division.',
       ],
       answer: '−$14,000 (Unfavorable)',
       keyTakeaway:
@@ -319,10 +327,10 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'All amounts in \'000 $. Revenue = 15 × 50 = 750, VC = 7 × 50 = 350, Additional Div OH = 100',
       approach: [
-        'Additional revenues: 15 × 50 = $750,000.',
-        'Additional variable costs: (4 + 3) × 50 = $350,000.',
-        'Additional Divisional OH: $100,000.',
-        'Cash flow effect = 750 − 350 − 100 = $300,000.',
+        'Step 1: For cash flow analysis at the company level, only incremental external cash inflows and outflows matter. Corporate OH is unchanged, so it is excluded.',
+        'Step 2: Incremental revenue from Gourmand. 50,000 boxes × $15/box = $750,000. These are new external sales.',
+        'Step 3: Incremental costs. Variable costs = ($4 + $3) × 50,000 = $350,000 (premix + other). Additional Divisional OH = $100,000 (hiring additional workers). No additional Corporate OH.',
+        'Step 4: Cash flow effect = $750,000 − $350,000 − $100,000 = +$300,000. Gourmand generates $300,000 in incremental cash for the firm.',
       ],
       answer: '+$300,000',
       keyTakeaway:
@@ -339,11 +347,10 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Amounts in \'000 $. Same as cash flow since no depreciation or Corporate OH changes',
       approach: [
-        'Additional revenues: $750,000.',
-        'Additional variable costs: $350,000.',
-        'Additional Divisional OH: $100,000.',
-        'No additional Corporate OH.',
-        'Effect on Divisional Profit = 750 − 350 − 100 = $300,000.',
+        'Step 1: Compare the Divisional Profit impact to the cash flow impact. Here, the two should align because there are no depreciation changes or Corporate OH changes.',
+        'Step 2: Incremental revenue = $750,000. Incremental variable costs = $350,000. Additional Divisional OH = $100,000. No additional Corporate OH (it is a fixed allocation equally distributed across divisions).',
+        'Step 3: Effect on Divisional Profit = $750,000 − $350,000 − $100,000 = +$300,000.',
+        'Step 4: The Divisional Profit effect equals the cash flow effect because Gourmand introduces no new depreciation or Corporate OH charges. This alignment is not always the case.',
       ],
       answer: '+$300,000',
       keyTakeaway:
@@ -356,8 +363,9 @@ export const FRESHBREAD: Simulation = {
       question:
         'Was launching Gourmand in the best interest of shareholders? Focus only on monetary considerations and provide your rationale.',
       approach: [
-        'Launching Gourmand generates $300,000 in additional cash flows for FB.',
-        'Since the project is cash-flow positive, it creates value for shareholders.',
+        'Step 1: Shareholders care about cash flows. A project creates value if it generates positive incremental cash flows (before considering financing).',
+        'Step 2: Gourmand generates +$300,000 in incremental cash flows (computed in Q10). There is no upfront investment or additional financing needed.',
+        'Step 3: Since the project is cash-flow positive with no offsetting costs, it creates value for shareholders. Launching Gourmand is in shareholders\u2019 interest.',
       ],
       answer:
         'Yes. Launching Gourmand generates $300,000 in positive incremental cash flows for FB.',
@@ -371,9 +379,10 @@ export const FRESHBREAD: Simulation = {
       question:
         'Was launching Gourmand in the best interest of Nancy? Focus only on monetary considerations and provide your rationale.',
       approach: [
-        'Divisional Profit increases by $300,000 due to Gourmand.',
-        'Since the bonus is 10% of the increase in Divisional Profit, Nancy benefits.',
-        'Her bonus increases by 10% × $300,000 = $30,000.',
+        'Step 1: Nancy\u2019s bonus depends on Divisional Profit improvement. Her bonus = 10% of the increase in Divisional Profit relative to the prior year.',
+        'Step 2: Gourmand increases Divisional Profit by $300,000 (Q11). This improvement directly feeds into her bonus calculation.',
+        'Step 3: Bonus increase = 10% × $300,000 = $30,000. Nancy benefits personally from launching Gourmand.',
+        'Step 4: Goal congruence holds: both shareholders and Nancy benefit from launching Gourmand. The incentive system works correctly for this decision.',
       ],
       answer:
         'Yes. It has a positive effect on her bonus because Divisional Profit increases by $300,000.',
@@ -392,10 +401,10 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Without Gourmand: rate = 600/150 = $4/box, charge = 4 × 140 = 560. With Gourmand: rate = 700/200 = $3.50/box, charge = 3.5 × 190 = 665. Difference in OH charge = 105.',
       approach: [
-        'Without Gourmand: OH rate = 600/150 = $4/box, charged OH = 4 × 140 = $560,000.',
-        'With Gourmand: OH rate = (600 + 100)/200 = $3.50/box, charged OH = 3.5 × (140 + 50) = $665,000.',
-        'Incremental OH charge = 665 − 560 = $105,000.',
-        'Effect = 750 − 350 − 105 = $295,000.',
+        'Step 1: Under idle capacity exclusion, Divisional OH is allocated as (actual volume / max capacity) × total OH. Adding Gourmand changes both the total OH and the capacity, so the rate itself changes.',
+        'Step 2: Without Gourmand: OH rate = $600,000 / 150,000 = $4.00/box. Charged OH = $4.00 × 140,000 = $560,000.',
+        'Step 3: With Gourmand: Total OH = $600,000 + $100,000 = $700,000. Capacity = 200,000 boxes. New rate = $700,000 / 200,000 = $3.50/box. Charged OH = $3.50 × 190,000 = $665,000. Incremental OH charge = $665,000 − $560,000 = $105,000.',
+        'Step 4: Effect on Divisional Profit = $750,000 − $350,000 − $105,000 = +$295,000. Slightly less than the $300,000 in Q11 because the capacity-based allocation spreads costs differently.',
       ],
       answer: '+$295,000',
       keyTakeaway:
@@ -408,8 +417,9 @@ export const FRESHBREAD: Simulation = {
       question:
         'Would launching Gourmand have been in the best interest of Nancy under this alternative way to compute Divisional Profit? Focus only on monetary considerations.',
       approach: [
-        'Divisional Profit increases by $295,000 under the alternative system.',
-        'Nancy\'s bonus increases by 10% × $295,000 = $29,500.',
+        'Step 1: Under the idle capacity exclusion system, Divisional Profit still increases by $295,000 from Gourmand (Q14). This is a positive change.',
+        'Step 2: Nancy\u2019s bonus = 10% × $295,000 = $29,500. She benefits, though slightly less than under the standard system ($29,500 vs $30,000).',
+        'Step 3: Goal congruence is preserved under both systems for the Gourmand decision. The idle capacity treatment only slightly changes the magnitude, not the direction.',
       ],
       answer:
         'Yes. It has a positive effect on her bonus because Divisional Profit increases by $295,000.',
@@ -428,9 +438,10 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Total fixed costs = Divisional OH (600 + 100) + Corporate OH (132) = 832. Total revenues = 1,330 + 750 = 2,080. All in \'000 $.',
       approach: [
-        'Total fixed costs = 600 + 100 + 132 = $832,000.',
-        'Total revenues = 1,330 + 750 = $2,080,000.',
-        'Allocation rate = 832 / 2,080 = 0.4 (i.e., $0.40 per dollar of revenue).',
+        'Step 1: Cost system #1 allocates all fixed costs to products in proportion to revenue. The logic is that higher-revenue products should absorb more fixed costs. This is a simple but rough allocation method.',
+        'Step 2: Compute total fixed costs. Divisional OH ($600,000 + $100,000 for Gourmand workers) + Corporate OH ($132,000) = $832,000.',
+        'Step 3: Compute total revenues. Regular ($1,330,000) + Gourmand ($750,000) = $2,080,000.',
+        'Step 4: Allocation rate = $832,000 / $2,080,000 = 0.40. This means $0.40 of every revenue dollar is allocated to fixed costs, regardless of actual resource consumption by each product.',
       ],
       answer: '0.4 (40% of revenue)',
       keyTakeaway:
@@ -447,10 +458,10 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Revenue = $750,000, VC = (4+3) × 50 = $350,000, Allocated FC = 0.4 × 750 = $300,000',
       approach: [
-        'Revenue from Gourmand = 15 × 50 = $750,000.',
-        'Variable costs = (4 + 3) × 50 = $350,000.',
-        'Allocated fixed costs = 0.4 × 750 = $300,000.',
-        'Profit = 750 − 350 − 300 = $100,000.',
+        'Step 1: Apply cost system #1 to Gourmand. Revenue-based allocation means Gourmand absorbs 40% of its own revenue as fixed costs.',
+        'Step 2: Gourmand revenue = 50,000 × $15 = $750,000. Variable costs = ($4 + $3) × 50,000 = $350,000.',
+        'Step 3: Allocated fixed costs = 0.40 × $750,000 = $300,000.',
+        'Step 4: Gourmand profit = $750,000 − $350,000 − $300,000 = $100,000. Gourmand appears profitable, but the allocation method is questionable — it may over- or under-allocate depending on each product\u2019s actual resource consumption.',
       ],
       answer: '$100,000',
       keyTakeaway:
@@ -468,10 +479,10 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Amounts in \'000 $. Revenue from client = $70, VC for Division 1 = $45, Transportation = $10',
       approach: [
-        'Revenue from client: 7 × 10,000 = $70,000.',
-        'Variable cost of production: 4.5 × 10,000 = $45,000.',
-        'Transportation cost: $10,000.',
-        'Net cash flow effect = 70 − 45 − 10 = $15,000.',
+        'Step 1: At the company level, only incremental external cash flows matter. Internal transfer prices cancel out. Division 1 has spare capacity (150,000 − 140,000 = 10,000 boxes), so no capacity is displaced.',
+        'Step 2: Revenue from external client = 10,000 × $7 = $70,000.',
+        'Step 3: Incremental costs. Variable production cost = 10,000 × $4.50 = $45,000 (the only real resource cost). Transportation = $10,000. Fixed costs are unaffected by this order.',
+        'Step 4: Cash flow effect = $70,000 − $45,000 − $10,000 = +$15,000. The order creates value for FB because the client price ($7) exceeds variable cost ($4.50) plus transport per box ($1).',
       ],
       answer: '+$15,000',
       keyTakeaway:
@@ -488,10 +499,10 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'TP = transfer price = 4.5 + 732/150 = $9.38/box. Amounts in \'000 $.',
       approach: [
-        'Transfer price = VC + FC/capacity = 4.5 + 732/150 = 4.5 + 4.88 = $9.38/box.',
-        'Revenue for Division 1 = 9.38 × 10 = $93,800.',
-        'Variable cost = 4.5 × 10 = $45,000.',
-        'Effect on Division 1 Divisional Profit = 93.8 − 45 = $48,800.',
+        'Step 1: Division 1 is the seller in this internal transfer. Its revenue is the transfer price, not the external client price. The TP includes a fixed cost component that does not represent an incremental cost.',
+        'Step 2: Compute the transfer price. TP = variable cost + total fixed costs / capacity = $4.50 + $732,000 / 150,000 = $4.50 + $4.88 = $9.38/box.',
+        'Step 3: Division 1 revenue = $9.38 × 10,000 = $93,800. Division 1 variable cost = $4.50 × 10,000 = $45,000.',
+        'Step 4: Effect on Division 1 Divisional Profit = $93,800 − $45,000 = +$48,800. Division 1 benefits significantly because the full-cost TP ($9.38) far exceeds its incremental cost ($4.50).',
       ],
       answer: '+$48,800',
       keyTakeaway:
@@ -508,10 +519,10 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Revenue from client = $70,000, Cost at TP = $93,800, Transportation = $10,000',
       approach: [
-        'Revenue from external client: 7 × 10 = $70,000.',
-        'Cost of buying from Division 1: 9.38 × 10 = $93,800.',
-        'Transportation: $10,000.',
-        'Effect = 70 − 93.8 − 10 = −$33,800.',
+        'Step 1: Division 2 is the buyer in this transfer. It pays the TP to Division 1, sells at $7/box to the client, and pays transportation. Division 2 bears all the external-facing costs.',
+        'Step 2: Revenue from external client = 10,000 × $7 = $70,000.',
+        'Step 3: Cost of buying from Division 1 = 10,000 × $9.38 = $93,800. Transportation = $10,000.',
+        'Step 4: Effect = $70,000 − $93,800 − $10,000 = −$33,800. Division 2 would reject this order because the full-cost TP ($9.38) exceeds the client price ($7). This is a goal congruence failure: the order creates value for FB (+$15,000) but Division 2 refuses it.',
       ],
       answer: '−$33,800',
       keyTakeaway:
@@ -528,10 +539,10 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Division 1 needs TP > VC ($4.50). Division 2 needs TP < client price minus transportation per box ($7 − $1 = $6).',
       approach: [
-        'Division 1 accepts if TP > variable cost = $4.50.',
-        'Division 2 accepts if (7 − TP) × 10 − 10 > 0, i.e., TP < $6.00.',
-        'Goal congruent range: $4.50 < TP < $6.00.',
-        'The current full-cost TP of $9.38 is outside this range, so it destroys goal congruence.',
+        'Step 1: For goal congruence, both divisions must prefer to accept the order. We need to find a TP range where both say yes, which also means FB says yes (since the order is profitable at the company level).',
+        'Step 2: Division 1\u2019s minimum acceptable TP. Division 1 has idle capacity, so its only incremental cost is variable cost ($4.50/box). Division 1 accepts if TP > $4.50.',
+        'Step 3: Division 2\u2019s maximum acceptable TP. Division 2 earns $7/box from the client and pays $1/box in transport ($10,000 / 10,000). Division 2 accepts if TP < $7 − $1 = $6.00.',
+        'Step 4: Goal congruent range: $4.50 < TP < $6.00. The current full-cost TP of $9.38 is far above this range, destroying goal congruence.',
       ],
       answer: '$4.50 < TP < $6.00',
       keyTakeaway:
@@ -549,10 +560,10 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Division 2 prefers internal if TP < external price ($6). Division 1 accepts if TP > $4.50. Transportation costs cancel (same for both options).',
       approach: [
-        'From FB perspective: internal production saves $1.50/box (VC $4.50 vs external $6.00). FB prefers internal.',
-        'Division 1 accepts if TP > $4.50.',
-        'Division 2 prefers internal over external if TP < $6.00 (same transportation either way).',
-        'Goal congruent range: $4.50 < TP < $6.00.',
+        'Step 1: From FB\u2019s perspective, internal production is cheaper. Division 1\u2019s variable cost is $4.50/box vs the external supplier price of $6.00/box, saving $1.50/box. FB prefers internal sourcing.',
+        'Step 2: Division 1 still requires TP > $4.50 (its incremental cost). The external supplier does not change Division 1\u2019s economics.',
+        'Step 3: Division 2 now compares internal vs external sourcing. Internal: pays TP + $10,000 transport. External: pays $6/box + $10,000 transport. Transportation is the same either way, so Division 2 prefers internal if TP < $6.00.',
+        'Step 4: Goal congruent range = $4.50 < TP < $6.00, same as Q21. The external supplier price ($6) happens to match the upper bound, confirming the range.',
       ],
       answer: '$4.50 < TP < $6.00',
       keyTakeaway:
@@ -570,11 +581,10 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Divisional OH rate = 600/150 = $4/box. Division 1 now bears $4/box OH on additional production. Need TP > 8.5 AND TP < 6, which is impossible.',
       approach: [
-        'Divisional OH allocation rate = 600/150 = $4/box.',
-        'Division 1 is now charged $4/box of Divisional OH for the additional 10,000 boxes.',
-        'Division 1 accepts if (TP − 4.5 − 4) × 10 > 0, i.e., TP > $8.50.',
-        'Division 2 accepts if (7 − TP) × 10 − 10 > 0, i.e., TP < $6.00.',
-        'Since $8.50 > $6.00, there is no range of TP that achieves goal congruence.',
+        'Step 1: Under idle capacity exclusion, producing the extra 10,000 boxes means Division 1 is charged Divisional OH on those units. The OH rate = $600,000 / 150,000 = $4/box. This turns a previously fixed cost into an incremental cost from Division 1\u2019s perspective.',
+        'Step 2: Division 1\u2019s effective incremental cost per box = $4.50 (variable) + $4.00 (OH allocation) = $8.50. Division 1 requires TP > $8.50.',
+        'Step 3: Division 2\u2019s constraint is unchanged: TP < $6.00 (client price minus transport).',
+        'Step 4: Since Division 1 requires TP > $8.50 and Division 2 requires TP < $6.00, there is no TP that satisfies both. Goal congruence is impossible. The idle capacity exclusion policy backfires here by making Division 1 bear an artificial incremental OH cost.',
       ],
       answer:
         'No goal-congruent range exists. Division 1 requires TP > $8.50 while Division 2 requires TP < $6.00.',
@@ -593,9 +603,10 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Amounts in \'000 $. VC savings = $0.30/box × 140,000 boxes = $42,000/year',
       approach: [
-        '2020: Cash outflow for equipment = −$90,000.',
-        '2021-2023: Annual VC savings = (4.50 − 4.20) × 140,000 = $42,000 per year.',
-        'Total cash flows: −90 + 42 + 42 + 42 = +$36,000 over the period.',
+        'Step 1: Cash flow analysis considers real money in and out, ignoring accounting allocations like depreciation. The investment is paid by HQ at end of 2020.',
+        'Step 2: 2020 cash flow: Equipment purchase = −$90,000. No savings yet because the equipment is bought at year-end.',
+        'Step 3: 2021-2023 cash flow: The equipment reduces VC from $4.50 to $4.20 per box, saving $0.30/box. Annual savings = $0.30 × 140,000 = $42,000 per year.',
+        'Step 4: Total cash flows = −$90,000 + $42,000 × 3 = +$36,000. The investment is cash-positive over its life, creating value for shareholders (before discounting).',
       ],
       answer:
         '2020: −$90,000 | 2021: +$42,000 | 2022: +$42,000 | 2023: +$42,000',
@@ -613,9 +624,10 @@ export const FRESHBREAD: Simulation = {
       formulaLegend:
         'Amounts in \'000 $. Annual VC savings = 42, Annual depreciation = 90/3 = 30',
       approach: [
-        'Annual VC savings: $42,000.',
-        'Annual depreciation: 90,000 / 3 = $30,000.',
-        'Effect on Divisional Profit = 42 − 30 = $12,000 per year.',
+        'Step 1: Divisional Profit differs from cash flow because it includes depreciation (a non-cash charge). The equipment cost is spread over 3 years via straight-line depreciation.',
+        'Step 2: Annual VC savings = $42,000 (same as cash flow). Annual depreciation = $90,000 / 3 = $30,000.',
+        'Step 3: Effect on Divisional Profit = $42,000 − $30,000 = +$12,000 per year, constant across all 3 years under straight-line depreciation.',
+        'Step 4: Since Divisional Profit increases, Nancy would earn a bonus from this investment: 10% × $12,000 = $1,200 per year. Her incentives align with shareholders\u2019 interests here.',
       ],
       answer:
         '2021: +$12,000 | 2022: +$12,000 | 2023: +$12,000',
