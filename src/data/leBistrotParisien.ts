@@ -308,25 +308,11 @@ export const LE_BISTROT_PARISIEN: Simulation = {
       answer: '+€69,000 increase in Adjusted Restaurant Profit',
       keyTakeaway: '💡 Under capacity-adjusted FC allocation, the vegan menu looks attractive (+€69,000) even though it destroys cash flow (−€15,000). The lower FC rate from spreading costs over more capacity makes the project look good — this is goal incongruence in reverse.',
     },
-    {
-      id: 'q14',
-      partLabel: 'Part 2 — New Vegan Menu',
-      questionTitle: 'Q14: Goal Congruence Analysis',
-      question: 'Is there goal congruence between the company and Patrícia regarding the vegan menu decision?',
-      approach: [
-        'Step 1: Company perspective (cash flow): ΔCF = −€15,000. The company should reject.',
-        'Step 2: Manager under standard RP: ΔRP = −€15,000 and RP still below 2023. Bonus = €0 either way. No incentive to pursue.',
-        'Step 3: Manager under capacity-adjusted RP: Δ ARP = +€69,000. If the bonus were based on ARP, Patrícia would want to launch the vegan menu even though it destroys company value.',
-        'Step 4: The capacity-adjusted measure creates goal incongruence — the FC rate drops because capacity increases, making a cash-negative project look profitable.',
-      ],
-      answer: 'Goal congruence under standard RP (both reject). Goal incongruence under capacity-adjusted RP (manager accepts, company rejects).',
-      keyTakeaway: '💡 The capacity-adjusted measure can create goal incongruence in both directions — sometimes it prevents desirable investments (by adding FC), sometimes it encourages undesirable ones (by lowering the FC rate).',
-    },
     // ===== PART 3 — Transfer Pricing =====
     {
-      id: 'q15',
+      id: 'q14',
       partLabel: 'Part 3 — Transfer Pricing',
-      questionTitle: 'Q15: Current Transfer Price Computation',
+      questionTitle: 'Q14: Current Transfer Price Computation',
       question: 'Another SF restaurant (CR) needs 10,000 menus from BP. Transfer price = full cost = VC + FC per menu (FC = €800k / 80,000 capacity = €10). BP has spare capacity. Compute the TP.',
       formulaTex: 'TP = VC + FC_{unit} = 14 + 10 = 24',
       formulaLegend: 'VC = €14/menu, FC per menu at capacity = 800,000/80,000 = €10',
@@ -339,9 +325,9 @@ export const LE_BISTROT_PARISIEN: Simulation = {
       keyTakeaway: 'The full-cost TP includes a fixed cost allocation even though BP has spare capacity.',
     },
     {
-      id: 'q16',
+      id: 'q15',
       partLabel: 'Part 3 — Transfer Pricing',
-      questionTitle: 'Q16: External Supplier Alternative',
+      questionTitle: 'Q15: External Supplier Alternative',
       question: 'CR can buy from an external supplier at €22/menu. Compare CR\'s cost under both alternatives.',
       formulaTex: 'Cost_{internal} = 10{,}000 \\times 24 = 240{,}000 \\quad vs \\quad Cost_{ext} = 10{,}000 \\times 22 = 220{,}000',
       formulaLegend: 'TP = €24, external price = €22',
@@ -354,9 +340,9 @@ export const LE_BISTROT_PARISIEN: Simulation = {
       keyTakeaway: 'The inflated TP makes the internal option uncompetitive for CR.',
     },
     {
-      id: 'q17',
+      id: 'q16',
       partLabel: 'Part 3 — Transfer Pricing',
-      questionTitle: 'Q17: SF Cash Flow Effect',
+      questionTitle: 'Q16: SF Cash Flow Effect',
       question: 'Compute the effect on SF group cash flow if BP supplies the 10,000 menus internally (BP has spare capacity).',
       formulaTex: '\\Delta CF_{SF} = N \\times (P_{ext} - VC_{BP}) = 10{,}000 \\times (22 - 14) = +80{,}000',
       formulaLegend: 'Saved external cost vs BP variable cost. TP cancels out within the group.',
@@ -369,9 +355,9 @@ export const LE_BISTROT_PARISIEN: Simulation = {
       keyTakeaway: 'The group saves €80k by producing internally, but the TP signals the wrong decision to CR.',
     },
     {
-      id: 'q18',
+      id: 'q17',
       partLabel: 'Part 3 — Transfer Pricing',
-      questionTitle: 'Q18: Goal Congruence TP Range',
+      questionTitle: 'Q17: Goal Congruence TP Range',
       question: 'What transfer price range achieves goal congruence? BP has spare capacity.',
       formulaTex: 'TP_{min} = VC_{BP} = 14 \\quad TP_{max} = P_{ext} = 22',
       formulaLegend: 'BP has spare capacity so opportunity cost = 0. CR will not pay more than external price.',
@@ -386,9 +372,9 @@ export const LE_BISTROT_PARISIEN: Simulation = {
     },
     // ===== PART 3b — Extended Transfer Pricing =====
     {
-      id: 'q19',
+      id: 'q18',
       partLabel: 'Part 3b — Extended Transfer Pricing',
-      questionTitle: 'Q19: Transfer Price (VC + 60% Markup)',
+      questionTitle: 'Q18: Transfer Price (VC + 60% Markup)',
       question:
         'Compute the transfer price per menu using the internal pricing policy of variable cost plus 60 percent markup.',
       formulaTex: 'TP = VC \\times 1.60 = 14 \\times 1.60 = 22.40',
@@ -403,9 +389,9 @@ export const LE_BISTROT_PARISIEN: Simulation = {
         'The VC-plus-markup TP (€22.40) is lower than the full-cost TP (€24) but still above the external supplier price of €22.',
     },
     {
-      id: 'q20',
+      id: 'q19',
       partLabel: 'Part 3b — Extended Transfer Pricing',
-      questionTitle: 'Q20: Effect on BP\'s Restaurant Profit',
+      questionTitle: 'Q19: Effect on BP\'s Restaurant Profit',
       question:
         'Compute the effect of the internal supply arrangement on BP\'s Restaurant Profit.',
       formulaTex:
@@ -423,9 +409,9 @@ export const LE_BISTROT_PARISIEN: Simulation = {
         'BP benefits from the internal transfer — the markup above variable cost generates €84k of incremental profit with no additional fixed costs.',
     },
     {
-      id: 'q21',
+      id: 'q20',
       partLabel: 'Part 3b — Extended Transfer Pricing',
-      questionTitle: 'Q21: Effect on CR\'s Restaurant Profit',
+      questionTitle: 'Q20: Effect on CR\'s Restaurant Profit',
       question:
         'Compute the effect on CR\'s Restaurant Profit.',
       formulaTex:
@@ -443,9 +429,9 @@ export const LE_BISTROT_PARISIEN: Simulation = {
         'The TP of €22.40 exceeds the external price of €22, so CR rationally rejects the internal transfer, even though it benefits the group.',
     },
     {
-      id: 'q22',
+      id: 'q21',
       partLabel: 'Part 3b — Extended Transfer Pricing',
-      questionTitle: 'Q22: Effect on SF\'s Consolidated Cash Flows',
+      questionTitle: 'Q21: Effect on SF\'s Consolidated Cash Flows',
       question:
         'Compute the effect on SF\'s consolidated cash flows.',
       formulaTex:
@@ -463,9 +449,9 @@ export const LE_BISTROT_PARISIEN: Simulation = {
         'The group saves €80k by producing internally regardless of the TP used. The TP merely determines the internal profit split.',
     },
     {
-      id: 'q23',
+      id: 'q22',
       partLabel: 'Part 3b — Extended Transfer Pricing',
-      questionTitle: 'Q23: Goal Congruence TP Range',
+      questionTitle: 'Q22: Goal Congruence TP Range',
       question:
         'What is the range of transfer prices that achieves goal congruence for this internal supply arrangement?',
       formulaTex:
@@ -486,9 +472,9 @@ export const LE_BISTROT_PARISIEN: Simulation = {
     },
     // ===== PART 4 — Investment Analysis =====
     {
-      id: 'q24',
+      id: 'q23',
       partLabel: 'Part 4 — Investment Analysis',
-      questionTitle: 'Q24: Cash Flow Effect of Fast Delivery Investment',
+      questionTitle: 'Q23: Cash Flow Effect of Fast Delivery Investment',
       question: 'BP can invest €330,000 in equipment (3-year life, straight-line) to supply 20,000 menus/year through Fast Delivery. Menu price €30, FD commission 25% of revenue, VC €14/menu, staff €40,000/year. Compute annual cash flow.',
       formulaTex: '\\Delta CF = 600{,}000 - 150{,}000 - 280{,}000 - 40{,}000 = +130{,}000',
       formulaLegend: 'Revenue = 20,000 × €30 = €600k. FD commission = 25% × €600k = €150k. Menu cost = 20,000 × €14 = €280k. Staff = €40k.',
@@ -505,9 +491,9 @@ export const LE_BISTROT_PARISIEN: Simulation = {
       keyTakeaway: '💡 The investment generates positive total cash flow (+€60,000 over 4 years). Note the FD commission is a key cost — without it, CF would be +€280,000/year.',
     },
     {
-      id: 'q25',
+      id: 'q24',
       partLabel: 'Part 4 — Investment Analysis',
-      questionTitle: 'Q25: Divisional Profit and Bonus Effect',
+      questionTitle: 'Q24: Divisional Profit and Bonus Effect',
       question: 'Compute the effect on Restaurant Profit and Patrícia\'s bonus for 2025-2027. Depreciation = €330k / 3 = €110k/year.',
       formulaTex: '\\Delta RP = \\Delta CF - Depr = 130{,}000 - 110{,}000 = +20{,}000',
       formulaLegend: 'Depr = €110,000/year (straight-line). Annual ΔRP = +€20,000.',
@@ -523,9 +509,9 @@ export const LE_BISTROT_PARISIEN: Simulation = {
       keyTakeaway: '💡 Patrícia earns a bonus only in Year 1 because RP improves vs the prior year. In Years 2-3, RP is flat (no improvement), so no bonus. The bonus-on-improvement design front-loads rewards.',
     },
     {
-      id: 'q26',
+      id: 'q25',
       partLabel: 'Part 4 — Investment Analysis',
-      questionTitle: 'Q26: Residual Income of Investment',
+      questionTitle: 'Q25: Residual Income of Investment',
       question: 'Compute the Residual Income for 2025-2027. Cost of capital = 10%.',
       formulaTex: 'RI_t = \\Delta RP - 10\\% \\times BV_t',
       formulaLegend: 'BV = book value at start of year. Depreciates by €110k/year. ΔRP = +€20,000/year.',
@@ -540,9 +526,9 @@ export const LE_BISTROT_PARISIEN: Simulation = {
       keyTakeaway: '💡 RI turns positive in Year 3 only because book value has fallen enough to reduce the capital charge below ΔRP. The mechanical improvement is not real operational improvement.',
     },
     {
-      id: 'q27',
+      id: 'q26',
       partLabel: 'Part 4b — Extended Investment Analysis',
-      questionTitle: 'Q27: RI-Based Bonus',
+      questionTitle: 'Q26: RI-Based Bonus',
       question: 'Compute Patrícia\'s bonus for 2025-2027 under the RI-based evaluation, where bonus = 10% of RI increase versus the prior year.',
       formulaTex: 'Bonus_t = 10\\% \\times \\max(RI_t - RI_{t-1},\\, 0)',
       formulaLegend: 'RI baseline (before investment) = €0. RI improves year-over-year as book value declines.',
@@ -558,7 +544,7 @@ export const LE_BISTROT_PARISIEN: Simulation = {
     },
     // ===== PART 5 — System Critique =====
     {
-      id: 'q28',
+      id: 'q27',
       partLabel: 'Part 5 — System Critique',
       questionTitle: 'System Critique',
       question: 'Analyze BP\'s variance analysis, incentive scheme, transfer pricing, and investment decisions. Propose improvements for each dimension.',
