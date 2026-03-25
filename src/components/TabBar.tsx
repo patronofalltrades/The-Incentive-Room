@@ -1,4 +1,4 @@
-import { LayoutDashboard, FileText, BookOpen } from 'lucide-react'
+import { LayoutDashboard, FileText, Lightbulb, BookOpen } from 'lucide-react'
 import type { Tab } from '../App'
 
 interface TabBarProps {
@@ -9,6 +9,7 @@ interface TabBarProps {
 const TABS: { id: Tab; label: string; Icon: typeof LayoutDashboard }[] = [
   { id: 'home', label: 'Home', Icon: LayoutDashboard },
   { id: 'practice', label: 'Practice', Icon: FileText },
+  { id: 'strategy', label: 'Strategy', Icon: Lightbulb },
   { id: 'formulas', label: 'Reference', Icon: BookOpen },
 ]
 

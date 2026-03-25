@@ -5,8 +5,9 @@ import ExamMap from './components/ExamMap'
 import Practice from './components/Practice'
 import Formulas from './components/Formulas'
 import TopicHub from './components/TopicHub'
+import Strategy from './components/Strategy'
 
-export type Tab = 'home' | 'practice' | 'formulas'
+export type Tab = 'home' | 'practice' | 'strategy' | 'formulas'
 
 interface ThemeContextType {
   isDark: boolean
@@ -104,6 +105,7 @@ export default function App() {
             <>
               {activeTab === 'home' && <ExamMap onNavigate={setActiveTab} onTopicSelect={handleTopicSelect} />}
               {activeTab === 'practice' && <Practice />}
+              {activeTab === 'strategy' && <Strategy />}
               {activeTab === 'formulas' && <Formulas />}
             </>
           )}
